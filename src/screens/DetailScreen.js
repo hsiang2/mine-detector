@@ -18,7 +18,7 @@ const DetailScreen = ({route, navigation}) => {
           } = route.params;
     return(
         <>
-            <ScrollView flex={1}>
+            {/* <ScrollView flex={1}> */}
             <Image h={179} source={{uri: image}} alt="movie"/>
             <HStack>
                 <HStack>
@@ -46,7 +46,7 @@ const DetailScreen = ({route, navigation}) => {
                 </Box>
             </HStack>       
             <ActorList data={actors}/>
-            </ScrollView>
+            {/* </ScrollView> */}
             <CommentSection navigation={navigation}/>
         </>
     );

@@ -1,10 +1,10 @@
-import { Pressable, Box, Image, Text } from "native-base";
 import React from "react";
+import { Pressable, Box, Image, Text } from "native-base";
 
 const MovieDetail = ({movie, navigation}) => {
     return(
         <Pressable
-          onPress={() => navigation.navigate('Detail', movie)}
+          onPress={() => navigation.navigate('Detail')}
         >
             <Box>
                 <Image 

@@ -1,4 +1,5 @@
 import React from "react";
+import { Pressable, Text } from "native-base";
 import { NavigationContainer, TabActions } from '@react-navigation/native' 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -27,10 +28,10 @@ const MyTabs = () => {
                 headerShown: false
             })}
         >
-            <Tab.Screen name='Home' component={MovieStack} />
-            <Tab.Screen name='Rankings' component={RankingsScreen} />
-            <Tab.Screen name='Search' component={SearchScreen} />
-            <Tab.Screen name='Account' component={AccountScreen} />
+            <Tab.Screen name='HomePage' component={MovieStack} />
+            <Tab.Screen name='RankingsPage' component={RankingsScreen} />
+            <Tab.Screen name='SearchPage' component={SearchScreen} />
+            <Tab.Screen name='AccountPage' component={AccountStack} />
         </Tab.Navigator>
     );
 }
@@ -39,7 +40,7 @@ const MovieStack = ({navigation}) => {
     return(
         <Stack.Navigator>
             <Stack.Screen 
-                name="Movie"
+                name="Home"
                 component={HomeScreen}
             />
             <Stack.Screen 
@@ -49,9 +50,29 @@ const MovieStack = ({navigation}) => {
             <Stack.Screen 
                 name="Comment"
                 component={CommentScreen}
-            />  
+            /> 
         </Stack.Navigator>
     );
+}
+
+const AccountStack = ({navigation}) => {
+    return(
+        <Stack.Navigator>
+            <Stack.Screen 
+                name="Account"
+                component={AccountScreen}
+            /> 
+            <Stack.Screen 
+                name="Detail"
+                component={DetailScreen}
+            />
+            <Stack.Screen 
+                name="Comment"
+                component={CommentScreen}
+            /> 
+        </Stack.Navigator>
+        
+    )
 }
 
 export default Navigation;

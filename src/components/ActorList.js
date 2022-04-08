@@ -6,7 +6,7 @@ const ActorList = ({data}) => {
     const renderItem = ({item}) => (<ActorDetail actor={item}/>)
     return(
         <>
-            <Text>{data.title}</Text>
+            {/* <Text>{data.title}</Text> */}
             <FlatList 
                 horizontal={true}
                 data={data}

@@ -1,5 +1,5 @@
-import { Text, Image, Box, HStack } from "native-base";
 import React from "react";
+import { Text, Image, Box, HStack } from "native-base";
 
 const ActorDetail = ({actor}) => {
     return(
