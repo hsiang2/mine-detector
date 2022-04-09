@@ -1,7 +1,6 @@
 import React from "react";
-import { Text, Box, ScrollView, Image, StatusBar, Switch, HStack } from "native-base";
+import { Text, Box, ScrollView, Image, StatusBar, Switch, HStack, useColorMode } from "native-base";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useColorMode } from "native-base";
 import accountData from "../json/account.json"
 import FavoriteActorList from "../components/FavoriteActorList";
 
@@ -9,6 +8,7 @@ import Wishlist from "../components/Wishlist";
 
 const AccountScreen = ({navigation}) => {
     const { colorMode, toggleColorMode } = useColorMode();
+
     return(
         <ScrollView>
             <Box>
@@ -25,6 +25,7 @@ const AccountScreen = ({navigation}) => {
                 <Text>深色模式</Text>
                 <Switch 
                     name="Dark Mode"
+                    value={true}
                     isChecked={colorMode==="dark"}
                     onToggle={toggleColorMode}
                     accessibilityLabel="display-mode"

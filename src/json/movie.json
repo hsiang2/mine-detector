@@ -8,14 +8,16 @@
                 "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
                 "genres": ["友誼", "溫暖", "幽默", "青春"],
                 "rated": "普0+",
-                "star": 9.0,
+                "star": 6.0,
                 "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
                 "runtime": "1:40:04",
                 "released": "2022/3/10",
                 "platform": "Disney+",
                 "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
+                        { "title": "Angelina Jolie", "role": "Maleficent", "image": "https://github.com/hsiang2/movie_image/blob/main/Angelina%20Jolie_img.png?raw=true"},
+                        { "title": "Elle Fanning", "role": "Aurora", "image":"https://github.com/hsiang2/movie_image/blob/main/Angelina%20Jolie_img.png?raw=true"},
+                        { "title": "Harris Dickinson", "role": "Prince Philip", "image":"https://github.com/hsiang2/movie_image/blob/main/Angelina%20Jolie_img.png?raw=true"},
+                        { "title": "Michelle Pfeiffer", "role": "Queen Ingrith", "image":"https://github.com/hsiang2/movie_image/blob/main/Angelina%20Jolie_img.png?raw=true"}
                     ]
             },
             {
@@ -24,7 +26,7 @@
                 "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
                 "genres": ["友誼", "溫暖", "幽默", "青春"],
                 "rated": "普0+",
-                "star": 9.0,
+                "star": 3.7,
                 "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
                 "runtime": "1:40:04",
                 "released": "2022/3/10",
@@ -56,7 +58,7 @@
                 "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
                 "genres": ["友誼", "溫暖", "幽默", "青春"],
                 "rated": "普0+",
-                "star": 9.0,
+                "star": 8.2,
                 "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
                 "runtime": "1:40:04",
                 "released": "2022/3/10",
