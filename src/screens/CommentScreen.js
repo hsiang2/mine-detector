@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 // import SegmentedControl from "@react-native-segmented-control/segmented-control"; 
 import SegmentedControlTab from "react-native-segmented-control-tab"
-import { Box, Center, ScrollView, Text } from "native-base";
+import { Box, Center, HStack, ScrollView, Text } from "native-base";
+import AntDesign from 'react-native-vector-icons/AntDesign'
 import CommentList from "../components/CommentList";
 import { SafeAreaView } from "react-native-safe-area-context";
 import DarkBackground from "../components/DarkBackground";
@@ -49,34 +50,32 @@ class CommentScreen extends Component {
                             values={['無雷區', '有雷區']}
                             selectedIndex={this.state.selectedIndex}
                             onTabPress={this.handleIndexChange}
-                            tabStyle={{
-                                backgroundColor: "transparent",
-                                borderWidth: 0
-                            }}
+                            tabStyle={{backgroundColor: "transparent", borderWidth: 0, borderColor: "#151520"}}
                             borderRadius={7}
-                            tabsContainerStyle={{borderWidth: 0}}
-                            tabsContainerDisableStyle={{borderWidth: 0}}
                             activeTabStyle={{
-                                backgroundColor: "#E7E4E4",
-                                borderRadius: 7,
+                                borderRadius: 7, backgroundColor: "#E7E4E4",
                             }}
-                            tabsContainerDisableStyle={{borderWidth:0}}
-                            activeTabTextStyle={{
-                                color: "#151520",
-                            }}
-                            tabTextStyle={{
-                                color: "#E7E4E4",
-                            }}
+                            activeTabTextStyle={{color: "#151520", fontSize: 13}}
+                            tabTextStyle={{color: "#E7E4E4", fontSize: 13}}
                         />
                     </Box>
+                    <ScrollView>
+                        <HStack justifyContent="space-between" alignItems="center" my={23} px={3}>
+                            <Text fontSize={24}>評論區</Text>
+                            <HStack alignItems="center">
+                                <Text fontSize={16} color="#B9B9B9" mr={1}>排序</Text>
+                                <AntDesign name="down" color="#B9B9B9" size={14}/>
+                            </HStack>
+                        </HStack>
+                        <Center>
+                            {
+                                this.state.selectedIndex === 0 ?
+                                <CommentList isSpoiler={false}/>:
+                                <CommentList isSpoiler={true}/>
+                            }
+                        </Center>
+                    </ScrollView>
                     
-                    <Center>
-                        {
-                            this.state.selectedIndex === 0 ?
-                            <CommentList isSpoiler={false}/>:
-                            <CommentList isSpoiler={true}/>
-                        }
-                    </Center>
                 </Box>
                 
             </SafeAreaView>
