@@ -13,7 +13,13 @@ const CommentSectionDetail = ({isSpoiler, navigation}) => {
                 mt={15} mb={18} mr={30} alignItems="flex-end" 
                 onPress={() => navigation.navigate('Comment')}
             >
-                <Text fontSize={14} color="#E0DAA4">查看更多</Text>
+                <Text 
+                    fontSize={14} letterSpacing={0.2}
+                    _dark={{color: "#FFDA7B"}}
+                    _light={{color: "#D99F3E"}}
+                >
+                    查看更多
+                </Text>
             </Pressable>
             <FlatList 
                 horizontal={true}

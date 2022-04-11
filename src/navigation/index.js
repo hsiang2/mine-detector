@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from "react";
-import { Pressable, Text } from "native-base";
+import { Pressable, StatusBar, Text, useColorMode } from "native-base";
 import { NavigationContainer, TabActions } from '@react-navigation/native' 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator, useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
@@ -8,6 +8,7 @@ import { BlurView } from "expo-blur";
 import { StyleSheet } from "react-native";
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+
 import HomeScreen from "../screens/HomeScreen";
 import DetailScreen from "../screens/DetailScreen";
 import CommentScreen from "../screens/CommentScreen";
@@ -19,8 +20,13 @@ const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const Navigation = () => {
+    const { colorMode } = useColorMode();
     return(
         <NavigationContainer>
+            <StatusBar
+                barStyle={ colorMode == "dark"? "light-content": "dark-content"}
+                //backgroundColor={ colorMode == "dark"? "black": "white"}
+            />
             <MyTabs />
         </NavigationContainer>
     );
@@ -28,13 +34,17 @@ const Navigation = () => {
 
 const MyTabs = () => {
     //const tabBarHeight = useBottomTabBarHeight();
+    const { colorMode } = useColorMode();
     return(
         <Tab.Navigator
             screenOptions={({route}) => ({
                 headerShown: false,
                 tabBarStyle: { position: 'absolute', borderTopWidth: 0 },
                 tabBarBackground: () => (
-                    <BlurView tint="dark" intensity={80} style={StyleSheet.absoluteFill} />
+                    <BlurView 
+                        tint={colorMode == "dark"? "dark": "light"} 
+                        intensity={80} style={StyleSheet.absoluteFill} 
+                    />
                 ),
                 tabBarIcon: ({focused, color, size}) => {
                     let iconName;
@@ -49,8 +59,8 @@ const MyTabs = () => {
                     }
                     return <Ionicons name={iconName} color={color} size={size}/>
                 },
-                tabBarActiveTintColor: '#FFDA7B',
-                tabBarInactiveTintColor: '#CCCCCC',
+                tabBarActiveTintColor: colorMode == 'dark'?'#FFDA7B': "#D99F3E",
+                tabBarInactiveTintColor: colorMode == 'dark'?'#CCCCCC': "#A4A4A4",
                 tabBarLabel: ({focused, color, size}) => {
                     let labelName;
                     if (route.name === 'HomePage') {
@@ -62,7 +72,7 @@ const MyTabs = () => {
                     } else if (route.name === 'AccountPage') {
                         labelName = '帳戶'
                     }
-                    return <Text fontSize={10} color={color}>{labelName}</Text>
+                    return <Text fontSize={10} color={color} letterSpacing={0.2}>{labelName}</Text>
                 },
             })}
         >
@@ -75,6 +85,7 @@ const MyTabs = () => {
 }
 
 const MovieStack = ({navigation}) => {
+    const {colorMode} = useColorMode();
     return(
         <Stack.Navigator
             screenOptions={{
@@ -96,7 +107,10 @@ const MovieStack = ({navigation}) => {
                         <Pressable
                             onPress={() => navigation.goBack()}
                         >
-                            <AntDesign name="closecircleo" color="white" size={24}/>
+                            <AntDesign 
+                                name="closecircleo"  size={24}
+                                color={colorMode=="dark"? "#EDF0F5": "#243243"}
+                            />
                         </Pressable>
                     ),
                     headerBackVisible: false,
@@ -111,7 +125,11 @@ const MovieStack = ({navigation}) => {
                         <Pressable
                             onPress={() => navigation.goBack()}
                         >
-                            <AntDesign name="closecircleo" color="white" size={24}/>
+                            <AntDesign 
+                                name="closecircleo" size={24}
+                                color={colorMode=="dark"? "#EDF0F5": "#243243"}
+                            
+                            />
                         </Pressable>
                     ),
                     headerBackVisible: false,
@@ -123,6 +141,7 @@ const MovieStack = ({navigation}) => {
 }
 
 const AccountStack = ({navigation}) => {
+    const {colorMode} = useColorMode();
     return(
         <Stack.Navigator
             screenOptions={{
@@ -135,7 +154,8 @@ const AccountStack = ({navigation}) => {
                 options={{
                     headerRight: () => (    
                         <AntDesign 
-                            name="setting" color="#EDF0F5" size={24} 
+                            name="setting" size={24} 
+                            color={colorMode=="dark"? "#EDF0F5": "#243243"}
                             style={{paddingTop: 20, paddingRight: 24}}
                         />
                     ),
@@ -151,7 +171,10 @@ const AccountStack = ({navigation}) => {
                         <Pressable
                             onPress={() => navigation.navigate('Account')}
                         >
-                            <AntDesign name="closecircleo" color="white" size={24}/>
+                            <AntDesign 
+                                name="closecircleo" size={24}
+                                color={colorMode=="dark"? "#EDF0F5": "#243243"}
+                            />
                         </Pressable>
                     ),
                     headerBackVisible: false,
@@ -166,7 +189,10 @@ const AccountStack = ({navigation}) => {
                         <Pressable
                             onPress={() => navigation.navigate('Account')}
                         >
-                            <AntDesign name="closecircleo" color="white" size={24}/>
+                            <AntDesign 
+                                name="closecircleo" size={24}
+                                color={colorMode=="dark"? "#EDF0F5": "#243243"}
+                            />
                         </Pressable>
                     ),
                     headerBackVisible: false,

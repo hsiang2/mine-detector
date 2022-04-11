@@ -13,7 +13,17 @@ const Star = ({star}) => {
     return(
         <HStack alignItems="center">
             {star >= 5 ? cheese: bomb}
-            <Text fontSize={12} ml={1}>{star}</Text>
+            <Text 
+                fontSize={12} ml={1} letterSpacing={0.5}
+                _dark={{
+                    color: star >= 5 ? "#FFDA7B": "#E2E0E0"
+                }}
+                _light={{
+                    color: star >= 5 ? "#D99F3E": "#5C7284"
+                }}
+            >
+                {star}
+            </Text>
         </HStack>
     );
     

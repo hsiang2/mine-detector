@@ -10,10 +10,12 @@ const Comment = ({comment, isLarge}) => {
     return(
         <Box 
             w={width} h={167} borderWidth={1} mr={mr} mb={mb}
-            borderColor={"#6477888C"} borderRadius={5} 
+             borderRadius={5} 
+            _dark={{borderColor: "#6477888C"}}
+            _light={{borderColor: "#BFE1E980"}}
         >
             <BlurView 
-                intensity={20} 
+                intensity={20}
                 style={{
                     flex: 1, padding: 14,
                     justifyContent: "space-between"
@@ -26,13 +28,32 @@ const Comment = ({comment, isLarge}) => {
                         alt="avatar"
                     />
                     <Box>
-                        <Text>{comment.user}</Text>
+                        <Text
+                            letterSpacing={0.2}
+                            _dark={{color: "#E8E8E8"}}
+                            _light={{color: "#243243"}}
+                        >
+                            {comment.user}
+                        </Text>
                         <Star star={comment.star.toFixed(1)}/>
                     </Box>
                 </HStack>
                 
-                <Text height={60} mt={4} fontSize={12}>{comment.content}</Text>
-                <Text fontSize={12}>{comment.date}</Text>
+                <Text 
+                    height={60} mt={4} fontSize={12}
+                    letterSpacing={0.2}
+                    _dark={{color: "#B7B7B7"}}
+                    _light={{color: "#808080"}}
+                >
+                    {comment.content}
+                </Text>
+                <Text 
+                    fontSize={12} letterSpacing={0.5}
+                    _dark={{color: "#989898"}}
+                    _light={{color: "#A8A8A8"}}
+                >
+                    {comment.date}
+                </Text>
             </BlurView>
         </Box>
         

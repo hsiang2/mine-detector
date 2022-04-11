@@ -6,7 +6,7 @@ const ActorList = ({data}) => {
     const renderItem = ({item}) => (<ActorDetail actor={item}/>)
     return(
         <FlatList 
-            contentContainerStyle={{marginLeft: 20, marginTop: 36, marginBottom: 32}}
+            contentContainerStyle={{marginLeft: 27, marginTop: 36, marginBottom: 32}}
             horizontal={true}
             data={data}
             renderItem={renderItem}

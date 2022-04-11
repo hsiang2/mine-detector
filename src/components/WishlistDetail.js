@@ -19,8 +19,22 @@ const WishlistDetail = ({movie, navigation}) => {
                     alignItems= "center" justifyContent="space-between"
                 >
                     <Box>
-                        <Text fontSize={20} mb={1}>{movie.title}</Text>
-                        <Text fontSize={12}>{movie.runtime}</Text>
+                        <Text 
+                            fontSize={20} mb={1}
+                            letterSpacing={0.2}
+                            _dark={{color: "#F4F5F9"}}
+                            _light={{color: "#445B6C"}}
+                        >
+                            {movie.title}
+                        </Text>
+                        <Text 
+                            fontSize={12}
+                            letterSpacing={0.5}
+                            _dark={{color: "#DDDFE6"}}
+                            _light={{color: "#767676"}}
+                        >
+                            {movie.runtime}
+                        </Text>
                     </Box>
                     <Image 
                         ml={70}

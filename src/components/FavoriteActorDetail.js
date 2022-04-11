@@ -14,8 +14,14 @@ const FavoriteActorDetail = ({actor}) => {
                     justifyContent: "flex-end"
                 }}
             >
-                <BlurView intensity={47} style={{height: 34, paddingLeft: 7}}>
-                    <Text fontSize={12} >{actor.title}</Text>
+                <BlurView intensity={45} style={{height: 34, paddingLeft: 7}}>
+                    <Text 
+                        fontSize={12} 
+                        color= "#E8E8E8"
+                        letterSpacing={0.2}
+                    >
+                        {actor.title}
+                    </Text>
                 </BlurView>
             </ImageBackground>
         </Box>

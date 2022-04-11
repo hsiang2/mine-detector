@@ -1,13 +1,14 @@
 import React from "react";
-import { Text, Box } from "native-base";
-import DarkBackground from "../components/DarkBackground";
+import { Text, Box, useColorMode } from "native-base";
+import Background from "../components/Background";
 
 const SearchScreen = () => {
+    const { colorMode } = useColorMode();
     return(
         <Box flex={1} alignItems="center" justifyContent="center"
-            style={{backgroundColor: "#181B2A"}}
+        style={{backgroundColor: colorMode == 'dark'? "#181B2A": "#ffffff"}}
         >
-            <DarkBackground />
+            <Background />
             <Text fontSize={20}>Search</Text>
         </Box>
     )

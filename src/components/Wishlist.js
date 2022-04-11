@@ -1,10 +1,11 @@
 import React from "react";
-import { FlatList, HStack, Text } from "native-base";
+import { FlatList, HStack, Text, useColorMode } from "native-base";
 import AntDesign from "react-native-vector-icons/AntDesign"
 import WishlistDetail from "./WishlistDetail";
 
 
 const Wishlist = ({data, navigation}) => {
+    const {colorMode} = useColorMode();
     const renderItem = ({item}) => (<WishlistDetail movie={item} navigation={navigation}/>)
     return(
         <>
@@ -12,8 +13,15 @@ const Wishlist = ({data, navigation}) => {
                 px={28}
                 alignItems="center" justifyContent="space-between"
             >
-                <Text fontSize={20}>我的片單</Text>
-                <AntDesign name="right" color="#F4F4F4" size={20}/>
+                <Text 
+                    _dark={{color: "#F4F4F4"}}
+                    _light={{color: "#445B6C"}}
+                    fontSize={20}
+                    letterSpacing={0.2}
+                >
+                    我的片單
+                </Text>
+                <AntDesign name="right" color= {colorMode =="dark"?"#F4F4F4":"#445B6C"} size={20}/>
                 
             </HStack>
             <FlatList 

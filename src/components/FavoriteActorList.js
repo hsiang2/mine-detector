@@ -1,9 +1,10 @@
 import React from "react";
-import { FlatList, HStack, Text } from "native-base";
+import { FlatList, HStack, Text, useColorMode } from "native-base";
 import AntDesign from "react-native-vector-icons/AntDesign"
 import FavoriteActorDetail from "./FavoriteActorDetail";
 
 const FavoriteActorList = ({data}) => {
+    const {colorMode} = useColorMode();
     const renderItem = ({item}) => (<FavoriteActorDetail actor={item}/>)
     return(
         <>
@@ -11,8 +12,15 @@ const FavoriteActorList = ({data}) => {
                 px={28}
                 alignItems="center" justifyContent="space-between"
             >
-                <Text fontSize={20}>喜愛演員</Text>
-                <AntDesign name="right" color="#F4F4F4" size={20}/>
+                <Text 
+                    _dark={{color: "#F4F4F4"}}
+                    _light={{color: "#445B6C"}}
+                    fontSize={20}
+                    letterSpacing={0.2}
+                >
+                    喜愛演員
+                </Text>
+                <AntDesign name="right" color={colorMode =="dark"?"#F4F4F4":"#445B6C"} size={20}/>
                 
             </HStack>
             <FlatList 

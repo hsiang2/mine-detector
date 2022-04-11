@@ -13,7 +13,12 @@ const MovieDetail = ({movie, navigation}) => {
                     source={{uri: movie.poster}}
                     alt="movie"
                 />
-                <Text fontSize={12}>{movie.title}</Text>
+                <Text 
+                    fontSize={12} letterSpacing={0.2}
+                    _dark={{color: "#E2E0E0"}} _light={{color: "#445B6C"} }
+                >
+                    {movie.title}
+                </Text>
                 <Star star={movie.star.toFixed(1)}/>
             </Box>
         </Pressable>
