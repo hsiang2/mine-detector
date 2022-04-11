@@ -4,6 +4,7 @@ import { Pressable, StatusBar, Text, useColorMode, Box } from "native-base";
 import { NavigationContainer, TabActions } from '@react-navigation/native' 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator, useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
+
 import { BlurView } from "expo-blur";
 import { StyleSheet } from "react-native";
 import AntDesign from 'react-native-vector-icons/AntDesign'
@@ -99,12 +100,13 @@ const MyTabs = () => {
     );
 }
 
+
 const MovieStack = ({navigation}) => {
     const {colorMode} = useColorMode();
     return(
         <Stack.Navigator
             screenOptions={{
-                headerTransparent: true
+                headerTransparent: true,
             }}
         >
             <Stack.Screen 

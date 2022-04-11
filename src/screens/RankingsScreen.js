@@ -9,7 +9,7 @@ const RankingsScreen = () => {
         style={{backgroundColor: colorMode == 'dark'? "#181B2A": "#ffffff"}}
         >
             <Background />
-            <Text fontSize={20}>Rankings</Text>
+            <Text fontSize={20}>排行榜</Text>
         </Box>
     )
 }

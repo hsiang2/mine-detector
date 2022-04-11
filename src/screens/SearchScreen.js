@@ -9,7 +9,7 @@ const SearchScreen = () => {
         style={{backgroundColor: colorMode == 'dark'? "#181B2A": "#ffffff"}}
         >
             <Background />
-            <Text fontSize={20}>Search</Text>
+            <Text fontSize={20}>搜尋</Text>
         </Box>
     )
 }
