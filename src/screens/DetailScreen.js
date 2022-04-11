@@ -10,6 +10,7 @@ import Star from "../components/Star";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Pressable } from "react-native";
 import MovieInfo from "../components/MovieInfo";
+import Rated from "../components/Rated";
 
 const DetailScreen = ({route, navigation}) => {
     const { image,
@@ -30,7 +31,7 @@ const DetailScreen = ({route, navigation}) => {
             <Background />
             <ScrollView>
                 <Box>
-                    <Image h={179} mt={49} mx={4} source={{uri: image}} alt="movie"/>
+                    <Image h={179} mt={49} mx={5} source={{uri: image}} alt="movie"/>
                     <HStack mt={47} mb={52} mx={4} justifyContent="space-between">
                         <HStack space={1.5}>
                             {genres.map(genre => {
@@ -54,7 +55,8 @@ const DetailScreen = ({route, navigation}) => {
                                 );
                             })}
                         </HStack>
-                        <Box 
+                        <Rated rated={rated}/>
+                        {/* <Box 
                             justifyContent="center"
                             alignItems="center"
                             w={53} h={22} borderRadius={12}
@@ -67,7 +69,7 @@ const DetailScreen = ({route, navigation}) => {
                             >
                                 {rated}
                             </Text>
-                        </Box>
+                        </Box> */}
                     </HStack>
                     <Box mx={27}  pr={1.25}>
                         <HStack justifyContent="space-between" alignItems="flex-start">

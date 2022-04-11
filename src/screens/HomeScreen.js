@@ -13,7 +13,7 @@ const HomeScreen = ({navigation}) => {
     return(
         <SafeAreaView style={{backgroundColor: colorMode == 'dark'? "#181B2A": "#ffffff"}}>
             <Background />
-            <ScrollView >
+            <ScrollView>
                 <Box pt={17} pb={2.5} mb={10}>
                     <MovieCarousel data={mainMovieData} navigation={navigation}/>
                 </Box>

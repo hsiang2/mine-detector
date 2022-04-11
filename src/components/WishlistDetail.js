@@ -1,18 +1,45 @@
 import React from "react";
-import { Pressable, Box, Image, Text, HStack } from "native-base";
+import { Pressable, Box, Image, Text, HStack, useColorMode } from "native-base";
+import { LinearGradient } from "expo-linear-gradient";
 import { BlurView } from "expo-blur";
+import { shadowColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
 const WishlistDetail = ({movie, navigation}) => {
+    const {colorMode} = useColorMode();
+    const color = colorMode == "dark"? 
+            ["#38425870", "#384258", "#38425854"]:
+            ["#CAE8EE", "#EEF7F9", "#EAEAEA"]
+    const location = colorMode == "dark"?
+            [0, 0.0001, 1]: [0, 0.4948, 1]
+
     return(
         <Pressable
-          onPress={() => navigation.navigate('Detail', movie)}
+            onPress={() => navigation.navigate('Detail', movie)}
+            mr= {5}
+            shadowOffset= {{width: 0, height: 4}}
+            shadowRadius= {3}
+            _dark={{
+                shadowColor: "#2D3E4E", shadowOpacity: 0.62
+            }}
+            _light={{ shadowColor: "#DDDDDD", shadowOpacity: 1}}
+            
         >
-            <BlurView 
+            {/* <BlurView 
                     intensity={44} 
                     style={{ 
                         height: 100, marginRight: 20,
                         padding: 17, borderRadius: 5, overflow: "hidden"
                     }}
+            > */}
+            <LinearGradient
+                colors= {color}
+                start= {{x: 0, y: 0}}
+                end= {{x: 1, y: 0}}
+                locations={location}
+                style={{ 
+                    height: 100,
+                    padding: 17, borderRadius: 5, overflow: "hidden",
+                }}
             >
                 <HStack 
                     flex={1} 
@@ -43,7 +70,9 @@ const WishlistDetail = ({movie, navigation}) => {
                         alt="movie"
                     />
                 </HStack>
-            </BlurView>
+            </LinearGradient>
+                
+            {/* </BlurView> */}
             
         </Pressable>
     );

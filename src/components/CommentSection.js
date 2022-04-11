@@ -33,7 +33,7 @@ const CommentSection = ({navigation}) => {
             {...props}
             style={{ 
                 backgroundColor: 'transparent', 
-                marginLeft: 24, marginRight: 17, 
+                marginLeft: 20, marginRight: 20, 
                 borderBottomWidth: 1,
                 borderColor: colorMode=="dark"? "#D3D3D366": "#D3D3D3"
             }}
@@ -43,8 +43,8 @@ const CommentSection = ({navigation}) => {
             labelStyle={{fontSize: 15, letterSpacing: 0.2}}
             indicatorStyle={{
                 backgroundColor: colorMode=="dark"?"#FFDA7B":"#D99F3E8C", 
-                height: 6, borderRadius: 3, 
-                position: "absolute", bottom: -3
+                height: 3, borderRadius: 3, 
+                position: "absolute", bottom: -1.5
             }}
         />
     )

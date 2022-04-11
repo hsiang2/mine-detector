@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from "react";
-import { Pressable, StatusBar, Text, useColorMode } from "native-base";
+import { Pressable, StatusBar, Text, useColorMode, Box } from "native-base";
 import { NavigationContainer, TabActions } from '@react-navigation/native' 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator, useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
@@ -41,10 +41,25 @@ const MyTabs = () => {
                 headerShown: false,
                 tabBarStyle: { position: 'absolute', borderTopWidth: 0 },
                 tabBarBackground: () => (
-                    <BlurView 
-                        tint={colorMode == "dark"? "dark": "light"} 
-                        intensity={80} style={StyleSheet.absoluteFill} 
-                    />
+                    <>
+                        <BlurView 
+                            tint={colorMode == "dark"? "dark": "light"} 
+                            intensity={60} style={StyleSheet.absoluteFill} 
+                        />
+                        <Box
+                            flex={1}
+                            _light={{backgroundColor: "#E7F9FD"}}
+                            _dark={{backgroundColor: "#2A3B4B"}}
+                            //position="relative"
+                            opacity={0.5}
+                        ></Box>
+                        
+                    </>
+                    
+                    // <BlurView 
+                    //     tint={colorMode == "dark"? "dark": "light"} 
+                    //     intensity={80} style={StyleSheet.absoluteFill} 
+                    // />
                 ),
                 tabBarIcon: ({focused, color, size}) => {
                     let iconName;

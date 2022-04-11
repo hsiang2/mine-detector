@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Text, Box, ScrollView, Image, StatusBar, Switch, HStack, useColorMode, Center } from "native-base";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Dimensions } from "react-native";
+import { Dimensions, Pressable } from "react-native";
 import AntDesign from "react-native-vector-icons/AntDesign"
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import Ionicons from "react-native-vector-icons/Ionicons"
@@ -14,12 +14,15 @@ import FavoriteActorList from "../components/FavoriteActorList";
 import Wishlist from "../components/Wishlist";
 import Background from "../components/Background";
 import { BlurView } from "expo-blur";
+import { LinearGradient } from "expo-linear-gradient";
 
 
 const AccountScreen = ({navigation}) => {
     const { colorMode, toggleColorMode } = useColorMode();
     const [ toggleValue, settoggleValue] = useState(true)
     const { width, height } = Dimensions.get("window");
+    const color = colorMode == "dark"? ["#DDDDDD19", "#F0F3F525"]:["#E2ECF2", "#D6DBDD"];
+    const location = colorMode == "dark"? [0,1]: [0.0073, 0.9907];
     return(
         <SafeAreaView style={{backgroundColor: colorMode == 'dark'? "#181B2A": "#ffffff"}}>
             <Background />
@@ -59,77 +62,100 @@ const AccountScreen = ({navigation}) => {
                 <FavoriteActorList data={accountData.favoriteActors}/>
                 <BottomTabBarHeightContext.Consumer>
                     {tabBarHeight => (
-                        <BlurView 
-                            intensity={44} 
-                            style={{
-                                marginBottom: tabBarHeight,
-                                height: 73,
-                                width: 330,
-                                alignSelf: "center",
-                                borderRadius: 5,
-                                overflow: "hidden"
-                            }}>
-                            <HStack flex={1} px={18} 
-                                alignItems="center" 
-                                justifyContent="space-between"
+                        // <BlurView 
+                        //     intensity={44} 
+                        //     style={{
+                        //         marginBottom: tabBarHeight,
+                        //         height: 73,
+                        //         width: 330,
+                        //         alignSelf: "center",
+                        //         borderRadius: 5,
+                        //         overflow: "hidden"
+                        //     }}>
+                        <Box
+                            shadowOffset= {{width: 0, height: 4}}
+                            shadowRadius= {5}
+                            _dark={{
+                                shadowColor: "#2D3E4E", shadowOpacity: 0.62
+                            }}
+                            _light={{ shadowColor: "#DDDDDD", shadowOpacity: 1}}
+                            marginBottom= {tabBarHeight}
+                            width={330} alignSelf= "center"
+                        >
+                            <LinearGradient
+                                colors={color}
+                                locations={location}
+                                start= {{x: 0, y: 0}}
+                                end= {{x: 1, y: 0}}
+                                style={{
+                                    height: 73,
+                                    borderRadius: 5,
+                                    overflow: "hidden"
+                                }}
                             >
-                                <Text 
-                                    fontSize={20} 
-                                    _dark={{color: "#F4F4F4"}}
-                                    _light={{color: "#445B6C"}}
-                                    letterSpacing={0.2}
+                                <HStack flex={1} px={18} 
+                                    alignItems="center" 
+                                    justifyContent="space-between"
                                 >
-                                    深色模式
-                                </Text>
-                                <HStack alignItems="center" space={3}>
                                     <Text 
-                                        fontSize={12}
-                                        _dark={{color: "#B9B9B9"}}
-                                        _light={{color: "#626262"}}
+                                        fontSize={20} 
+                                        _dark={{color: "#F4F4F4"}}
+                                        _light={{color: "#445B6C"}}
                                         letterSpacing={0.2}
                                     >
-                                        開啟
+                                        深色模式
                                     </Text>
-                                    <Toggle
-                                        value={true}
-                                        onPress={toggleColorMode}
-                                        thumbActiveComponent={
-                                            <Box justifyContent="center" alignItems="center" w={27} h={27} >
-                                                <Ionicons name="ios-moon" size={16} color="#243243"/>
-                                            </Box>
-                                        }
-                                        thumbInActiveComponent={
-                                            <Box justifyContent="center" alignItems="center" w={27} h={27}>
-                                                <Ionicons name="ios-sunny" size={16} color="#EDF0F5"/>
-                                            </Box>
-                                        }
-                                        trackBar={{
-                                            inActiveBackgroundColor: "transparent",
-                                            activeBackgroundColor: "transparent",
-                                            width: 51,
-                                            height: 31,
-                                            borderWidth: 1, 
-                                            borderActiveColor: "#EDF0F5",
-                                            borderInActiveColor: "#243243",
-                                        }}
-                                        thumbButton={{
-                                            width: 27, height: 27, 
-                                            activeBackgroundColor: "#EDF0F5", inActiveBackgroundColor: "#243243"
-                                        }}
-                                    />
-                                    {/* <Switch 
-                                        name="Dark Mode"
-                                        value={true}
-                                        isChecked={colorMode==="dark"}
-                                        onToggle={toggleColorMode}
-                                        accessibilityLabel="display-mode"
-                                        accessibilityHint="light or dark mode"
-                                    /> */}
+                                    <HStack alignItems="center" space={3}>
+                                        <Text 
+                                            fontSize={12}
+                                            _dark={{color: "#B9B9B9"}}
+                                            _light={{color: "#626262"}}
+                                            letterSpacing={0.2}
+                                        >
+                                            開啟
+                                        </Text>
+                                        <Toggle
+                                            value={true}
+                                            onPress={toggleColorMode}
+                                            thumbActiveComponent={
+                                                <Box justifyContent="center" alignItems="center" w={27} h={27} >
+                                                    <Ionicons name="ios-moon" size={16} color="#243243"/>
+                                                </Box>
+                                            }
+                                            thumbInActiveComponent={
+                                                <Box justifyContent="center" alignItems="center" w={27} h={27}>
+                                                    <Ionicons name="ios-sunny" size={16} color="#EDF0F5"/>
+                                                </Box>
+                                            }
+                                            trackBar={{
+                                                inActiveBackgroundColor: "transparent",
+                                                activeBackgroundColor: "transparent",
+                                                width: 51,
+                                                height: 31,
+                                                borderWidth: 1, 
+                                                borderActiveColor: "#EDF0F5",
+                                                borderInActiveColor: "#243243",
+                                            }}
+                                            thumbButton={{
+                                                width: 27, height: 27, 
+                                                activeBackgroundColor: "#EDF0F5", inActiveBackgroundColor: "#243243"
+                                            }}
+                                        />
+                                        {/* <Switch 
+                                            name="Dark Mode"
+                                            value={true}
+                                            isChecked={colorMode==="dark"}
+                                            onToggle={toggleColorMode}
+                                            accessibilityLabel="display-mode"
+                                            accessibilityHint="light or dark mode"
+                                        /> */}
+                                    </HStack>
+                                    
                                 </HStack>
-                                
-                            </HStack>
-                        </BlurView>
-                            
+                            {/* </BlurView> */}
+                            </LinearGradient>    
+                        </Box>
+                        
                     )}
                 </BottomTabBarHeightContext.Consumer>
                 
