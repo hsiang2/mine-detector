@@ -1,6 +1,7 @@
 import React from "react";
 import { HStack, Box, Text } from "native-base";
 
+
 const MovieInfo = ({data, title}) => {
     return(
         <HStack>

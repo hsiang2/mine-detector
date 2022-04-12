@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React from "react";
 import { Pressable, StatusBar, Text, useColorMode, Box } from "native-base";
 import { NavigationContainer, TabActions } from '@react-navigation/native' 
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { createStackNavigator } from "@react-navigation/stack";
 import { createBottomTabNavigator, useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
 import { BlurView } from "expo-blur";
@@ -17,7 +17,7 @@ import RankingsScreen from "../screens/RankingsScreen";
 import SearchScreen from "../screens/SearchScreen";
 import AccountScreen from "../screens/AccountScreen";
 
-const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const Navigation = () => {
@@ -107,6 +107,7 @@ const MovieStack = ({navigation}) => {
         <Stack.Navigator
             screenOptions={{
                 headerTransparent: true,
+                
             }}
         >
             <Stack.Screen 
@@ -114,6 +115,8 @@ const MovieStack = ({navigation}) => {
                 component={HomeScreen}
                 options={{
                     headerShown: false,
+                    
+                    
                 }}
             />
             <Stack.Screen 
@@ -123,6 +126,7 @@ const MovieStack = ({navigation}) => {
                     headerRight: () => (
                         <Pressable
                             onPress={() => navigation.goBack()}
+                            mr={4}
                         >
                             <AntDesign 
                                 name="closecircleo"  size={24}
@@ -130,8 +134,12 @@ const MovieStack = ({navigation}) => {
                             />
                         </Pressable>
                     ),
-                    headerBackVisible: false,
+                    headerLeft: () => null,
+                    //headerBackVisible: false,
                     title: null,
+                    //animation: 'fade_from_bottom',
+                    presentation:"modal"
+                    
                 }}
             />
             <Stack.Screen 
@@ -141,16 +149,20 @@ const MovieStack = ({navigation}) => {
                     headerRight: () => (
                         <Pressable
                             onPress={() => navigation.goBack()}
+                            mr={4}
                         >
                             <AntDesign 
                                 name="closecircleo" size={24}
                                 color={colorMode=="dark"? "#EDF0F5": "#243243"}
-                            
                             />
                         </Pressable>
                     ),
-                    headerBackVisible: false,
+                    //headerBackVisible: false,
+                    headerLeft: () => null,
                     title: null,
+                    //animation: 'fade_from_bottom',
+                    presentation:"modal"
+                
                 }}
             /> 
         </Stack.Navigator>
@@ -173,10 +185,11 @@ const AccountStack = ({navigation}) => {
                         <AntDesign 
                             name="setting" size={24} 
                             color={colorMode=="dark"? "#EDF0F5": "#243243"}
-                            style={{paddingTop: 20, paddingRight: 24}}
+                            style={{paddingTop: 20, paddingRight: 40}}
                         />
                     ),
-                    headerBackVisible: false,
+                    //headerBackVisible: false,
+                    //headerLeft: () => null,
                     title: null,
                 }}
             /> 
@@ -187,6 +200,7 @@ const AccountStack = ({navigation}) => {
                     headerRight: () => (
                         <Pressable
                             onPress={() => navigation.navigate('Account')}
+                            mr={4}
                         >
                             <AntDesign 
                                 name="closecircleo" size={24}
@@ -194,8 +208,10 @@ const AccountStack = ({navigation}) => {
                             />
                         </Pressable>
                     ),
-                    headerBackVisible: false,
+                    //headerBackVisible: false,
+                    headerLeft: () => null,
                     title: null,
+                    presentation:"modal"
                 }}
             />
             <Stack.Screen 
@@ -205,6 +221,7 @@ const AccountStack = ({navigation}) => {
                     headerRight: () => (
                         <Pressable
                             onPress={() => navigation.navigate('Account')}
+                            mr={4}
                         >
                             <AntDesign 
                                 name="closecircleo" size={24}
@@ -212,8 +229,10 @@ const AccountStack = ({navigation}) => {
                             />
                         </Pressable>
                     ),
-                    headerBackVisible: false,
+                    //headerBackVisible: false,
+                    headerLeft: () => null,
                     title: null,
+                    presentation:"modal"
                 }}
             /> 
         </Stack.Navigator>

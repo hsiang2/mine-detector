@@ -21,7 +21,7 @@ const AccountScreen = ({navigation}) => {
     const { colorMode, toggleColorMode } = useColorMode();
     const [ toggleValue, settoggleValue] = useState(true)
     const { width, height } = Dimensions.get("window");
-    const color = colorMode == "dark"? ["#DDDDDD19", "#F0F3F525"]:["#E2ECF2", "#D6DBDD"];
+    const color = colorMode == "dark"? ["#DDDDDD19", "#F0F3F525"]:["#F2F9FE", "#E8F0F5"];
     const location = colorMode == "dark"? [0,1]: [0.0073, 0.9907];
     return(
         <SafeAreaView style={{backgroundColor: colorMode == 'dark'? "#181B2A": "#ffffff"}}>

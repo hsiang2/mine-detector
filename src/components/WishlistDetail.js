@@ -8,9 +8,9 @@ const WishlistDetail = ({movie, navigation}) => {
     const {colorMode} = useColorMode();
     const color = colorMode == "dark"? 
             ["#38425870", "#384258", "#38425854"]:
-            ["#CAE8EE", "#EEF7F9", "#EAEAEA"]
+            ["#CAE8EE", "#E2F1F4", "#EEF7F9", "#F7F7F7"]
     const location = colorMode == "dark"?
-            [0, 0.0001, 1]: [0, 0.4948, 1]
+            [0, 0.0001, 1]: [0, 0, 0.4948, 1]
 
     return(
         <Pressable

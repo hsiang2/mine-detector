@@ -19,7 +19,7 @@ const CommentScreen = (props) => {
         <SafeAreaView backgroundColor={colorMode=="dark"? "#181B2A": "#ffffff"}>
             <Background />
             <Box 
-                w={343} h={8} p={0.5}  mt={65} alignSelf="center"
+                w={343} h={8} p={0.5}  mt={14} alignSelf="center"
                 borderRadius={9} borderWidth={1}
                 justifyContent="center" alignItems="center"
                 _dark={{borderColor: "#ffffff"}}
