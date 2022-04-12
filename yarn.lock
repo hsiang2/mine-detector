@@ -1070,7 +1070,7 @@
 
 "@expo-google-fonts/asap@^0.2.2":
   version "0.2.2"
-  resolved "https://registry.npmjs.org/@expo-google-fonts/asap/-/asap-0.2.2.tgz"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/asap/-/asap-0.2.2.tgz#494e6cb274f46cb4b6855d813bb9a8571dee3709"
   integrity sha512-fwQmuYP6ymRuBsPcxzCZXyiHiaZ4tHiFDts0v+XpBvua+5yJM77qEkVNjWbl1AbNWu1ztKrmUJwjOLhoD4meaQ==
 
 "@expo/config-plugins@4.0.6":

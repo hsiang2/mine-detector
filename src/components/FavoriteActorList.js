@@ -30,7 +30,7 @@ const FavoriteActorList = ({data}) => {
                 keyExtractor={item => item.title}
                 showsHorizontalScrollIndicator={false}
                 contentContainerStyle={{
-                    marginLeft: 26, marginTop: 25, marginBottom: 29
+                    marginLeft: 26, marginTop: 25, marginBottom: 29, paddingRight: 26
                 }}
             />
         </>

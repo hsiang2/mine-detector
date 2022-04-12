@@ -1,7 +1,10 @@
+import React from "react";
 import { BlurView } from "expo-blur";
 import { Box, HStack, Text, Image, useColorMode } from "native-base";
-import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
+import AppLoading from "expo-app-loading";
+import { useFonts, Asap_400Regular } from "@expo-google-fonts/asap";
+
 import Star from "./Star";
 
 const Comment = ({comment, isLarge}) => {
@@ -18,7 +21,14 @@ const Comment = ({comment, isLarge}) => {
         colorMode=="dark"?[0, 0.0001, 0.4844, 1]:[0, 1]:
         colorMode=="dark"?[0.0073, 0.4687,0.9341]:[0, 0.276, 0.5573, 0.8073, 1];
     const end = isLarge? {x:0, y: 1}: {x: 1, y: 0}
-    
+
+    let [fontsLoaded] = useFonts({
+        Asap_400Regular
+    });
+    if (!fontsLoaded) {
+        return <AppLoading />
+    }
+
     return(
         <Box 
             w={width} h={167} borderWidth={1} mr={mr} mb={mb}
@@ -63,6 +73,7 @@ const Comment = ({comment, isLarge}) => {
                                 letterSpacing={0.2}
                                 _dark={{color: "#E8E8E8"}}
                                 _light={{color: "#243243"}}
+                                fontFamily= "Asap_400Regular"
                             >
                                 {comment.user}
                             </Text>
@@ -74,6 +85,7 @@ const Comment = ({comment, isLarge}) => {
                         letterSpacing={0.2}
                         _dark={{color: "#B7B7B7"}}
                         _light={{color: "#808080"}}
+                        
                     >
                         {comment.content}
                     </Text>
@@ -81,6 +93,7 @@ const Comment = ({comment, isLarge}) => {
                         fontSize={12} letterSpacing={0.5}
                         _dark={{color: "#989898"}}
                         _light={{color: "#A8A8A8"}}
+                        fontFamily= "Asap_400Regular"
                     >
                         {comment.date}
                     </Text>

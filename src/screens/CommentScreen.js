@@ -3,17 +3,18 @@ import React, { Component, useEffect, useState } from "react";
 import SegmentedControlTab from "react-native-segmented-control-tab"
 import { Box, Center, HStack, ScrollView, Text, useColorMode } from "native-base";
 import AntDesign from 'react-native-vector-icons/AntDesign'
-import CommentList from "../components/CommentList";
 import { SafeAreaView } from "react-native-safe-area-context";
+
+import CommentList from "../components/CommentList";
 import Background from "../components/Background";
 
 const CommentScreen = (props) => {
-
     const [customStyleIndex, setCustomStyleIndex] = useState(0);
     const handleCustomIndexSelect = (index) => {
         setCustomStyleIndex(index);
     };
     const {colorMode} = useColorMode();
+
 
     return(
         <SafeAreaView backgroundColor={colorMode=="dark"? "#181B2A": "#ffffff"}>

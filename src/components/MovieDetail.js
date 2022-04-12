@@ -16,6 +16,7 @@ const MovieDetail = ({movie, navigation}) => {
                 <Text 
                     fontSize={12} letterSpacing={0.2}
                     _dark={{color: "#E2E0E0"}} _light={{color: "#445B6C"} }
+                    numberOfLines={1}
                 >
                     {movie.title}
                 </Text>

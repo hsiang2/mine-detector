@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { Text, Box, ScrollView, Image, StatusBar, Switch, HStack, useColorMode, Center } from "native-base";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Dimensions, Pressable } from "react-native";
-import AntDesign from "react-native-vector-icons/AntDesign"
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons"
 import Ionicons from "react-native-vector-icons/Ionicons"
 import { SvgUri } from "react-native-svg";
 import { BottomTabBarHeightContext } from "@react-navigation/bottom-tabs";
 import Toggle from 'react-native-toggle-element'
+import AppLoading from "expo-app-loading";
+import { useFonts, Asap_400Regular } from "@expo-google-fonts/asap";
+
 
 import accountData from "../json/account.json"
 import FavoriteActorList from "../components/FavoriteActorList";
@@ -23,6 +24,13 @@ const AccountScreen = ({navigation}) => {
     const { width, height } = Dimensions.get("window");
     const color = colorMode == "dark"? ["#DDDDDD19", "#F0F3F525"]:["#F2F9FE", "#E8F0F5"];
     const location = colorMode == "dark"? [0,1]: [0.0073, 0.9907];
+
+    let [fontsLoaded] = useFonts({
+        Asap_400Regular
+    });
+    if (!fontsLoaded) {
+        return <AppLoading />
+    }
     return(
         <SafeAreaView style={{backgroundColor: colorMode == 'dark'? "#181B2A": "#ffffff"}}>
             <Background />
@@ -51,6 +59,7 @@ const AccountScreen = ({navigation}) => {
                         _dark={{color: "#F2F1F1"}} 
                         _light={{color: "#445B6C"}}
                         letterSpacing={0.2}
+                        fontFamily= "Asap_400Regular"
                     >
                         {accountData.user.name}
                     </Text>

@@ -31,7 +31,7 @@ const Wishlist = ({data, navigation}) => {
                 keyExtractor={item => item.title}
                 showsHorizontalScrollIndicator={false}
                 contentContainerStyle={{
-                    marginLeft: 21, marginTop: 25, marginBottom: 40
+                    marginLeft: 24, marginTop: 25, marginBottom: 40, paddingRight: 24
                 }}
             />
         </>
