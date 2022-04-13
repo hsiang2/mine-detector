@@ -22,12 +22,12 @@ const Comment = ({comment, isLarge}) => {
         colorMode=="dark"?[0.0073, 0.4687,0.9341]:[0, 0.276, 0.5573, 0.8073, 1];
     const end = isLarge? {x:0, y: 1}: {x: 1, y: 0}
 
-    let [fontsLoaded] = useFonts({
-        Asap_400Regular
-    });
-    if (!fontsLoaded) {
-        return <AppLoading />
-    }
+    // let [fontsLoaded] = useFonts({
+    //     Asap_400Regular
+    // });
+    // if (!fontsLoaded) {
+    //     return <AppLoading />
+    // }
 
     return(
         <Box 
