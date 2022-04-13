@@ -8,9 +8,11 @@ import { SafeAreaView } from "react-native";
 import { BottomTabBarHeightContext } from "@react-navigation/bottom-tabs";
 import Background from "../components/Background";
 import { LinearGradient } from "expo-linear-gradient";
+import { Dimensions } from "react-native";
 
 const HomeScreen = ({navigation}) => {
     const { colorMode } = useColorMode();
+    const { width } = Dimensions.get("window");
     const color = colorMode=="dark"? 
             ["#0C0C150F", "#0C0C0E33", "#030508A6"]:
             ["#F0F0F046", "#F1F1F111", "#0C0C0E1C", "#EEEEEE81"];
@@ -22,7 +24,7 @@ const HomeScreen = ({navigation}) => {
                 <LinearGradient
                     colors= {color}
                     locations={location}
-                    style={{width: 390, height: 397, position: "absolute"}}
+                    style={{width: width, height: 397, position: "absolute"}}
                     pointerEvents="none"
                 />
                 <Box pt={17} pb={2.5} mb={10} zIndex={-1}>

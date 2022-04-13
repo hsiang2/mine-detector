@@ -11,7 +11,7 @@ const CommentSectionDetail = ({isSpoiler, navigation}) => {
         <Box flex={1} >
             <Pressable 
                 mt={15} mb={18} mr={30} alignItems="flex-end" 
-                onPress={() => navigation.navigate('Comment')}
+                onPress={() => navigation.navigate('Comment', {isSpoiler: isSpoiler})}
             >
                 <Text 
                     fontSize={14} letterSpacing={0.2}
