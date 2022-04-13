@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "movie",
-    "slug": "movie",
+    "name": "09_MINE DETECTOR",
+    "slug": "09_mine-detector",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -28,6 +28,7 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "description": ""
+    "description": "",
+    "githubUrl": "https://github.com/hsiang2/movie"
   }
 }

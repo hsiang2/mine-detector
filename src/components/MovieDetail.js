@@ -9,6 +9,7 @@ const MovieDetail = ({movie, navigation}) => {
         >
             <Box w={104}>
                 <Image 
+                    borderRadius={5}
                     h={125} w={90} mb={1.5}
                     source={{uri: movie.poster}}
                     alt={movie.title}

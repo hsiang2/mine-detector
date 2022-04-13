@@ -36,6 +36,7 @@ const MovieCarousel = ({data, navigation}) => {
                 onPress={() => navigation.navigate('Detail',item)}
             >
                 <Image 
+                    borderRadius={5}
                     w={250} h={370}
                     source={{uri: item.poster}}
                     alt="movie"
