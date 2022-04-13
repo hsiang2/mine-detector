@@ -1,14 +1,14 @@
 import React from "react";
-import { ScrollView, Box, StatusBar, useColorMode } from "native-base";
+import { ScrollView, Box, useColorMode } from "native-base";
+import { SafeAreaView, Dimensions } from "react-native";
+import { BottomTabBarHeightContext } from "@react-navigation/bottom-tabs";
+import { LinearGradient } from "expo-linear-gradient";
+
+import Background from "../components/Background";
 import MovieList from "../components/MovieList";
 import movieData from "../json/movie.json"
 import MovieCarousel from "../components/MovieCarousel";
 import mainMovieData from "../json/mainMovie.json"
-import { SafeAreaView } from "react-native";
-import { BottomTabBarHeightContext } from "@react-navigation/bottom-tabs";
-import Background from "../components/Background";
-import { LinearGradient } from "expo-linear-gradient";
-import { Dimensions } from "react-native";
 
 const HomeScreen = ({navigation}) => {
     const { colorMode } = useColorMode();
@@ -47,7 +47,6 @@ const HomeScreen = ({navigation}) => {
                 </BottomTabBarHeightContext.Consumer>
             </ScrollView>
         </SafeAreaView>
-        
     );
 };
 

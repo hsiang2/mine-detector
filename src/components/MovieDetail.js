@@ -11,7 +11,7 @@ const MovieDetail = ({movie, navigation}) => {
                 <Image 
                     h={125} w={90} mb={1.5}
                     source={{uri: movie.poster}}
-                    alt="movie"
+                    alt={movie.title}
                 />
                 <Text 
                     fontSize={12} letterSpacing={0.2}

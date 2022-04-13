@@ -29,7 +29,7 @@ const Slider = ({visible}) => {
                         shadowRadius={2}
                     >
                         <Image 
-                            w={6} h={pressed? 8: 6} //borderRadius={50}
+                            w={6} h={pressed? 8: 6}
                             alt="marker"
                             source={{uri: pressed? "https://github.com/hsiang2/movie_image/blob/main/Group%202.png?raw=true":"https://github.com/hsiang2/movie_image/blob/main/米奇img.png?raw=true"}}
                         />

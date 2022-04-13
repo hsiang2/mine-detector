@@ -28,7 +28,7 @@ const CommentSectionDetail = ({isSpoiler, navigation}) => {
                 keyExtractor={item => item.id}
                 showsHorizontalScrollIndicator={false}
                 contentContainerStyle={{
-                    marginLeft: 22
+                    paddingLeft: 22
                 }}
             />
         </Box>

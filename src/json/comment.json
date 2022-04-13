@@ -2,15 +2,16 @@
     "comments": [
         {   "id": 1, "user": "Violet Gray", "star": 7.0, "date": "08:50 3月1日",
             "content": "這部電影在捕捉黑魔女的視角和糾正我們小時候的誤解方面做得很好。這是我最喜歡的迪士尼電影，我希望每個人都會像我一樣愛上它！！",
-            "avatar": "https://compai.pub/v1/png/de328639295f33894a560a9cc5ec97f2342366b376c8061d97ab2c8d9e714623"
+            "avatar": "https://compai.pub/v1/png/69b8ab6e996a5b9783fd1ac20ffb16f4d12de6ada80d903823ee929bdc4c5fe5"
         },
         {   "id": 2, "user": "Patty", "star": 8.0, "date": "06:01 3月1日",
             "content": "這部電影有許多新的更有趣和更深刻的故事情節，同時保留了傳統的“愛是強大的”迪士尼信息。情節內容富有創意，演技也很棒!",
-            "avatar": "https://compai.pub/v1/png/8ce81ffe084d3efb1599564ae0a31053304f683921b0950b9fb1007641d5106f"
+            "avatar": "https://compai.pub/v1/png/de328639295f33894a560a9cc5ec97f2342366b376c8061d97ab2c8d9e714623"
+            
         },
         {   "id": 3, "user": "Marcie", "star": 4.0, "date": "17:22 2月28日",
             "content": "電影中散落著許多片段，可以形成有趣的故事及角色之間的一些很好的互動，但它們沒有以應有的方式結合在一起",
-            "avatar": "https://compai.pub/v1/png/69b8ab6e996a5b9783fd1ac20ffb16f4d12de6ada80d903823ee929bdc4c5fe5"
+            "avatar": "https://compai.pub/v1/png/8ce81ffe084d3efb1599564ae0a31053304f683921b0950b9fb1007641d5106f"
         },
         {   "id": 4, "user": "Patricia Reichardt", "star": 3.0, "date": "18:37 2月25日",
             "content": "這部電影不需要發生。故事可以預見，我在等待最後的戰鬥，我也對它感到失望，因為它真的很慢，而且看起來很沉悶",

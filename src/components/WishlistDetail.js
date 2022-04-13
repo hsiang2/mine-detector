@@ -1,8 +1,6 @@
 import React from "react";
 import { Pressable, Box, Image, Text, HStack, useColorMode } from "native-base";
 import { LinearGradient } from "expo-linear-gradient";
-import { BlurView } from "expo-blur";
-import { shadowColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
 const WishlistDetail = ({movie, navigation}) => {
     const {colorMode} = useColorMode();
@@ -24,13 +22,6 @@ const WishlistDetail = ({movie, navigation}) => {
             _light={{ shadowColor: "#DDDDDD", shadowOpacity: 1}}
             
         >
-            {/* <BlurView 
-                    intensity={44} 
-                    style={{ 
-                        height: 100, marginRight: 20,
-                        padding: 17, borderRadius: 5, overflow: "hidden"
-                    }}
-            > */}
             <LinearGradient
                 colors= {color}
                 start= {{x: 0, y: 0}}
@@ -72,9 +63,6 @@ const WishlistDetail = ({movie, navigation}) => {
                     />
                 </HStack>
             </LinearGradient>
-                
-            {/* </BlurView> */}
-            
         </Pressable>
     );
 };

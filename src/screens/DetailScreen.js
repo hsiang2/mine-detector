@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { Box, HStack, Image, ScrollView, Text, useColorMode } from "native-base";
 import { BottomTabBarHeightContext } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { Pressable } from "react-native";
 
 import ActorList from "../components/ActorList";
 import CommentSection from "../components/CommentSection";
 import Background from "../components/Background";
 import Star from "../components/Star";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { Pressable } from "react-native";
 import MovieInfo from "../components/MovieInfo";
 import Rated from "../components/Rated";
 
@@ -56,20 +56,6 @@ const DetailScreen = ({route, navigation}) => {
                             })}
                         </HStack>
                         <Rated rated={rated}/>
-                        {/* <Box 
-                            justifyContent="center"
-                            alignItems="center"
-                            w={53} h={22} borderRadius={12}
-                            _dark={{bgColor: "#B2D6FF99"}}
-                            _light={{bgColor: "#A0B8CF"}}
-                        >
-                            <Text 
-                                fontSize={12} letterSpacing={0.2}
-                                color="white"
-                            >
-                                {rated}
-                            </Text>
-                        </Box> */}
                     </HStack>
                     <Box mx={27}  pr={1.25}>
                         <HStack justifyContent="space-between" alignItems="flex-start">

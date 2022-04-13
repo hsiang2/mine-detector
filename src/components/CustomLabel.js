@@ -10,7 +10,6 @@ CustomLabel.defaultProps = {
 };
 
 const width = 26;
-// const pointerWidth = width * 0.47;
 
 function LabelBase(props) {
     const { position, value, leftDiff, pressed } = props;
@@ -43,7 +42,6 @@ function LabelBase(props) {
           },
         ]}
       >
-        {/* <View style={styles.pointer} /> */}
         <Text 
             textAlign="center" flex={1} fontSize={12}
             _dark={{color: '#FFDA7B'}} _light={{color: "#D99F3E"}}
@@ -59,11 +57,8 @@ export default function CustomLabel(props) {
   const {
     leftDiff,
     oneMarkerValue,
-    twoMarkerValue,
     oneMarkerLeftPosition,
-    twoMarkerLeftPosition,
     oneMarkerPressed,
-    twoMarkerPressed,
   } = props;
 
   return (
@@ -74,12 +69,6 @@ export default function CustomLabel(props) {
         leftDiff={leftDiff}
         pressed={oneMarkerPressed}
       />
-      {/* <LabelBase
-        position={twoMarkerLeftPosition}
-        value={twoMarkerValue}
-        leftDiff={leftDiff}
-        pressed={twoMarkerPressed}
-      /> */}
     </View>
   );
 }
@@ -93,27 +82,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     justifyContent: 'center',
     bottom: -10,
-    //bottom: '100%',
     width: width,
-    //height: width,
   },
   sliderLabelText: {
     textAlign: 'center',
-    // lineHeight: width,
-    // borderRadius: width / 2,
-    // borderWidth: 2,
-    // borderColor: '#999',
     flex: 1,
     fontSize: 12,
-    //color: colorMode=="dark"? '#FFDA7B': "#D99F3E",
   },
-//   pointer: {
-//     position: 'absolute',
-//     bottom: -pointerWidth / 4,
-//     left: (width - pointerWidth) / 2,
-//     transform: [{ rotate: '45deg' }],
-//     width: pointerWidth,
-//     height: pointerWidth,
-//     backgroundColor: '#999',
-//   },
 });

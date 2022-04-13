@@ -1,5 +1,5 @@
-import { useColorMode } from "native-base";
 import React from "react";
+import { useColorMode } from "native-base";
 import { Dimensions } from "react-native";
 import { SvgUri } from "react-native-svg";
 

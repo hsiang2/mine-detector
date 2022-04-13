@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, Text } from "native-base";
+import { FlatList } from "native-base";
 import ActorDetail from "./ActorDetail";
 
 const ActorList = ({data}) => {

@@ -8,10 +8,10 @@ import { useFonts, Asap_400Regular } from "@expo-google-fonts/asap";
 import Star from "./Star";
 
 const Comment = ({comment, isLarge}) => {
+    const { colorMode } = useColorMode();
     const width = isLarge? 329: 293;
     const mr = isLarge? null: 25;
     const mb = isLarge? 5: null;
-    const { colorMode } = useColorMode();
     const color = isLarge? 
         colorMode=="dark"?["#A1BAD01B","#A1BAD01B", "#A1BAD01B", "#9FB0BE00"]:
         ["#44BFDA1B", "#A1BAD000"]:
@@ -48,20 +48,8 @@ const Comment = ({comment, isLarge}) => {
                     start= {{x: 0, y: 0}}
                     end= {end}
                     locations={locations}
-                    //colors= {["#FF4747", "#479CFF", "#FF4747"]}
                     style={{flex: 1, padding: 14}}
                 >
-                {/* <Box
-                    flex={1}
-                    bg={{
-                        linearGradient: {
-                            colors: ["#FF4747", "#479CFF"],
-                            //colors: ["#C6DEF41B", "#365F8310", "#A1BAD015"],
-                            start: [0, 0],
-                            end: [1, 0]
-                        }
-                    }}
-                > */}
                     <HStack>
                         <Image 
                             h={45} w={45} mr={14} borderRadius={50}
@@ -98,7 +86,6 @@ const Comment = ({comment, isLarge}) => {
                         {comment.date}
                     </Text>
                 </LinearGradient>
-                {/* </Box> */}
             </BlurView>
         </Box>
         

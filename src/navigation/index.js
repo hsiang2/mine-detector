@@ -1,10 +1,9 @@
 import 'react-native-gesture-handler';
 import React from "react";
 import { Pressable, StatusBar, Text, useColorMode, Box } from "native-base";
-import { NavigationContainer, TabActions } from '@react-navigation/native' 
+import { NavigationContainer } from '@react-navigation/native' 
 import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator, useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
-
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BlurView } from "expo-blur";
 import { StyleSheet } from "react-native";
 import AntDesign from 'react-native-vector-icons/AntDesign'
@@ -26,7 +25,6 @@ const Navigation = () => {
         <NavigationContainer>
             <StatusBar
                 barStyle={ colorMode == "dark"? "light-content": "dark-content"}
-                //backgroundColor={ colorMode == "dark"? "black": "white"}
             />
             <MyTabs />
         </NavigationContainer>
@@ -34,7 +32,6 @@ const Navigation = () => {
 }
 
 const MyTabs = () => {
-    //const tabBarHeight = useBottomTabBarHeight();
     const { colorMode } = useColorMode();
     return(
         <Tab.Navigator
@@ -51,16 +48,9 @@ const MyTabs = () => {
                             flex={1}
                             _light={{backgroundColor: "#E7F9FD"}}
                             _dark={{backgroundColor: "#2A3B4B"}}
-                            //position="relative"
                             opacity={0.5}
                         ></Box>
-                        
                     </>
-                    
-                    // <BlurView 
-                    //     tint={colorMode == "dark"? "dark": "light"} 
-                    //     intensity={80} style={StyleSheet.absoluteFill} 
-                    // />
                 ),
                 tabBarIcon: ({focused, color, size}) => {
                     let iconName;
@@ -135,9 +125,7 @@ const MovieStack = ({navigation}) => {
                         </Pressable>
                     ),
                     headerLeft: () => null,
-                    //headerBackVisible: false,
                     title: null,
-                    //animation: 'fade_from_bottom',
                     presentation:"modal"
                     
                 }}
@@ -157,12 +145,9 @@ const MovieStack = ({navigation}) => {
                             />
                         </Pressable>
                     ),
-                    //headerBackVisible: false,
                     headerLeft: () => null,
                     title: null,
-                    //animation: 'fade_from_bottom',
                     presentation:"modal"
-                
                 }}
             /> 
         </Stack.Navigator>
@@ -188,8 +173,6 @@ const AccountStack = ({navigation}) => {
                             style={{paddingTop: 20, paddingRight: 40}}
                         />
                     ),
-                    //headerBackVisible: false,
-                    //headerLeft: () => null,
                     title: null,
                 }}
             /> 
@@ -208,7 +191,6 @@ const AccountStack = ({navigation}) => {
                             />
                         </Pressable>
                     ),
-                    //headerBackVisible: false,
                     headerLeft: () => null,
                     title: null,
                     presentation:"modal"
@@ -229,7 +211,6 @@ const AccountStack = ({navigation}) => {
                             />
                         </Pressable>
                     ),
-                    //headerBackVisible: false,
                     headerLeft: () => null,
                     title: null,
                     presentation:"modal"

@@ -1,12 +1,11 @@
 import React from "react";
-import { Text, Image, Box, HStack } from "native-base";
+import { Text, Box } from "native-base";
 import { ImageBackground } from "react-native";
 import { BlurView } from "expo-blur";
 import AppLoading from "expo-app-loading";
 import { useFonts, Asap_400Regular } from "@expo-google-fonts/asap";
 
 const FavoriteActorDetail = ({actor}) => {
-    //let index = actor.title.indexOf(' ');
     const firstName = actor.title.slice(0, actor.title.indexOf(' '));
     const lastName = actor.title.slice(actor.title.indexOf(' ')+1);
     let [fontsLoaded] = useFonts({

@@ -19,14 +19,11 @@ const ActorDetail = ({actor}) => {
                     colors= {colorMode=="dark"? ["#E8E8E833"]: ["#D5E9F2", "#F5EFEF"]}
                     start= {{x: 0, y: 0}}
                     end= {{x: 1, y: 0}}
-                    //colors= {["#FF4747", "#479CFF", "#FF4747"]}
                     style={{
                         flex: 1,
                         paddingLeft: 12,
                         paddingRight: 48,
-                        // borderLeftRadius: 8,
-                        // borderRightRadius: 50,
-                         justifyContent: "center"
+                        justifyContent: "center"
                     }}
                 >
                     <Text 
@@ -49,13 +46,6 @@ const ActorDetail = ({actor}) => {
                     </Text>
                 </LinearGradient>
             </Box>
-            {/* <Box 
-                bgColor="#E8E8E833" pl={3} pr={12} 
-                borderLeftRadius={8} borderRightRadius={50}
-                height={39} justifyContent="center"
-            > */}
-                
-            {/* </Box> */}
             <Image 
                 h={39} w={39}
                 source={{uri: actor.image}}

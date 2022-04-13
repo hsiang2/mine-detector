@@ -1,5 +1,5 @@
-import { HStack, Image, Text } from "native-base";
 import React from "react";
+import { HStack, Image, Text } from "native-base";
 import AppLoading from "expo-app-loading";
 import { useFonts, Asap_400Regular } from "@expo-google-fonts/asap";
 

@@ -1,20 +1,16 @@
-import React, { Component, useEffect, useState } from "react";
-// import SegmentedControl from "@react-native-segmented-control/segmented-control"; 
+import React, { useState } from "react";
 import SegmentedControlTab from "react-native-segmented-control-tab"
 import { Box, Center, HStack, ScrollView, Text, useColorMode, Image, View,Pressable, Input, KeyboardAvoidingView } from "native-base";
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Ionicons from 'react-native-vector-icons/Ionicons'
-import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
-// import MultiSlider from "@ptomasroos/react-native-multi-slider";
-import { Dimensions, TextInput, Platform } from "react-native";
+import { SafeAreaView, } from "react-native-safe-area-context";
+import { Dimensions, Platform } from "react-native";
 import { BlurView } from "expo-blur";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
 import CommentList from "../components/CommentList";
 import Background from "../components/Background";
 import Slider from "../components/Slider";
-
-// import CustomLabel from "../components/CustomLabel";
 
 const CommentScreen = ({route}) => {
     const {isSpoiler} = route.params;
@@ -23,16 +19,9 @@ const CommentScreen = ({route}) => {
         setCustomStyleIndex(index);
     };
     const {colorMode} = useColorMode();
-    const { width, height } = Dimensions.get("window");
+    const { width } = Dimensions.get("window");
     const tabBarHeight = useBottomTabBarHeight();
-    // const insets = useSafeAreaInsets();
-    // const [sliderOneChanging, setSliderOneChanging] = React.useState(false);
-    // const [sliderOneValue, setSliderOneValue] = React.useState([0]);
-    // const sliderOneValuesChangeStart = () => setSliderOneChanging(true);
-    // const sliderOneValuesChange = values => setSliderOneValue(values);
-    // const sliderOneValuesChangeFinish = () => setSliderOneChanging(false);
 
-    //const [inputComponent, setInputComponent] = React.useState(<Slider />);
     const [isSlider, setIsSlider] = React.useState(true);
     const [sliderVisible, setSliderVisible]= React.useState('flex');
     const [inputVisible, setInputVisible]= React.useState('none');
@@ -109,22 +98,9 @@ const CommentScreen = ({route}) => {
                                 if(isSlider){
                                     setSliderVisible('none');
                                     setInputVisible('flex');
-                                    // setInputComponent(
-                                    //     <HStack alignItems="center"  w={280} height={50}>
-                                    //         <Input 
-                                    //             variant="rounded"
-                                    //             placeholder= "輸入評論..."
-                                    //             w="100%"
-                                    //             px={4}
-                                    //             multiline
-                                    //             //mx={3} //w="75%" //maxWidth="280px"
-                                    //         />
-                                    //     </HStack>
-                                    // )
                                 }else {
                                     setSliderVisible('flex');
                                     setInputVisible('none');
-                                    //setInputComponent(<Slider />)
                                 }
                                 setIsSlider(!isSlider);
                             }}
@@ -132,7 +108,6 @@ const CommentScreen = ({route}) => {
                             <Ionicons 
                                 name={ isSlider? "chatbubble-ellipses-sharp": "arrow-back-circle" }
                                 color={colorMode=="dark"? "#EDF0F5": "#5A7D9D"} size={21} 
-                                //style={{marginRight: 10}}
                             />
                         </Pressable>
                         <Slider visible={sliderVisible}/>
@@ -143,10 +118,11 @@ const CommentScreen = ({route}) => {
                                 w="100%"
                                 px={4}
                                 multiline
-                                                //mx={3} //w="75%" //maxWidth="280px"
+                                //placeholderTextColor="amber.800"
+                                
+                                _light={{borderColor: "#5A7D9D"}}
                             />
                             </HStack>
-                        {/* {inputComponent} */}
                         <Ionicons name="send" color={colorMode=="dark"?"#EDF0F5": "#5A7D9D"} size={21}/>
                     </HStack>
                 </Box>
