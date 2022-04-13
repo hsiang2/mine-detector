@@ -3,70 +3,76 @@
         "title": "最新上映",
         "list": [
             {
-                "title": "逃無可逃aaaaaaaaaaaaaaaaaa",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-                "genres": ["友誼", "溫暖", "幽默", "青春"],
+                "title": "逃無可逃",
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/%E9%80%83%E7%84%A1%E5%8F%AF%E9%80%83_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/1%E9%80%83%E7%84%A1%E5%8F%AF%E9%80%83_lg_img.png?raw=true",
+                "genres": ["懸疑", "驚悚", "恐怖", "犯罪"],
                 "rated": "輔15+",
                 "star": 6.0,
-                "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
+                "plot": "一位華裔女子在返家路程中被暴風雪困住，前往休息區避難，卻發現一輛廂型車裡有一個被綁架的女孩，她必須小屋裡的幾位遊客中找出綁匪，跟他展開生死搏鬥，拯救小女孩的性命",
+                "runtime": "01:35:00",
+                "released": "2022/02/27",
                 "platform": "Disney+",
                 "actors": [
-                        { "title": "Angelina Jolie", "role": "Maleficent", "image": "https://github.com/hsiang2/movie_image/blob/main/Angelina%20Jolie_img.png?raw=true"},
-                        { "title": "Elle Fanning", "role": "Aurora", "image":"https://github.com/hsiang2/movie_image/blob/main/Angelina%20Jolie_img.png?raw=true"},
-                        { "title": "Harris Dickinson", "role": "Prince Philip", "image":"https://github.com/hsiang2/movie_image/blob/main/Angelina%20Jolie_img.png?raw=true"},
-                        { "title": "Michelle Pfeiffer", "role": "Queen Ingrith", "image":"https://github.com/hsiang2/movie_image/blob/main/Angelina%20Jolie_img.png?raw=true"}
+                        { "title": "Havana Rose Liu", "role": "Darby", "image": "https://github.com/mmleelee/movie-app/blob/main/Havana%20Rose%20Liu_img.png?raw=true"},
+                        { "title": "Danny Ramirez", "role": "Ash", "image":"https://github.com/mmleelee/movie-app/blob/main/Danny%20Ramirez_img.png?raw=true"},
+                        { "title": "David Rysdahl", "role": "Lars", "image":"https://github.com/mmleelee/movie-app/blob/main/David%20Rysdahl_img.png?raw=true"},
+                        { "title": "Mila Harris", "role": "Jay", "image":"https://github.com/mmleelee/movie-app/blob/main/Mila%20Harris_img.png?raw=true"}
                     ]
             },
             {
                 "title": "明日之戰",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-                "genres": ["友誼", "溫暖", "幽默", "青春"],
-                "rated": "普0+",
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/%E6%98%8E%E6%97%A5%E4%B9%8B%E6%88%B0_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/1%E6%98%8E%E6%97%A5%E4%B9%8B%E6%88%B0_lg_img.png?raw=true",
+                "genres": ["動作", "冒險", "劇情", "科幻"],
+                "rated": "護6+",
                 "star": 3.7,
-                "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
-                "platform": "Disney+",
+                "plot": "正與家人共享天倫之樂的主角Dan，突然收到一群士兵的警告，在不遠的未來地球會受到外星生物襲擊，而他們能做的就是為最終決戰做出準備，試著穿越時空拯救全人類的性命",
+                "runtime": "02:20:07",
+                "released": "2021/02/10",
+                "platform": "Amazon Prime",
                 "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
+                        { "title": "Chris Pratt", "role": "Dan Forester", "image": "https://github.com/mmleelee/movie-app/blob/main/Chris%20Pratt_img.png?raw=true"},
+                        { "title": "Yvonne Strahovski", "role": "Colonel Muri Forester", "image":"https://github.com/mmleelee/movie-app/blob/main/Yvonne%20Strahovski_img.png?raw=true"},
+                        { "title": "J.K. Simmons", "role": "James Forester", "image":"https://github.com/mmleelee/movie-app/blob/main/J.K.%20Simmons_img.png?raw=true"},
+                        { "title": "Betty Gilpin", "role": "Emmy Forester", "image":"https://github.com/mmleelee/movie-app/blob/main/Betty%20Gilpin_img.png?raw=true"}
                     ]
             },
             {
                 "title": "青春養成記",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/%E9%9D%92%E6%98%A5%E9%A4%8A%E6%88%90%E8%A8%98_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/1%E9%9D%92%E6%98%A5%E9%A4%8A%E6%88%90%E8%A8%98_lg_img.png?raw=true",
                 "genres": ["友誼", "溫暖", "幽默", "青春"],
                 "rated": "普0+",
                 "star": 9.0,
                 "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
+                "runtime": "01:40:04",
+                "released": "2022/03/10",
                 "platform": "Disney+",
                 "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
+                        { "title": "Sandra Oh", "role": "Ming", "image": "https://github.com/mmleelee/movie-app/blob/main/Sandra%20Oh_img.png?raw=true"},
+                        { "title": "Rosalie Chiang", "role": "Meilin", "image":"https://github.com/mmleelee/movie-app/blob/main/Rosalie%20Chiang_img.png?raw=true"},
+                        { "title": "Ava Morse", "role": "Miriam", "image":"https://github.com/mmleelee/movie-app/blob/main/Ava%20Morse_img.png?raw=true"},
+                        { "title": "Hyein Park", "role": "Abby", "image":"https://github.com/mmleelee/movie-app/blob/main/Hyein%20Park_img.png?raw=true"}
                     ]
             },
             {
-                "title": "尼羅河謀殺案",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-                "genres": ["友誼", "溫暖", "幽默", "青春"],
-                "rated": "普0+",
+                "title": "蝙蝠俠",
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/%E8%9D%99%E8%9D%A0%E4%BF%A0_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/%E8%9D%99%E8%9D%A0%E4%BF%A0_lg_img.png?raw=true",
+                "genres": ["動作", "犯罪", "劇情", "推理"],
+                "rated": "輔12+",
                 "star": 8.2,
-                "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
+                "plot": "Bruce Wayne在夜晚化身為蝙蝠俠打擊罪犯。當謎天大聖留下新的謎題，設下陷阱殺害高譚市的菁英份子後，蝙蝠俠循著神祕線索，並與貓女聯手為高譚市伸張正義",
+                "runtime": "02:56:19",
+                "released": "2022/03/03",
                 "platform": "Disney+",
                 "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-                    ]
+                    { "title": "Robert Pattinson", "role": "Bruce Wayne, The Batman", "image": "https://github.com/mmleelee/movie-app/blob/main/Robert%20Pattinson_img.png?raw=true"},
+                    { "title": "Zoë Kravitz", "role": "Selina Kyle, Catwoman", "image":"https://github.com/mmleelee/movie-app/blob/main/Zo%C3%AB%20Kravitz_img.png?raw=true"},
+                    { "title": "Jeffrey Wright", "role": "Lt. James Gordon", "image":"https://github.com/mmleelee/movie-app/blob/main/Jeffrey%20Wright_img.png?raw=true"},
+                    { "title": "Colin Farrell", "role": "Oz, The Penguin", "image":"https://github.com/mmleelee/movie-app/blob/main/Colin%20Farrell_img.png?raw=true"}
+                ]
             }
         ]
     },
@@ -74,68 +80,76 @@
         "title": "好評推薦",
         "list": [
             {
-                "title": "蜘蛛人：無家日",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-                "genres": ["友誼", "溫暖", "幽默", "青春"],
+                "title": "動物方城市",
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/%E5%8B%95%E7%89%A9%E6%96%B9%E5%9F%8E%E5%B8%82_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/%E5%8B%95%E7%89%A9%E6%96%B9%E5%9F%8E%E5%B8%82_lg_img.png?raw=true",
+                "genres": ["動作", "喜劇", "冒險", "動畫"],
                 "rated": "普0+",
-                "star": 9.0,
-                "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
+                "star": 9.2,
+                "plot": "動物方城市裡沒有人類的存在，也就如同一般的大都會，彷彿一個種族的大熔爐，在這個只有哺乳類動物存在的城市裡，獵物與獵食者處於一個巧妙的平衡",
+                "runtime": "01:49:04",
+                "released": "2016/02/26",
                 "platform": "Disney+",
                 "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-                    ]
+                    { "title": "Ginnifer Goodwin", "role": "Judy Hopps", "image": "https://github.com/mmleelee/movie-app/blob/main/Ginnifer%20Goodwin_img.png?raw=true"},
+                    { "title": "Jason Bateman", "role": "Nick Wilde", "image":"https://github.com/mmleelee/movie-app/blob/main/Jason%20Bateman_img.png?raw=true"},
+                    { "title": "Idris Elba", "role": "Chief Bogo", "image":"https://github.com/mmleelee/movie-app/blob/main/Idris%20Elba_img.png?raw=true"},
+                    { "title": "Jenny Slate", "role": "Bellwether", "image":"https://github.com/mmleelee/movie-app/blob/main/Jenny%20Slate_img.png?raw=true"}
+                ]
             },
             {
-                "title": "醉好的時光",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-                "genres": ["友誼", "溫暖", "幽默", "青春"],
-                "rated": "普0+",
+                "title": "無須多言",
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/%E7%84%A1%E9%A0%88%E5%A4%9A%E8%A8%80_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/%E7%84%A1%E9%A0%88%E5%A4%9A%E8%A8%80_lg_img.png?raw=true",
+                "genres": ["浪漫", "愛情", "喜劇", "劇情"],
+                "rated": "輔12+",
                 "star": 9.0,
-                "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
-                "platform": "Disney+",
+                "plot": "單親母親Eva和同樣離過婚的Albert談起了戀愛，也結識了一位幾近完美的女性好友Marianne。原本十分順利的生活，卻因為Eva得知了一件事情，似乎開始變了調",
+                "runtime": "01:33:20",
+                "released": "2013/09/18",
+                "platform": "Apple TV",
                 "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-                    ]
+                    { "title": "Julia Louis-Dreyfus", "role": "Eva", "image": "https://github.com/mmleelee/movie-app/blob/main/Julia%20Louis-Dreyfus_img.png?raw=true"},
+                    { "title": "James Gandolfini", "role": "Albert", "image":"https://github.com/mmleelee/movie-app/blob/main/James%20Gandolfini_img.png?raw=true"},
+                    { "title": "Catherine Keener", "role": "Marianne", "image":"https://github.com/mmleelee/movie-app/blob/main/Catherine%20Keener_img.png?raw=true"},
+                    { "title": "Toni Collette", "role": "Sarah", "image":"https://github.com/mmleelee/movie-app/blob/main/Toni%20Collette_img.png?raw=true"}
+                ]
             },
             {
-                "title": "歡樂好聲音2",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-                "genres": ["友誼", "溫暖", "幽默", "青春"],
-                "rated": "普0+",
-                "star": 9.0,
-                "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
-                "platform": "Disney+",
+                "title": "一屋三故",
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/%E4%B8%80%E5%B1%8B%E4%B8%89%E6%95%85_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/%E4%B8%80%E5%B1%8B%E4%B8%89%E6%95%85_lg_img.png?raw=true",
+                "genres": ["黑暗", "喜劇", "詭異", "動畫"],
+                "rated": "輔12+",
+                "star": 9.3,
+                "plot": "講述了三個不同的故事，跨越不同的世界和角色，但都在同一個房子裡",
+                "runtime": "01:37:45",
+                "released": "2022/01/14",
+                "platform": "Netflix",
                 "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-                    ]
+                    { "title": "Mia Goth", "role": "Mabel", "image": "https://github.com/mmleelee/movie-app/blob/main/Mia%20Goth_img.png?raw=true"},
+                    { "title": "Matthew Goode", "role": "Raymond", "image":"https://github.com/mmleelee/movie-app/blob/main/Matthew%20Goode_img.png?raw=true"},
+                    { "title": "Yvonne Lombard", "role": "Odd Woman", "image":"https://github.com/mmleelee/movie-app/blob/main/Yvonne%20Lombard_img.png?raw=true"},
+                    { "title": "Sven Wollter", "role": "Odd Man", "image":"https://github.com/mmleelee/movie-app/blob/main/Sven%20Wollter_img.png?raw=true"}
+                ]
             },
             {
-                "title": "黑暗騎士",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-                "genres": ["友誼", "溫暖", "幽默", "青春"],
-                "rated": "普0+",
-                "star": 9.0,
-                "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
-                "platform": "Disney+",
+                "title": "黑色黨徒",
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/%E9%BB%91%E8%89%B2%E9%BB%A8%E5%BE%92_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/%E9%BB%91%E8%89%B2%E9%BB%A8%E5%BE%92_lg_img.png?raw=true",
+                "genres": ["犯罪", "喜劇", "社會", "種族"],
+                "rated": "輔15+",
+                "star": 9.1,
+                "plot": "科羅拉多州科羅拉多泉的一名非裔美國警探，他最初被分配到檔案室工作，面對同事的種族辱罵。但之後滲透了三K黨的地方分會，並最終成為該會的負責人",
+                "runtime": "02:08:49",
+                "released": "2018/05/14",
+                "platform": "friDay 影音",
                 "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-                    ]
+                    { "title": "John David Washington", "role": "Ron Stallworth", "image": "https://github.com/mmleelee/movie-app/blob/main/John%20David%20Washington_img.png?raw=true"},
+                    { "title": "Adam Driver", "role": "Flip Zimmerman", "image":"https://github.com/mmleelee/movie-app/blob/main/Adam%20Driver_img.png?raw=true"},
+                    { "title": "Laura Harrier", "role": "Patrice Dumas", "image":"https://github.com/mmleelee/movie-app/blob/main/Laura%20Harrier_img.png?raw=true"},
+                    { "title": "Topher Grace", "role": "David Duke", "image":"https://github.com/mmleelee/movie-app/blob/main/Topher%20Grace_img.png?raw=true"}
+                ]
             }
         ]
     },
@@ -143,68 +157,76 @@
         "title": "動作冒險",
         "list": [
             {
-                "title": "秘境探險",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-                "genres": ["友誼", "溫暖", "幽默", "青春"],
-                "rated": "普0+",
-                "star": 9.0,
-                "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
-                "platform": "Disney+",
+                "title": "奇異博士",
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/%E5%A5%87%E7%95%B0%E5%8D%9A%E5%A3%AB_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/%E5%A5%87%E7%95%B0%E5%8D%9A%E5%A3%AB_lg_img.png?raw=true",
+                "genres": ["科幻", "動作", "冒險", "英雄"],
+                "rated": "輔12+",
+                "star": 7.8,
+                "plot": "外科手術專家Dr. Stephen Strange遭遇一次車禍悲劇之後，遠赴東方機緣巧合成為了一名神秘魔法大師，之後接任成為至尊法師對抗魔界入侵",
+                "runtime": "01:55:58",
+                "released": "2016/10/25",
+                "platform": "Netflix",
                 "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-                    ]
+                    { "title": "Benedict Cumberbatch", "role": "Dr. Stephen Strange", "image": "https://github.com/mmleelee/movie-app/blob/main/Benedict%20Cumberbatch_img.png?raw=true"},
+                    { "title": "Chiwetel Ejiofor", "role": "Mordo", "image":"https://github.com/mmleelee/movie-app/blob/main/Chiwetel%20Ejiofor_img.png?raw=true"},
+                    { "title": "Rachel McAdams", "role": "Dr. Christine Palmer", "image":"https://github.com/mmleelee/movie-app/blob/main/Rachel%20McAdams_img.png?raw=true"},
+                    { "title": "Benedict Wong", "role": "Wong", "image":"https://github.com/mmleelee/movie-app/blob/main/Benedict%20Wong_img.png?raw=true"}
+                ]
             },
             {
                 "title": "巨齒鯊",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-                "genres": ["友誼", "溫暖", "幽默", "青春"],
-                "rated": "普0+",
-                "star": 9.0,
-                "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
-                "platform": "Disney+",
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/%E5%B7%A8%E9%BD%92%E9%AF%8A_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/%E5%B7%A8%E9%BD%92%E9%AF%8A_lg_img.png?raw=true",
+                "genres": ["動作", "恐怖", "科幻", "災難"],
+                "rated": "輔12+",
+                "star": 2.8,
+                "plot": "當喬納斯順利救出小艇成員，卻發現先前交手過的駭人「巨齒鯊」再度甦醒！眼看遠古巨獸即將大開「鯊」戒，人類與海洋的對決將如何收場",
+                "runtime": "01:53:57",
+                "released": "2018/08/10",
+                "platform": "MyVideo",
                 "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-                    ]
+                    { "title": "Jason Statham", "role": "Jonas Taylor", "image": "https://github.com/mmleelee/movie-app/blob/main/Jason%20Bateman_img.png?raw=true"},
+                    { "title": "Bingbing Li", "role": "Suyin", "image":"https://github.com/mmleelee/movie-app/blob/main/Bingbing%20Li_img.png?raw=true"},
+                    { "title": "Rainn Wilson", "role": "Morris", "image":"https://github.com/mmleelee/movie-app/blob/main/Rainn%20Wilson_img.png?raw=true"},
+                    { "title": "Cliff Curtis", "role": "Mac", "image":"https://github.com/mmleelee/movie-app/blob/main/Cliff%20Curtis_img.png?raw=true"}
+                ]
             },
             {
                 "title": "007生死交戰",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-                "genres": ["友誼", "溫暖", "幽默", "青春"],
-                "rated": "普0+",
-                "star": 9.0,
-                "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
-                "platform": "Disney+",
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/007%E7%94%9F%E6%AD%BB%E4%BA%A4%E6%88%B0_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/007_img.png?raw=true",
+                "genres": ["動作", "驚悚", "冒險", "懸疑"],
+                "rated": "輔12+",
+                "star": 8.0,
+                "plot": "情報員James Bond退役後，在牙買加享受著平靜的生活。但當中央情報局的老朋友Felix出現請他協助時，這短暫的平靜也隨之結束",
+                "runtime": "02:43:00",
+                "released": "2021/09/30",
+                "platform": "Apple TV",
                 "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-                    ]
+                    { "title": "Daniel Craig", "role": "James Bond", "image": "https://github.com/mmleelee/movie-app/blob/main/Daniel%20Craig_img.png?raw=true"},
+                    { "title": "Ana de Armas", "role": "Paloma", "image":"https://github.com/mmleelee/movie-app/blob/main/Ana%20de%20Armas_img.png?raw=true"},
+                    { "title": "Léa Seydoux", "role": "Madeleine", "image":"https://github.com/mmleelee/movie-app/blob/main/Yvonne%20Lombard_img-1.png?raw=true"},
+                    { "title": "Rami Malek", "role": "Lyutsifer Safin", "image":"https://github.com/mmleelee/movie-app/blob/main/Rami%20Malek_img.png?raw=true"}
+                ]
             },
             {
-                "title": "驚奇隊長",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-                "genres": ["友誼", "溫暖", "幽默", "青春"],
-                "rated": "普0+",
-                "star": 9.0,
-                "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
-                "platform": "Disney+",
+                "title": "劫命救護",
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/%E5%8A%AB%E5%91%BD%E6%95%91%E8%AD%B7_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/%E5%8A%AB%E5%91%BD%E6%95%91%E8%AD%B7_lg_img.png?raw=true",
+                "genres": ["動作", "犯罪", "驚悚", "劇情"],
+                "rated": "輔12+",
+                "star": 7.6,
+                "plot": "一對兄弟參與一場銀行搶劫，突如其來的巧合破壞了整個計畫。這對兄弟只好劫持救護車逃亡，車上有被誤傷的警員和一名女性救護員",
+                "runtime": "02:16:00",
+                "released": "2022/03/25",
+                "platform": "威秀影城",
                 "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-                    ]
+                    { "title": "Jake Gyllenhaal", "role": "Danny Sharp", "image": "https://github.com/mmleelee/movie-app/blob/main/Jake%20Gyllenhaal_img.png?raw=true"},
+                    { "title": "Yahya Abdul-Mateen II", "role": "Will Sharp", "image":"https://github.com/mmleelee/movie-app/blob/main/Yahya%20Abdul-Mateen%20II_img.png?raw=true"},
+                    { "title": "Eiza González", "role": "Cam Thompson", "image":"https://github.com/mmleelee/movie-app/blob/main/Eiza%20Gonzalez_img.png?raw=true"},
+                    { "title": "Garret Dillahunt", "role": "Captain Monroe", "image":"https://github.com/mmleelee/movie-app/blob/main/Garret%20Dillahunt_img.png?raw=true"}
+                ]
             }
         ]
     },
@@ -213,67 +235,75 @@
         "list": [
             {
                 "title": "以你的名字呼喚我",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-                "genres": ["友誼", "溫暖", "幽默", "青春"],
-                "rated": "普0+",
-                "star": 9.0,
-                "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
-                "platform": "Disney+",
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/%E4%BB%A5%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97%E5%91%BC%E5%96%9A%E6%88%91_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/%E4%BB%A5%E4%BD%A0%E7%9A%84%E5%90%8D%E5%AD%97%E5%91%BC%E5%96%9A%E6%88%91_lg_img.png?raw=true",
+                "genres": ["愛情", "劇情", "幽默", "青春"],
+                "rated": "輔15+",
+                "star": 9.5,
+                "plot": "1983年夏天，17歲的Elio在義大利的鄉間，和父親極具魅力的研究助理Oliver發展出不可磨滅的感情",
+                "runtime": "02:12:00",
+                "released": "2017/11/05",
+                "platform": "Netflix",
                 "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-                    ]
-            },
-            {
-                "title": "我就要你好好的",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-                "genres": ["友誼", "溫暖", "幽默", "青春"],
-                "rated": "普0+",
-                "star": 9.0,
-                "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
-                "platform": "Disney+",
-                "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-                    ]
+                    { "title": "Armie Hammer", "role": "Oliver", "image": "https://github.com/mmleelee/movie-app/blob/main/Armie%20Hammer_img.png?raw=true"},
+                    { "title": "Timothée Chalamet", "role": "Elio", "image":"https://github.com/mmleelee/movie-app/blob/main/Timothee%20Chalamet_img.png?raw=true"},
+                    { "title": "Michael Stuhlbarg", "role": "Mr.Perlman", "image":"https://github.com/mmleelee/movie-app/blob/main/Rachel%20McAdams_img-1.png?raw=true"},
+                    { "title": "Amira Casar", "role": "Annella Perlman", "image":"https://github.com/mmleelee/movie-app/blob/main/Amira%20Casar_img.png?raw=true"}
+                ]
             },
             {
                 "title": "樂來越愛你",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-                "genres": ["友誼", "溫暖", "幽默", "青春"],
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/%E6%A8%82%E4%BE%86%E8%B6%8A%E6%84%9B%E4%BD%A0_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/%E6%A8%82%E4%BE%86%E8%B6%8A%E6%84%9B%E4%BD%A0_lg_img.png?raw=true",
+                "genres": ["喜劇", "音樂", "愛情", "劇情"],
                 "rated": "普0+",
-                "star": 9.0,
-                "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
-                "platform": "Disney+",
+                "star": 8.9,
+                "plot": "在洛杉磯展開職業生涯時，一位鋼琴家和一位女演員墜入愛河，同時試圖調和他們對未來的渴望",
+                "runtime": "02:08:00",
+                "released": "2016/12/09",
+                "platform": "MyVideo",
                 "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-                    ]
+                    { "title": "Ryan Gosling", "role": "Sebastian", "image": "https://github.com/mmleelee/movie-app/blob/main/Ryan%20Gosling_img.png?raw=true"},
+                    { "title": "Emma Stone", "role": "Mia", "image":"https://github.com/mmleelee/movie-app/blob/main/Emma%20Stone_img.png?raw=true"},
+                    { "title": "Rosemarie DeWitt", "role": "Laura", "image":"https://github.com/mmleelee/movie-app/blob/main/Rosemarie%20DeWitt_img.png?raw=true"},
+                    { "title": "J.K. Simmons", "role": "Bill", "image":"https://github.com/mmleelee/movie-app/blob/main/J.K.%20Simmons_img.png?raw=true"}
+                ]
             },
             {
-                "title": "盛夏未來",
-                "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-                "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-                "genres": ["友誼", "溫暖", "幽默", "青春"],
-                "rated": "普0+",
+                "title": "愛‧慕",
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/%E6%84%9B%E6%85%95_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/%E6%84%9B%E6%85%95_lg_img.png?raw=true",
+                "genres": ["愛情", "劇情", "浪漫", "現實"],
+                "rated": "輔12+",
                 "star": 9.0,
-                "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-                "runtime": "1:40:04",
-                "released": "2022/3/10",
-                "platform": "Disney+",
+                "plot": "80多歲的Georges和Anne，是一對優雅的退休音樂教授夫婦，他們向來深愛彼此。有天，安妮突然遭到疾病擊倒，這竟使他們夫妻鶼鰈情深的愛，受到了嚴峻的考驗。",
+                "runtime": "02:07:00",
+                "released": "2012/11/09",
+                "platform": "Apple TV",
                 "actors": [
-                        { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                        { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-                    ]
+                    { "title": "Jean-Louis Trintignant", "role": "Georges", "image": "https://github.com/mmleelee/movie-app/blob/main/Jean-Louis%20Trintignant_img.png?raw=true"},
+                    { "title": "Emmanuelle Riva", "role": "Anne", "image":"https://github.com/mmleelee/movie-app/blob/main/Emmanuelle%20Riva_img.png?raw=true"},
+                    { "title": "Isabelle Huppert", "role": "Eva", "image":"https://github.com/mmleelee/movie-app/blob/main/Isabelle%20Huppert_img.png?raw=true"},
+                    { "title": "William Shimell", "role": "Geoff", "image":"https://github.com/mmleelee/movie-app/blob/main/William%20Shimell_img.png?raw=true"}
+                ]
+            },
+            {
+                "title": "王牌冤家",
+                "poster": "https://github.com/mmleelee/movie-app/blob/main/1%E7%8E%8B%E7%89%8C%E5%86%A4%E5%AE%B6_img.png?raw=true",
+                "image": "https://github.com/mmleelee/movie-app/blob/main/1%E7%8E%8B%E7%89%8C%E5%86%A4%E5%AE%B6_lg_img.png?raw=true",
+                "genres": ["劇情", "愛情", "科幻", "奇幻"],
+                "rated": "護6+",
+                "star": 3.1,
+                "plot": "某一天Joel驚訝的發現交往兩年的女友Clementine竟到一家名叫「忘情診所」的地方，將一切有關他的記憶刪除地一乾二淨，往日的甜蜜冤愁一去不回",
+                "runtime": "01:48:00",
+                "released": "2004/04/16",
+                "platform": "MyVideo",
+                "actors": [
+                    { "title": "Jim Carrey", "role": "Joel Barish", "image": "https://github.com/mmleelee/movie-app/blob/main/Jim%20Carrey_img.png?raw=true"},
+                    { "title": "Kate Winslet", "role": "Clementine Kruczynski", "image":"https://github.com/mmleelee/movie-app/blob/main/Kate%20Winslet_img.png?raw=true"},
+                    { "title": "Tom Wilkinson", "role": "Dr.Mierzwiak", "image":"https://github.com/mmleelee/movie-app/blob/main/Tom%20Wilkinson_img.png?raw=true"},
+                    { "title": "Elijah Wood", "role": "Patrick", "image":"https://github.com/mmleelee/movie-app/blob/main/Elijah%20Wood_img.png?raw=true"}
+                ]
             }
         ]
     }

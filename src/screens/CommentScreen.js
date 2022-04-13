@@ -32,8 +32,10 @@ const CommentScreen = ({route}) => {
     // const sliderOneValuesChange = values => setSliderOneValue(values);
     // const sliderOneValuesChangeFinish = () => setSliderOneChanging(false);
 
-    const [inputComponent, setInputComponent] = React.useState(<Slider />);
+    //const [inputComponent, setInputComponent] = React.useState(<Slider />);
     const [isSlider, setIsSlider] = React.useState(true);
+    const [sliderVisible, setSliderVisible]= React.useState('flex');
+    const [inputVisible, setInputVisible]= React.useState('none');
 
     return(
         <KeyboardAvoidingView
@@ -105,21 +107,24 @@ const CommentScreen = ({route}) => {
                         <Pressable
                             onPress={()=>{
                                 if(isSlider){
-
-                                    setInputComponent(
-                                        <HStack alignItems="center"  w={280} height={50}>
-                                            <Input 
-                                                variant="rounded"
-                                                placeholder= "輸入評論..."
-                                                w="100%"
-                                                px={4}
-                                                multiline
-                                                //mx={3} //w="75%" //maxWidth="280px"
-                                            />
-                                        </HStack>
-                                    )
+                                    setSliderVisible('none');
+                                    setInputVisible('flex');
+                                    // setInputComponent(
+                                    //     <HStack alignItems="center"  w={280} height={50}>
+                                    //         <Input 
+                                    //             variant="rounded"
+                                    //             placeholder= "輸入評論..."
+                                    //             w="100%"
+                                    //             px={4}
+                                    //             multiline
+                                    //             //mx={3} //w="75%" //maxWidth="280px"
+                                    //         />
+                                    //     </HStack>
+                                    // )
                                 }else {
-                                    setInputComponent(<Slider />)
+                                    setSliderVisible('flex');
+                                    setInputVisible('none');
+                                    //setInputComponent(<Slider />)
                                 }
                                 setIsSlider(!isSlider);
                             }}
@@ -130,7 +135,18 @@ const CommentScreen = ({route}) => {
                                 //style={{marginRight: 10}}
                             />
                         </Pressable>
-                        {inputComponent}
+                        <Slider visible={sliderVisible}/>
+                        <HStack alignItems="center"  w={280} height={50} mr={2} display={inputVisible}>
+                            <Input 
+                                variant="rounded"
+                                placeholder= "輸入評論..."
+                                w="100%"
+                                px={4}
+                                multiline
+                                                //mx={3} //w="75%" //maxWidth="280px"
+                            />
+                            </HStack>
+                        {/* {inputComponent} */}
                         <Ionicons name="send" color={colorMode=="dark"?"#EDF0F5": "#5A7D9D"} size={21}/>
                     </HStack>
                 </Box>

@@ -64,7 +64,7 @@ const Comment = ({comment, isLarge}) => {
                 > */}
                     <HStack>
                         <Image 
-                            h={45} w={45} mr={14}
+                            h={45} w={45} mr={14} borderRadius={50}
                             source={{uri: comment.avatar}}
                             alt="avatar"
                         />

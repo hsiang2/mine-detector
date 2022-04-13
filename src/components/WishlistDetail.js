@@ -64,6 +64,7 @@ const WishlistDetail = ({movie, navigation}) => {
                         </Text>
                     </Box>
                     <Image 
+                        borderRadius={8}
                         ml={70}
                         h={60} w={60}
                         source={{uri: movie.poster}}

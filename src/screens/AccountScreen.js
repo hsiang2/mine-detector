@@ -50,7 +50,7 @@ const AccountScreen = ({navigation}) => {
                     alignItems="center"
                 >
                     <Image 
-                        w={90} h={90} mb={4}
+                        w={90} h={90} mb={4} borderRadius={50}
                         source={{uri: accountData.user.avatar}}
                         alt="avatar"
                     />

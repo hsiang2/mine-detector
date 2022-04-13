@@ -4,7 +4,7 @@ import MultiSlider from "@ptomasroos/react-native-multi-slider";
 
 import CustomLabel from "../components/CustomLabel";
 
-const Slider = () => {
+const Slider = ({visible}) => {
     const {colorMode} = useColorMode();
     const [sliderOneChanging, setSliderOneChanging] = React.useState(false);
     const [sliderOneValue, setSliderOneValue] = React.useState([0]);
@@ -13,7 +13,7 @@ const Slider = () => {
     const sliderOneValuesChangeFinish = () => setSliderOneChanging(false);
 
     return(
-        <HStack alignItems="center" >
+        <HStack alignItems="center" display={visible}>
             <MultiSlider 
                 values={sliderOneValue}
                 sliderLength={240} 

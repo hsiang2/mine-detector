@@ -1,50 +1,56 @@
 [
     {
-        "title": "黑魔女",
-        "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-        "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-        "genres": ["友誼", "溫暖", "幽默", "青春"],
-        "rated": "普0+",
-        "star": 9.0,
-        "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-        "runtime": "1:40:04",
-        "released": "2022/3/10",
+        "title": "黑魔女 2",
+        "poster": "https://github.com/mmleelee/movie-app/blob/main/maleficent%E5%B0%81%E9%9D%A2_img.png?raw=true",
+        "image": "https://github.com/mmleelee/movie-app/blob/main/%E5%B0%81%E9%9D%A2_img.png?raw=true",
+        "genres": ["黑暗", "奇幻", "冒險", "動作"],
+        "rated": "護6+",
+        "star": 8.0,
+        "plot": "對人類還是存有戒心的梅菲瑟，一心想保護奧蘿拉公主卻適得其反，不但與公主的關係岌岌可危，還可能引發牽連無辜的大戰…",
+        "runtime": "01:59:00",
+        "released": "2019/10/17",
         "platform": "Disney+",
         "actors": [
-                { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-            ]     
+            { "title": "Angelina Jolie", "role": "Maleficent", "image": "https://github.com/mmleelee/movie-app/blob/main/Angelina%20Jolie_img.png?raw=true"},
+            { "title": "Elle Fanning", "role": "Aurora", "image":"https://github.com/mmleelee/movie-app/blob/main/Elle%20Fanning_img.png?raw=true"},
+            { "title": "Harris Dickinson", "role": "Prince Philip", "image":"https://github.com/mmleelee/movie-app/blob/main/Prince%20Philip_img.png?raw=true"},
+            { "title": "Michelle Pfeiffer", "role": "Queen Ingrith", "image":"https://github.com/mmleelee/movie-app/blob/main/Michelle%20Pfeiffer_img.png?raw=true"}
+        ]   
     },
     {
-        "title": "黑魔女 2",
-        "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-        "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-        "genres": ["友誼", "溫暖", "幽默", "青春"],
-        "rated": "普0+",
+        "title": "V.I.P",
+        "poster": "https://github.com/mmleelee/movie-app/blob/main/V.I.P.%E5%B0%81%E9%9D%A2_img.png?raw=true",
+        "image": "https://github.com/mmleelee/movie-app/blob/main/vip_lg_img.png?raw=true",
+        "genres": ["犯罪", "動作", "政治", "血腥"],
+        "rated": "限18+",
         "star": 9.0,
-        "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-        "runtime": "1:40:04",
-        "released": "2022/3/10",
-        "platform": "Disney+",
+        "plot": "從北韓逃出投奔南韓的高官子弟，其父親手中擁有牽動南北韓、美國與中國之間龐大的政治利益，當命案碰上了更詭譎陰黯的政治黑手時，究竟會引爆怎樣的人性風暴",
+        "runtime": "01:47:08",
+        "released": "2017/09/22",
+        "platform": "friDay影音",
         "actors": [
-                { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-            ]     
+            { "title": "李鍾碩(이종석)", "role": "金光日(김광일)", "image": "https://github.com/mmleelee/movie-app/blob/main/%E6%9D%8E%E9%8D%BE%E7%A2%A9_img.png?raw=true"},
+            { "title": "張東健(장동건)", "role": "朴在赫(박재혁)", "image":"https://github.com/mmleelee/movie-app/blob/main/%E5%BC%B5%E6%9D%B1%E5%81%A5_img.png?raw=true"},
+            { "title": "金明民(김명민)", "role": "蔡易道(채이도)", "image":"https://github.com/mmleelee/movie-app/blob/main/%E9%87%91%E6%98%8E%E6%B0%91_img.png?raw=true"},
+            { "title": "朴喜洵(박희순)", "role": "李大範(리대범)", "image":"https://github.com/mmleelee/movie-app/blob/main/%E6%9C%B4%E6%88%90%E6%B4%B5_img.png?raw=true"}
+        ]  
     },
     {
         "title": "美女與野獸",
-        "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
+        "poster": "https://github.com/mmleelee/movie-app/blob/main/beauty&beast%E5%B0%81%E9%9D%A2_img.png?raw=true",
         "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-        "genres": ["友誼", "溫暖", "幽默", "青春"],
+        "genres": ["愛情", "歌舞", "浪漫", "奇幻"],
         "rated": "普0+",
-        "star": 9.0,
-        "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-        "runtime": "1:40:04",
-        "released": "2022/3/10",
+        "star": 7.3,
+        "plot": "王子因不懂得慈悲與寬容而被施與魔咒變成野獸，貝兒為救父親答應被野獸囚禁，在一群魔堡僕役的穿針引線之下，貝兒與野獸從針鋒相對到相知相守",
+        "runtime": "02:10:50",
+        "released": "2017/02/23",
         "platform": "Disney+",
         "actors": [
-                { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-            ]     
+            { "title": "Emma Watson", "role": "Belle", "image": "https://github.com/mmleelee/movie-app/blob/main/Emma%20Watson_img.png?raw=true"},
+            { "title": "Dan Stevens", "role": "Beast", "image":"https://github.com/mmleelee/movie-app/blob/main/Dan%20Stevens_img.png?raw=true"},
+            { "title": "Luke Evans", "role": "Gaston", "image":"https://github.com/mmleelee/movie-app/blob/main/Josh%20Gad_img.png?raw=true"},
+            { "title": "Josh Gad", "role": "LeFou", "image":"https://github.com/mmleelee/movie-app/blob/main/Luke%20Evans_img.png?raw=true"}
+        ]  
     }
 ]

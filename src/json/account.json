@@ -1,74 +1,93 @@
 {
     "user": {
         "name": "Charlie Brown",
-        "avatar": "https://compai.pub/v1/png/71252ed6336a3334e21366bd03c6c316d56e982d2b7e68bc152d87076e656d26"
+        "avatar": "https://github.com/hsiang2/movie_image/blob/main/老鼠中灰.png?raw=true"
     },
     "wishlist": [
         {
             "title": "青春養成記",
-            "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-            "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
+            "poster": "https://github.com/mmleelee/movie-app/blob/main/%E9%9D%92%E6%98%A5%E9%A4%8A%E6%88%90%E8%A8%98_sm_img.png?raw=true",
+            "image": "https://github.com/mmleelee/movie-app/blob/main/1%E9%9D%92%E6%98%A5%E9%A4%8A%E6%88%90%E8%A8%98_lg_img.png?raw=true",
             "genres": ["友誼", "溫暖", "幽默", "青春"],
             "rated": "普0+",
             "star": 9.0,
             "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-            "runtime": "1:40:04",
-            "released": "2022/3/10",
+            "runtime": "01:40:04",
+            "released": "2022/03/10",
             "platform": "Disney+",
             "actors": [
-                    { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                    { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-                ]     
+                { "title": "Sandra Oh", "role": "Ming", "image": "https://github.com/mmleelee/movie-app/blob/main/Sandra%20Oh_img.png?raw=true"},
+                { "title": "Rosalie Chiang", "role": "Meilin", "image":"https://github.com/mmleelee/movie-app/blob/main/Rosalie%20Chiang_img.png?raw=true"},
+                { "title": "Ava Morse", "role": "Miriam", "image":"https://github.com/mmleelee/movie-app/blob/main/Ava%20Morse_img.png?raw=true"},
+                { "title": "Hyein Park", "role": "Abby", "image":"https://github.com/mmleelee/movie-app/blob/main/Hyein%20Park_img.png?raw=true"}
+            ]
             },
         {
-            "title": "黑魔女",
-            "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-            "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-            "genres": ["友誼", "溫暖", "幽默", "青春"],
+            "title": "媽媽咪鴨",
+            "poster": "https://github.com/mmleelee/movie-app/blob/main/%E5%AA%BD%E5%AA%BD%E5%92%AA%E9%B4%A8_img.png?raw=true",
+            "image": "https://github.com/mmleelee/movie-app/blob/main/%E5%AA%BD%E5%AA%BD%E5%92%AA%E9%B4%A8_lg_img.png?raw=true",
+            "genres": ["喜劇", "兒童", "冒險", "家庭"],
             "rated": "普0+",
             "star": 9.0,
-            "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-            "runtime": "1:40:04",
-            "released": "2022/3/10",
-            "platform": "Disney+",
+            "plot": "眼看同伴即將展開一年一度的遷徙之旅，這隻生性樂天的大雁因傷無法同行，卻照料起兩隻迷路的小鴨",
+            "runtime": "01:31:00",
+            "released": "2018/07/20",
+            "platform": "Netflix",
             "actors": [
-                    { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                    { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-            ]     
+                { "title": "Jim Gaffigan", "role": "Peng", "image": "https://github.com/mmleelee/movie-app/blob/main/Jim%20Gaffigan_img.png?raw=true"},
+                { "title": "Zendaya", "role": "Chi", "image":"https://github.com/mmleelee/movie-app/blob/main/Zendaya_img.png?raw=true"},
+                { "title": "Lance Lim", "role": "Chao", "image":"https://github.com/mmleelee/movie-app/blob/main/Lance%20Lim_img.png?raw=true"},
+                { "title": "Greg Proops", "role": "Banzou", "image":"https://github.com/mmleelee/movie-app/blob/main/Greg%20Proops_img.png?raw=true"}
+            ]  
         },
         {
-            "title": "美女與野獸",
-            "poster": "https://compai.pub/v1/png/829aaf8b3b52f98102d82a745a07bf67da9f043a814bd62f5a3d7f694aac5f69",
-            "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
-            "genres": ["友誼", "溫暖", "幽默", "青春"],
+            "title": "寵物當家2",
+            "poster": "https://github.com/mmleelee/movie-app/blob/main/%E5%AF%B5%E7%89%A9%E7%95%B6%E5%AE%B6_sm_img.png?raw=true",
+            "image": "https://github.com/mmleelee/movie-app/blob/main/%E5%AF%B5%E7%89%A9%E7%95%B6%E5%AE%B62_lg_img.png?raw=true",
+            "genres": ["動作", "冒險", "喜劇", "家庭"],
             "rated": "普0+",
-            "star": 9.0,
-            "plot": "13歲華裔少女李美玲偶然發現自己擁有變身成紅色熊貓的能力後，在生活、人際關係、自我價值觀產生的變化",
-            "runtime": "1:40:04",
-            "released": "2022/3/10",
-            "platform": "Disney+",
+            "star": 6.8,
+            "plot": "Max正在面對一些重大的生活改變。他的主人Katie已經結婚了，而且有一個小幼兒Liam。當這一家人前往農場旅行，他們能找到內心的勇氣與平靜嗎？",
+            "runtime": "01:26:30",
+            "released": "2019/06/06",
+            "platform": "MyVideo",
             "actors": [
-                    { "title": "Sandra Oh", "role": "Young Ming", "image": "https://compai.pub/v1/png/2e978f6623db844bf9bd9cfda4d52251e787843ed308ebf53f61ab086abd939e"},
-                    { "title": "Orion Lee", "role": "Jin", "image":"https://compai.pub/v1/png/736adf7b59b08a89c7097f2cdb4741636c0301b80ed4bae3be657b8d67205ec2"}
-                ]     
+                { "title": "Patton Oswalt", "role": "Max", "image": "https://github.com/mmleelee/movie-app/blob/main/Patton%20Owsalt_img.png?raw=true"},
+                { "title": "Kevin Hart", "role": "Snowball", "image":"https://github.com/mmleelee/movie-app/blob/main/Kevin%20Hart_img.png?raw=true"},
+                { "title": "Harrison Ford", "role": "Rooster", "image":"https://github.com/mmleelee/movie-app/blob/main/Harrison%20Ford_img.png?raw=true"},
+                { "title": "Eric Stonestreet", "role": "Duke", "image":"https://github.com/mmleelee/movie-app/blob/main/Eric%20Stonestreet_img.png?raw=true"}
+            ]     
         }
     ],
     "favoriteActors": [
         {
-            "title": "Lana Condor aaaaaaaaaaa",
-            "image": "https://compai.pub/v1/png/c549b97f421606dd9d1b61368b47a30ac51b9dcda7b954d9e16512df6da4591e"
+            "title": "Lana Condor",
+            "image": "https://github.com/mmleelee/movie-app/blob/main/Lana%20Condor_img.png?raw=true"
         },
         {
             "title": "Saoirse Ronan",
-            "image": "https://compai.pub/v1/png/c549b97f421606dd9d1b61368b47a30ac51b9dcda7b954d9e16512df6da4591e"
+            "image": "https://github.com/mmleelee/movie-app/blob/main/Saoirse%20Ronan_img.png?raw=true"
         },
         {
             "title": "Kiernan Shipka",
-            "image": "https://compai.pub/v1/png/c549b97f421606dd9d1b61368b47a30ac51b9dcda7b954d9e16512df6da4591e"
+            "image": "https://github.com/mmleelee/movie-app/blob/main/Kiernan%20Shipka_img.png?raw=true"
         },
         {
             "title": "Anya Taylor-Joy",
-            "image": "https://compai.pub/v1/png/c549b97f421606dd9d1b61368b47a30ac51b9dcda7b954d9e16512df6da4591e"
+            "image": "https://github.com/mmleelee/movie-app/blob/main/Anya%20Taylor-Joy_img.png?raw=true"
+        },
+        {
+            "title": "Phoebe Dynevor",
+            "image": "https://github.com/mmleelee/movie-app/blob/main/Phoebe%20Dynevor_img.png?raw=true"
+        },
+        {
+            "title": "Olivia Cooke",
+            "image": "https://github.com/mmleelee/movie-app/blob/main/Olivia%20Cooke_img.png?raw=true"
+        },
+        {
+            "title": "Shailene Woodley",
+            "image": "https://github.com/mmleelee/movie-app/blob/main/Shailene%20Woodley_img.png?raw=true"
         }
+       
     ]
 }
