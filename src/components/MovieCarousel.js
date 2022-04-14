@@ -4,30 +4,6 @@ import { useWindowDimensions } from "react-native"
 import Carousel from "react-native-snap-carousel";
 import { Component } from "react/cjs/react.production.min";
 
-// class MovieCarousel extends Component {
-//     _renderItem = ({item, index}) => {
-//         return(
-//             <Pressable>
-//                 <Image 
-
-//                 />
-//             </Pressable>
-//         );
-//     }
-
-//     render () {
-//         return(
-//             <Carousel 
-//                 ref={(c) => { this._carousel = c; }}
-//                 data={this.state.entries}
-//                 renderItem={this._renderItem}
-//                 sliderWidth={sliderWidth}
-//                 itemWidth={itemWidth}
-//             />
-//         );
-//     }
-// }
-
 const MovieCarousel = ({data, navigation}) => {
     const layout = useWindowDimensions();
     const renderItem = ({item}) => {
@@ -46,7 +22,6 @@ const MovieCarousel = ({data, navigation}) => {
     }
     return (
         <Carousel 
-            //ref={ref => { this._carousel = ref; }}
             data={data}
             renderItem={renderItem}
             sliderWidth={layout.width}

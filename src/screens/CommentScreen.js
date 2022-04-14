@@ -118,9 +118,7 @@ const CommentScreen = ({route}) => {
                                 w="100%"
                                 px={4}
                                 multiline
-                                //placeholderTextColor="amber.800"
-                                
-                                _light={{borderColor: "#5A7D9D"}}
+                                _light={{borderColor: "#5A7D9D", color: "#5A7D9D"}}
                             />
                             </HStack>
                         <Ionicons name="send" color={colorMode=="dark"?"#EDF0F5": "#5A7D9D"} size={21}/>
