@@ -38,7 +38,7 @@
     {
         "title": "美女與野獸",
         "poster": "https://github.com/mmleelee/movie-app/blob/main/beauty&beast%E5%B0%81%E9%9D%A2_img.png?raw=true",
-        "image": "https://compai.pub/v1/png/0332373d3fc62b2d7a5e5c9c70c3e8ab062ca3892452ac91402baf46656d561a",
+        "image": "https://raw.githubusercontent.com/mmleelee/movie-app/main/美女與野獸_lg_img.png",
         "genres": ["愛情", "歌舞", "浪漫", "奇幻"],
         "rated": "普0+",
         "star": 7.3,

@@ -31,7 +31,7 @@ const DetailScreen = ({route, navigation}) => {
             <Background />
             <ScrollView>
                 <Box>
-                    <Image h={179} mt={14} mx={5} source={{uri: image}} alt="movie"/>
+                    <Image h={179} mt={14} mx={5} source={{uri: image}} borderRadius={5} alt="movie"/>
                     <HStack mt={47} mb={52} mx={4} justifyContent="space-between">
                         <HStack space={1.5}>
                             {genres.map(genre => {
