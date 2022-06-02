@@ -1,13 +1,14 @@
 import 'react-native-gesture-handler';
 import React from "react";
 import { Pressable, StatusBar, Text, useColorMode, Box } from "native-base";
-import { NavigationContainer } from '@react-navigation/native' 
-import { createStackNavigator } from "@react-navigation/stack";
+import { NavigationContainer, useNavigation } from '@react-navigation/native' 
+import { createStackNavigator, TransitionPresets } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { BlurView } from "expo-blur";
 import { StyleSheet } from "react-native";
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Ionicons from 'react-native-vector-icons/Ionicons'
+import { useSelector } from "react-redux";
 
 import HomeScreen from "../screens/HomeScreen";
 import DetailScreen from "../screens/DetailScreen";
@@ -15,21 +16,59 @@ import CommentScreen from "../screens/CommentScreen";
 import RankingsScreen from "../screens/RankingsScreen";
 import SearchScreen from "../screens/SearchScreen";
 import AccountScreen from "../screens/AccountScreen";
+import LoginScreen from '../screens/LoginScreen';
+import RegisterScreen from '../screens/RegisterScreen';
+import { selectLogin, selectInfo } from '../redux/accountSlice';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const Navigation = () => {
     const { colorMode } = useColorMode();
-    return(
+    const login = useSelector(selectLogin);
+     //const info = useSelector(selectInfo)
+     //console.log(info);
+    return login? (
         <NavigationContainer>
             <StatusBar
                 barStyle={ colorMode == "dark"? "light-content": "dark-content"}
             />
             <MyTabs />
+            {/* <StatusBar
+                barStyle={ colorMode == "dark"? "light-content": "dark-content"}
+            />
+            <MyTabs /> */}
+        </NavigationContainer>
+    ) : (
+        <NavigationContainer>
+            <LoginStack />
         </NavigationContainer>
     );
 }
+
+const LoginStack = () => {
+    const navigation = useNavigation();
+    return(
+        <Stack.Navigator>
+            <Stack.Screen 
+                options={{headerShown: false}}
+                name='Login' component={LoginScreen}
+            />
+            <Stack.Screen 
+                options={{ 
+                    headerTransparent: true, title: null, 
+                    headerLeft: () => (
+                        <AntDesign 
+                            name="left" style={{marginLeft: 26}}
+                            size={24} color="#FFF8E8"
+                            onPress={()=> navigation.goBack()}
+                    />)
+                }}
+                name='Register' component={RegisterScreen}
+            />
+        </Stack.Navigator>
+    )
+} 
 
 const MyTabs = () => {
     const { colorMode } = useColorMode();
@@ -97,7 +136,6 @@ const MovieStack = ({navigation}) => {
         <Stack.Navigator
             screenOptions={{
                 headerTransparent: true,
-                
             }}
         >
             <Stack.Screen 

@@ -1,11 +1,14 @@
 import React from "react";
 import { FlatList, HStack, Text, useColorMode } from "native-base";
 import AntDesign from "react-native-vector-icons/AntDesign"
+import { useSelector } from "react-redux";
+import { selectWatchlist } from "../redux/accountSlice";
 import WishlistDetail from "./WishlistDetail";
 
 
 const Wishlist = ({data, navigation}) => {
     const {colorMode} = useColorMode();
+    const watchlist = useSelector(selectWatchlist);
     const renderItem = ({item}) => (<WishlistDetail movie={item} navigation={navigation}/>)
     return(
         <>
@@ -26,7 +29,7 @@ const Wishlist = ({data, navigation}) => {
             </HStack>
             <FlatList 
                 horizontal={true}
-                data={data}
+                data={watchlist}
                 renderItem={renderItem}
                 keyExtractor={item => item.title}
                 showsHorizontalScrollIndicator={false}

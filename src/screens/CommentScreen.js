@@ -7,13 +7,21 @@ import { SafeAreaView, } from "react-native-safe-area-context";
 import { Dimensions, Platform } from "react-native";
 import { BlurView } from "expo-blur";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
+import { doc, setDoc, serverTimestamp, arrayUnion, updateDoc } from "firebase/firestore";
+import { useSelector, useDispatch } from "react-redux"; 
 
 import CommentList from "../components/CommentList";
 import Background from "../components/Background";
 import Slider from "../components/Slider";
+import { db } from "../../App";
+import { selectInfo } from "../redux/accountSlice";
+import { selectSlider, setSlider } from "../redux/sliderSlice";
+import { async } from "@firebase/util";
+import { update } from "../redux/commentSlice";
 
 const CommentScreen = ({route}) => {
-    const {isSpoiler} = route.params;
+    const {isSpoiler, movie} = route.params;
+    //console.log(route);
     const [customStyleIndex, setCustomStyleIndex] = isSpoiler?useState(1): useState(0);
     const handleCustomIndexSelect = (index) => {
         setCustomStyleIndex(index);
@@ -25,6 +33,37 @@ const CommentScreen = ({route}) => {
     const [isSlider, setIsSlider] = React.useState(true);
     const [sliderVisible, setSliderVisible]= React.useState('flex');
     const [inputVisible, setInputVisible]= React.useState('none');
+    const [comment, setComment] = useState("");
+
+    const { name, avatar } = useSelector(selectInfo);
+    const slider = useSelector(selectSlider);
+    const dispatch = useDispatch();
+    //const spoiler = isSpoiler?"spoiler":"noSpoiler";
+    //console.log(slider[0])
+    
+    const commentRef = doc(db, "comments", movie);
+    const submit = () => {
+        if(customStyleIndex===1) {
+            setDoc(commentRef, { spoiler: arrayUnion({
+                user: name, 
+                star: slider[0].toFixed(1), 
+                date: new Date().toLocaleString('zh-tw'),
+                content: comment, 
+                avatar: avatar}) }, {merge: true});
+        } else {
+            setDoc(commentRef, { noSpoiler: arrayUnion({
+                user: name, 
+                star: slider[0].toFixed(1), 
+                date: new Date().toLocaleString('zh-tw'),
+                content: comment, 
+                avatar: avatar}) }, {merge: true});
+        }
+        dispatch(setSlider([0]));
+        dispatch(update());
+        setComment("");
+    }
+
+    
 
     return(
         <KeyboardAvoidingView
@@ -73,8 +112,8 @@ const CommentScreen = ({route}) => {
                     <Center mb={tabBarHeight+66}>
                         {
                             customStyleIndex === 0 ?
-                                <CommentList isSpoiler={false}/>:
-                                <CommentList isSpoiler={true}/>
+                                <CommentList isSpoiler={false} movie={movie}/>:
+                                <CommentList isSpoiler={true} movie={movie}/>
                         }
                         
                     </Center>
@@ -119,9 +158,14 @@ const CommentScreen = ({route}) => {
                                 px={4}
                                 multiline
                                 _light={{borderColor: "#5A7D9D", color: "#5A7D9D"}}
+                                value={comment}
+                                onChangeText={text => setComment(text)}
                             />
                             </HStack>
-                        <Ionicons name="send" color={colorMode=="dark"?"#EDF0F5": "#5A7D9D"} size={21}/>
+                        <Ionicons 
+                            name="send" color={colorMode=="dark"?"#EDF0F5": "#5A7D9D"} size={21}
+                            onPress={submit}
+                        />
                     </HStack>
                 </Box>
             </SafeAreaView>

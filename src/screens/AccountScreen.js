@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Text, Box, ScrollView, Image, HStack, useColorMode, Center } from "native-base";
+import { Text, Box, ScrollView, Image, HStack, useColorMode, Center, Button } from "native-base";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Dimensions } from "react-native";
 import Ionicons from "react-native-vector-icons/Ionicons"
@@ -9,12 +9,18 @@ import Toggle from 'react-native-toggle-element'
 import AppLoading from "expo-app-loading";
 import { useFonts, Asap_400Regular } from "@expo-google-fonts/asap";
 import { LinearGradient } from "expo-linear-gradient";
+import { useDispatch, useSelector } from "react-redux";
+import { signOut } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
 
-
+import { selectInfo, selectWatchlist } from "../redux/accountSlice";
+import { auth, db } from "../../App";
+import { logout, setAccountInfo, setWatchlist } from "../redux/accountSlice";
 import accountData from "../json/account.json"
 import FavoriteActorList from "../components/FavoriteActorList";
 import Wishlist from "../components/Wishlist";
 import Background from "../components/Background";
+import { async } from "@firebase/util";
 
 
 const AccountScreen = ({navigation}) => {
@@ -22,6 +28,18 @@ const AccountScreen = ({navigation}) => {
     const { width } = Dimensions.get("window");
     const color = colorMode == "dark"? ["#DDDDDD19", "#F0F3F525"]:["#F2F9FE", "#E8F0F5"];
     const location = colorMode == "dark"? [0,1]: [0.0073, 0.9907];
+    //const [name, setName] = useState(null);
+    const { name, avatar } = useSelector(selectInfo);
+    const watchlist = useSelector(selectWatchlist);
+    
+    const dispatch = useDispatch();
+    //dispatch(setWatchlist());
+    //console.log(watchlist);
+    const onSignOut = () => {
+        signOut(auth);
+        dispatch(logout());
+        //dispatch(setAccountInfo(""));
+    };
 
     let [fontsLoaded] = useFonts({
         Asap_400Regular
@@ -51,7 +69,7 @@ const AccountScreen = ({navigation}) => {
                 >
                     <Image 
                         w={90} h={90} mb={4} borderRadius={50}
-                        source={{uri: accountData.user.avatar}}
+                        source={{uri: avatar}}
                         alt="avatar"
                     />
                     <Text 
@@ -61,16 +79,17 @@ const AccountScreen = ({navigation}) => {
                         letterSpacing={0.2}
                         fontFamily= "Asap_400Regular"
                     >
-                        {accountData.user.name}
+                        {name}
+                        {/* {accountData.user.name} */}
                     </Text>
                 </Box>
                 <Box mt={84}>
-                    <Wishlist data={accountData.wishlist} navigation={navigation}/>
+                    <Wishlist data={watchlist} navigation={navigation}/>
                 </Box>
                 
                 <FavoriteActorList data={accountData.favoriteActors}/>
-                <BottomTabBarHeightContext.Consumer>
-                    {tabBarHeight => (
+                
+                    
                         <Box
                             shadowOffset= {{width: 0, height: 4}}
                             shadowRadius= {5}
@@ -78,7 +97,8 @@ const AccountScreen = ({navigation}) => {
                                 shadowColor: "#2D3E4E", shadowOpacity: 0.62
                             }}
                             _light={{ shadowColor: "#DDDDDD", shadowOpacity: 1}}
-                            marginBottom= {tabBarHeight}
+                            // marginBottom= {tabBarHeight}
+                            mb={4}
                             width={330} alignSelf= "center"
                         >
                             <LinearGradient
@@ -144,6 +164,13 @@ const AccountScreen = ({navigation}) => {
                                 </HStack>
                             </LinearGradient>    
                         </Box>
+                <BottomTabBarHeightContext.Consumer>
+                    {tabBarHeight => (
+                        <Button marginBottom= {tabBarHeight}
+                            onPress={() => onSignOut()}
+                        >
+                            登出
+                        </Button>
                     )}
                 </BottomTabBarHeightContext.Consumer>
                 

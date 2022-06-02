@@ -1,21 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box, HStack, useColorMode, Image } from "native-base";
 import MultiSlider from "@ptomasroos/react-native-multi-slider";
+import { useDispatch, useSelector } from "react-redux";
 
+import { setSlider, selectSlider } from "../redux/sliderSlice";
 import CustomLabel from "../components/CustomLabel";
 
+
 const Slider = ({visible}) => {
+    const dispatch = useDispatch();
+    const slider = useSelector(selectSlider);
+    //dispatch(setSlider([0]));
+
     const {colorMode} = useColorMode();
     const [sliderOneChanging, setSliderOneChanging] = React.useState(false);
-    const [sliderOneValue, setSliderOneValue] = React.useState([0]);
+    //const [sliderOneValue, setSliderOneValue] = React.useState([0]);
+    
     const sliderOneValuesChangeStart = () => setSliderOneChanging(true);
-    const sliderOneValuesChange = values => setSliderOneValue(values);
+    //const sliderOneValuesChange = values => setSliderOneValue(values);
+    const sliderOneValuesChange = values => dispatch(setSlider(values));
     const sliderOneValuesChangeFinish = () => setSliderOneChanging(false);
+    // useEffect(() => {
+    //     dispatch(setSlider(sliderOneValue));
+    // }, [sliderOneValue]);
+    
 
     return(
         <HStack alignItems="center" display={visible}>
             <MultiSlider 
-                values={sliderOneValue}
+                values={slider}
                 sliderLength={240} 
                 onValuesChangeStart={sliderOneValuesChangeStart}
                 onValuesChange={sliderOneValuesChange}

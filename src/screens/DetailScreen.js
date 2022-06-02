@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Box, HStack, Image, ScrollView, Text, useColorMode } from "native-base";
 import { BottomTabBarHeightContext } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Pressable } from "react-native";
+import { useDispatch, useSelector } from "react-redux";
+import { doc, updateDoc } from "firebase/firestore";
 
 import ActorList from "../components/ActorList";
 import CommentSection from "../components/CommentSection";
@@ -11,6 +13,9 @@ import Background from "../components/Background";
 import Star from "../components/Star";
 import MovieInfo from "../components/MovieInfo";
 import Rated from "../components/Rated";
+import { db, auth } from "../../App";
+import { addWatchlist,removeWatchlist, selectWatchlist } from "../redux/accountSlice";
+import { async } from "@firebase/util";
 
 const DetailScreen = ({route, navigation}) => {
     const { image,
@@ -25,7 +30,52 @@ const DetailScreen = ({route, navigation}) => {
             actors,
           } = route.params;
     const { colorMode } = useColorMode();
+    const watchlist = useSelector(selectWatchlist);
     const [isPressed, setIsPressed] = useState(false);
+        // () => {
+        //     const isSaved = (element) => {
+        //         return element.title === route.params.title;
+        //     }
+        //     if(watchlist.find(isSaved) === undefined){
+        //         console.log("沒看過");
+        //         return false
+        //     } else {
+        //         console.log("看過");
+        //         return true
+        //     }
+        // });
+    const watchlistRef = doc(db, "users", auth.currentUser.uid);
+    
+    const dispatch = useDispatch();
+    useEffect(async () => {
+        await updateDoc(watchlistRef, {
+            watchlist
+        }).then(() => {
+            const isSaved = (element) => {
+                return element.title === route.params.title;
+            }
+            if(watchlist.find(isSaved) === undefined){
+                //console.log("沒看過");
+                setIsPressed(false);
+            } else {
+                //console.log("看過");
+                setIsPressed(true);
+            }
+        })
+    }, [watchlist])
+    // useEffect(() => {
+    //     const isSaved = (element) => {
+    //         return element.title === route.params.title;
+    //     }
+    //     if(watchlist.find(isSaved) === undefined){
+    //         console.log("沒看過");
+    //             setIsPressed(false);
+    //     } else {
+    //         console.log("看過");
+    //         setIsPressed(true);
+    //     }
+    // },[])
+
     return(
         <SafeAreaView style={{backgroundColor: colorMode == 'dark'? "#181B2A": "#ffffff"}}>
             <Background />
@@ -68,7 +118,21 @@ const DetailScreen = ({route, navigation}) => {
                                 </Text>
                                 <Star star={star.toFixed(1)}/>
                             </Box>
-                            <Pressable onPress={() => setIsPressed(!isPressed)}>
+                            <Pressable onPress={() => {
+                                if (isPressed){
+                                    setIsPressed(false);
+                                    dispatch(removeWatchlist(route.params));
+                        
+                                    //console.log(route)
+                                } else {
+                                    setIsPressed(true);
+                                    dispatch(addWatchlist(route.params));
+                                    //console.log(route)
+                                }
+                                // setIsPressed(!isPressed)
+                                // isPressed?dispatch(addWatchlist(route))
+                                // :dispatch(removeWatchlist(route))
+                            }}>
                                 < Ionicons 
                                     name={isPressed? "bookmark": "bookmark-outline"} 
                                     color={colorMode == "dark"?"#FFDA7B": "#D99F3ED9"}
@@ -94,7 +158,7 @@ const DetailScreen = ({route, navigation}) => {
                 <BottomTabBarHeightContext.Consumer>
                     {tabBarHeight => (
                         <Box mb={tabBarHeight}>
-                            <CommentSection navigation={navigation}/>
+                            <CommentSection navigation={navigation} movie={title}/>
                         </Box>
                     )}
                 </BottomTabBarHeightContext.Consumer>

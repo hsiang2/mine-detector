@@ -65,7 +65,7 @@ const Comment = ({comment, isLarge}) => {
                             >
                                 {comment.user}
                             </Text>
-                            <Star star={comment.star.toFixed(1)}/>
+                            <Star star={comment.star}/>
                         </Box>
                     </HStack>
                     <Text 

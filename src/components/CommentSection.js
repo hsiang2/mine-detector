@@ -4,12 +4,12 @@ import { TabView, SceneMap, TabBar } from 'react-native-tab-view'
 import { useColorMode } from "native-base";
 import CommentSectionDetail from "./CommentSectionDetail";
 
-const CommentSection = ({navigation}) => {
+const CommentSection = ({navigation, movie}) => {
     const CommentRoute = () => (
-        <CommentSectionDetail isSpoiler={false} navigation={navigation}/>
+        <CommentSectionDetail isSpoiler={false} navigation={navigation} movie={movie}/>
     );
     const SpoilerCommentRoute = () => (
-        <CommentSectionDetail isSpoiler={true} navigation={navigation}/>
+        <CommentSectionDetail isSpoiler={true} navigation={navigation} movie={movie}/>
     );
     const renderScene = SceneMap({
         comment: CommentRoute,
