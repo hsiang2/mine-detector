@@ -13,7 +13,7 @@ const persistConfig = {
 
 export const store = configureStore({
     reducer: {
-        account: persistReducer(persistConfig, accountReducer),
+        account: accountReducer,
         slider: sliderReducer,
         comment: commentReducer
     },

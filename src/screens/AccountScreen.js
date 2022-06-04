@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Text, Box, ScrollView, Image, HStack, useColorMode, Center, Button } from "native-base";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Dimensions } from "react-native";
@@ -10,17 +10,15 @@ import AppLoading from "expo-app-loading";
 import { useFonts, Asap_400Regular } from "@expo-google-fonts/asap";
 import { LinearGradient } from "expo-linear-gradient";
 import { useDispatch, useSelector } from "react-redux";
-import { signOut } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore";
+//import { signOut } from "firebase/auth";
 
-import { selectInfo, selectWatchlist } from "../redux/accountSlice";
-import { auth, db } from "../../App";
-import { logout, setAccountInfo, setWatchlist } from "../redux/accountSlice";
+import { selectInfo, /*selectWatchlist*/ readUserAsync, updateUserAsync } from "../redux/accountSlice";
+//import { auth, db } from "../../App";
+import { /*logout,*/signOut, setAccountInfo } from "../redux/accountSlice";
 import accountData from "../json/account.json"
 import FavoriteActorList from "../components/FavoriteActorList";
 import Wishlist from "../components/Wishlist";
 import Background from "../components/Background";
-import { async } from "@firebase/util";
 
 
 const AccountScreen = ({navigation}) => {
@@ -28,18 +26,29 @@ const AccountScreen = ({navigation}) => {
     const { width } = Dimensions.get("window");
     const color = colorMode == "dark"? ["#DDDDDD19", "#F0F3F525"]:["#F2F9FE", "#E8F0F5"];
     const location = colorMode == "dark"? [0,1]: [0.0073, 0.9907];
-    //const [name, setName] = useState(null);
-    const { name, avatar } = useSelector(selectInfo);
-    const watchlist = useSelector(selectWatchlist);
+    //const { name, avatar } = useSelector(selectInfo);
+    //const watchlist = useSelector(selectWatchlist);
     
+    const info = useSelector(selectInfo);
+    const [name, setName] = useState();
+    const [email, setEmail] = useState();
+    const [avatar, setAvatar] = useState("");
+    console.log(avatar);
+
     const dispatch = useDispatch();
-    //dispatch(setWatchlist());
-    //console.log(watchlist);
-    const onSignOut = () => {
-        signOut(auth);
-        dispatch(logout());
-        //dispatch(setAccountInfo(""));
-    };
+    // const onSignOut = () => {
+    //     signOut(auth);
+    //     dispatch(logout());
+    // };
+    useEffect(() => {
+        dispatch(readUserAsync());
+     }, [])
+
+     useEffect(() => {
+        setName(info.name)
+        setEmail(info.email)
+        setAvatar(info.avatar)
+     }, [info]);
 
     let [fontsLoaded] = useFonts({
         Asap_400Regular
@@ -70,6 +79,7 @@ const AccountScreen = ({navigation}) => {
                     <Image 
                         w={90} h={90} mb={4} borderRadius={50}
                         source={{uri: avatar}}
+                        //source={{uri: info.avatar}}
                         alt="avatar"
                     />
                     <Text 
@@ -80,11 +90,10 @@ const AccountScreen = ({navigation}) => {
                         fontFamily= "Asap_400Regular"
                     >
                         {name}
-                        {/* {accountData.user.name} */}
                     </Text>
                 </Box>
                 <Box mt={84}>
-                    <Wishlist data={watchlist} navigation={navigation}/>
+                    <Wishlist /*data={watchlist}*/ data={accountData.wishlist} navigation={navigation}/>
                 </Box>
                 
                 <FavoriteActorList data={accountData.favoriteActors}/>
@@ -97,7 +106,6 @@ const AccountScreen = ({navigation}) => {
                                 shadowColor: "#2D3E4E", shadowOpacity: 0.62
                             }}
                             _light={{ shadowColor: "#DDDDDD", shadowOpacity: 1}}
-                            // marginBottom= {tabBarHeight}
                             mb={4}
                             width={330} alignSelf= "center"
                         >
@@ -167,7 +175,8 @@ const AccountScreen = ({navigation}) => {
                 <BottomTabBarHeightContext.Consumer>
                     {tabBarHeight => (
                         <Button marginBottom= {tabBarHeight}
-                            onPress={() => onSignOut()}
+                            //onPress={() => onSignOut()}
+                            onPress={() => dispatch(signOut())}
                         >
                             登出
                         </Button>

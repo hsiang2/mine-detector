@@ -5,7 +5,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Pressable } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { doc, updateDoc } from "firebase/firestore";
+//import { doc, updateDoc } from "firebase/firestore";
 
 import ActorList from "../components/ActorList";
 import CommentSection from "../components/CommentSection";
@@ -13,9 +13,9 @@ import Background from "../components/Background";
 import Star from "../components/Star";
 import MovieInfo from "../components/MovieInfo";
 import Rated from "../components/Rated";
-import { db, auth } from "../../App";
-import { addWatchlist,removeWatchlist, selectWatchlist } from "../redux/accountSlice";
-import { async } from "@firebase/util";
+//import { db, auth } from "../../App";
+//import { addWatchlist,removeWatchlist, selectWatchlist } from "../redux/accountSlice";
+
 
 const DetailScreen = ({route, navigation}) => {
     const { image,
@@ -30,7 +30,7 @@ const DetailScreen = ({route, navigation}) => {
             actors,
           } = route.params;
     const { colorMode } = useColorMode();
-    const watchlist = useSelector(selectWatchlist);
+    //const watchlist = useSelector(selectWatchlist);
     const [isPressed, setIsPressed] = useState(false);
         // () => {
         //     const isSaved = (element) => {
@@ -44,37 +44,26 @@ const DetailScreen = ({route, navigation}) => {
         //         return true
         //     }
         // });
-    const watchlistRef = doc(db, "users", auth.currentUser.uid);
+    //const watchlistRef = doc(db, "users", auth.currentUser.uid);
     
-    const dispatch = useDispatch();
-    useEffect(async () => {
-        await updateDoc(watchlistRef, {
-            watchlist
-        }).then(() => {
-            const isSaved = (element) => {
-                return element.title === route.params.title;
-            }
-            if(watchlist.find(isSaved) === undefined){
-                //console.log("沒看過");
-                setIsPressed(false);
-            } else {
-                //console.log("看過");
-                setIsPressed(true);
-            }
-        })
-    }, [watchlist])
-    // useEffect(() => {
-    //     const isSaved = (element) => {
-    //         return element.title === route.params.title;
-    //     }
-    //     if(watchlist.find(isSaved) === undefined){
-    //         console.log("沒看過");
+    // const dispatch = useDispatch();
+    // useEffect(async () => {
+    //     await updateDoc(watchlistRef, {
+    //         watchlist
+    //     }).then(() => {
+    //         const isSaved = (element) => {
+    //             return element.title === route.params.title;
+    //         }
+    //         if(watchlist.find(isSaved) === undefined){
+    //             //console.log("沒看過");
     //             setIsPressed(false);
-    //     } else {
-    //         console.log("看過");
-    //         setIsPressed(true);
-    //     }
-    // },[])
+    //         } else {
+    //             //console.log("看過");
+    //             setIsPressed(true);
+    //         }
+    //     })
+    // }, [watchlist])
+
 
     return(
         <SafeAreaView style={{backgroundColor: colorMode == 'dark'? "#181B2A": "#ffffff"}}>
@@ -121,12 +110,12 @@ const DetailScreen = ({route, navigation}) => {
                             <Pressable onPress={() => {
                                 if (isPressed){
                                     setIsPressed(false);
-                                    dispatch(removeWatchlist(route.params));
+                                    //dispatch(removeWatchlist(route.params));
                         
                                     //console.log(route)
                                 } else {
                                     setIsPressed(true);
-                                    dispatch(addWatchlist(route.params));
+                                    //dispatch(addWatchlist(route.params));
                                     //console.log(route)
                                 }
                                 // setIsPressed(!isPressed)

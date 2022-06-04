@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-//import * as firebase from 'firebase/app';
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore";
+//import { doc, getDoc } from "firebase/firestore";
 import { Center, FormControl, Input, Text, WarningOutlineIcon, Button, Image, Pressable, HStack, Box } from "native-base";
 //import { TextInput, Button, Text } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,98 +11,95 @@ import Feather from "react-native-vector-icons/Feather";
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import { login, setAccountInfo, setWatchlist } from "../redux/accountSlice";
+//import { login, setAccountInfo, setWatchlist, gotoRegister} from "../redux/accountSlice";
 import { selectInfo } from "../redux/accountSlice";
-import { auth, db } from "../../App";
-import { async } from "@firebase/util";
+//import { auth, db } from "../../App";
 import Background from "../components/Background"; 
+import { gotoRegister, loginAsync, selectErrorMsg, selectStatus } from "../redux/accountSlice"
 
 const LoginScreen = ({ navigation }) => {
-    //const info = useSelector(selectInfo);
-    
-    //const [name, setName] = useState(info.name);
-    const [hide, setHide] = useState(true);
-    const [loading, setLoading] = useState(false);
-    const [email, setEmail] = useState(null);
-    const [password, setPassword] = useState(null);
-    const [error, setError] = useState("");
     const dispatch = useDispatch();
+
+    const errMsg = useSelector(selectErrorMsg);
+    const loginStatus = useSelector(selectStatus);
+
+    const [hide, setHide] = useState(true);
+    //const [loading, setLoading] = useState(false);
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    //const [error, setError] = useState("");
+    
+
+    const goToRegister = () => {
+        dispatch(gotoRegister())
+    }
+
+    const onLogin = () => {
+        dispatch(loginAsync({ email, password }))
+    }
+
     // const onSignIn = async () => {
     //     setError(" ");
+    //     if (!email) {
+    //         setError("請輸入信箱");
+    //         return;
+    //     }
+    //     if (!password) {
+    //         setError("請輸入密碼");
+    //         return;
+    //     }
+    //     setLoading(true);
     //     try {
-    //       await firebase.auth().signInWithEmailAndPassword(email, password);
-    //     } catch (err2) {
-    //         setError(err2.message);
+    //         await signInWithEmailAndPassword(auth, email, password)
+    //             .then(async (result) => {
+    //                 const docRef = doc(db, "users", auth.currentUser.uid);
+    //                 const docSnap = await getDoc(docRef);
+    //                 if(docSnap.exists()){
+    //                     const name = docSnap.data().name;
+    //                     const avatar = docSnap.data().avatar;
+    //                     const watchlist = docSnap.data().watchlist;
+    //                     dispatch(setAccountInfo({ name, email, password, avatar }));
+    //                     dispatch(setWatchlist(watchlist));
+    //                 } else {
+    //                     setLoading(false);
+    //                     setError("錯誤");
+    //                 }
+    //             })
+    //             setError("");
+    //             setEmail("");
+    //             setPassword("");
+    //         dispatch(login());
+    //     } catch (err){
+    //         setLoading(false);
+    //         setError(err);
+    //     } finally {
+    //         setLoading(false);
     //     }
     // };
-    // useEffect(() => {
-    //     dispatch(setAccountInfo({ email, password }))
-    // }, [ email, password])
-
-    const onSignIn = async () => {
-        //setLoading(true);
-        setError(" ");
-        if (!email) {
-            setError("請輸入信箱");
-            return;
-        }
-        if (!password) {
-            setError("請輸入密碼");
-            return;
-        }
-        setLoading(true);
-        try {
-            await signInWithEmailAndPassword(auth, email, password)
-                .then(async (result) => {
-                    const docRef = doc(db, "users", auth.currentUser.uid);
-                    const docSnap = await getDoc(docRef);
-                    if(docSnap.exists()){
-                        const name = docSnap.data().name;
-                        const avatar = docSnap.data().avatar;
-                        const watchlist = docSnap.data().watchlist;
-                        dispatch(setAccountInfo({ name, email, password, avatar }));
-                        dispatch(setWatchlist(watchlist));
-                        //dispatch(setAccountInfo({ name, email, password}));
-                    } else {
-                        setLoading(false);
-                        setError("錯誤");
-                    }
-                })
-                setError("");
-                setEmail("");
-                setPassword("");
-            dispatch(login());
-        } catch (err){
-            setLoading(false);
-            setError(err);
-        } finally {
-            setLoading(false);
-        }
-    };
 
     const renderButton = () => {
-        return loading ? (
+        return /*loading*/(loginStatus == 'loading') ? (
             <Button
                 isLoading _loading={{
                     bgColor: "#FFDA7B",
-                    w: '314', h:'60', mb:'4'
+                    w: '314', h:'60', mb:'8'
                 }}
                 _spinner={{color: "#445B6C"}}
                 
             >登入</Button>
         ) : (
             <Button
-                onPress={onSignIn} 
+                onPress={onLogin} 
                 _text={{color: "#445B6C", fontSize: "12"}} 
-                w={314} h={60} mb={4}
+                w={314} h={60} mb={8}
                 bgColor="#FFDA7B"
             >登入</Button>
         );
     };
 
     return(
-        <Center flex={1} style={{backgroundColor: "#181B2A"}}>
-            <Background />
+        <Center flex={1}>
+            {/* <Background /> */}
             <Image 
                 w={108} h={108} mb={55} borderRadius={50}
                 source={{uri: "https://github.com/hsiang2/movie_image/blob/main/avatar-rat.png?raw=true"}}
@@ -175,7 +170,7 @@ const LoginScreen = ({ navigation }) => {
                         />
                     </HStack>
                 </LinearGradient>
-                <Pressable>
+                <Pressable >
                     <Text color="#E2E0E0" fontSize={12} my={8}>忘記密碼？</Text>
                 </Pressable>
                 {renderButton()}
@@ -183,15 +178,21 @@ const LoginScreen = ({ navigation }) => {
                     onPress={onSignIn}
                 >登入</Button> */}
                 {/* <Text style={{padding: 10}}>{error}</Text> */}
-                <Button
+                
+            </Box>
+            <HStack>
+                    <Text fontSize={12} color="#A0A0A0">尚未建立帳號？</Text>
+                    <Pressable onPress={goToRegister}>
+                        <Text fontSize={12} color="#FFDA7B">註冊</Text>
+                    </Pressable>
+                </HStack>
+                {/* <Button
                     _text={{color: "#445B6C", fontSize: "12"}} 
                     w={314} h={60} mb={4}
                     bgColor="#EFEFEF"
                     onPress={() => navigation.navigate("Register")}
-                >註冊</Button>
-                <Text fontSize={14} color="#E48D8D">{error}</Text>
-            </Box>
-            
+                >註冊</Button> */}
+                <Text fontSize={12} color="#E48D8D" mt={3}>{errMsg}</Text>
             {/* <TextInput
                 labelStyle={{ marginTop: 20 }}
                 label="Email"

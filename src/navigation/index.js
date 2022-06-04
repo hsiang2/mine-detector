@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React from "react";
-import { Pressable, StatusBar, Text, useColorMode, Box } from "native-base";
+import { Pressable, StatusBar, Text, useColorMode, Box, KeyboardAvoidingView } from "native-base";
 import { NavigationContainer, useNavigation } from '@react-navigation/native' 
 import { createStackNavigator, TransitionPresets } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -18,6 +18,7 @@ import SearchScreen from "../screens/SearchScreen";
 import AccountScreen from "../screens/AccountScreen";
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
+import AuthScreen from '../screens/AuthScreen';
 import { selectLogin, selectInfo } from '../redux/accountSlice';
 
 const Stack = createStackNavigator();
@@ -28,22 +29,45 @@ const Navigation = () => {
     const login = useSelector(selectLogin);
      //const info = useSelector(selectInfo)
      //console.log(info);
-    return login? (
-        <NavigationContainer>
-            <StatusBar
-                barStyle={ colorMode == "dark"? "light-content": "dark-content"}
-            />
-            <MyTabs />
-            {/* <StatusBar
-                barStyle={ colorMode == "dark"? "light-content": "dark-content"}
-            />
-            <MyTabs /> */}
-        </NavigationContainer>
-    ) : (
-        <NavigationContainer>
-            <LoginStack />
-        </NavigationContainer>
-    );
+
+     return (
+          <KeyboardAvoidingView
+            keyboardVerticalOffset={Platform.select({ ios: 0, android: -500 })}
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            flex={1}
+          >
+            {
+              !login.hasLogin
+              ? <AuthScreen />
+              : (
+                <NavigationContainer>
+                    <StatusBar
+                        barStyle={ colorMode == "dark"? "light-content": "dark-content"}
+                    />
+                    <MyTabs />
+                </NavigationContainer>          
+              )
+            }
+          </KeyboardAvoidingView>
+      );
+
+
+    // return login? (
+    //     <NavigationContainer>
+    //         <StatusBar
+    //             barStyle={ colorMode == "dark"? "light-content": "dark-content"}
+    //         />
+    //         <MyTabs />
+    //         {/* <StatusBar
+    //             barStyle={ colorMode == "dark"? "light-content": "dark-content"}
+    //         />
+    //         <MyTabs /> */}
+    //     </NavigationContainer>
+    // ) : (
+    //     <NavigationContainer>
+    //         <LoginStack />
+    //     </NavigationContainer>
+    // );
 }
 
 const LoginStack = () => {

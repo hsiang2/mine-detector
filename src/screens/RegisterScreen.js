@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import * as firebase from 'firebase/app';
+//import * as firebase from 'firebase/app';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 //import "firebase/firestore";
-import { doc, setDoc } from "firebase/firestore";
+//import { doc, setDoc } from "firebase/firestore";
 import { TextInput, Modal } from "react-native";
 import { Center, FormControl, Input, Text, WarningOutlineIcon, Button, Image,Box, Pressable, HStack } from "native-base";
 import { useDispatch, useSelector } from "react-redux";
@@ -12,152 +12,108 @@ import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { LinearGradient } from "expo-linear-gradient";
 
-import { addWatchlist, login, setAccountInfo } from "../redux/accountSlice";
-import { selectInfo } from "../redux/accountSlice";
-import { auth, db } from "../../App";
+import { /*login,*/registerAsync, /*setAccountInfo,*/ gotoLogin, selectErrorMsg, selectStatus } from "../redux/accountSlice";
+//import { auth, db } from "../../App";
 import Background from "../components/Background";
 
-//console.log(firebase.auth);
-// const auth = firebase.auth();
-// export {auth}
 require('firebase/firestore');
 
 const RegisterScreen = ({ navigation }) => {
-    //const info = useSelector(selectInfo);
-    //console.log(info.avatar);
+    const dispatch = useDispatch();
+    const errMsg = useSelector(selectErrorMsg);
+    const loginStatus = useSelector(selectStatus);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [name, setName] = useState('');
+
     const [hide, setHide] = useState(true);
-    const [loading, setLoading] = useState(false);
+    //const [loading, setLoading] = useState(false);
     const [modalVisible, setModalVisible] = useState(false)
     const [index, setIndex] = useState(0);
-
-    const [email, setEmail] = useState(null);
-    //const [emailIsError, setEmailIsError] = useState(true);
-    const [password, setPassword] = useState(null);
-    //const [passwordIsError, setPasswordIsError] = useState(true);
-    const [name, setName] = useState(null);
     const [avatar, setAvatar] = useState("https://github.com/hsiang2/movie_image/blob/main/avatar-rat.png?raw=true");
-    //const [nameIsError, setNameIsError] = useState(true);
-    const [error, setError] = useState("");
-
-    const dispatch = useDispatch();
-    // const onSignUp = async () => {
-    //     setError(" ");
-    //     try {
-    //         await createUserWithEmailAndPassword(getAuth(), email, password);
-    //         setEmail("");
-    //         setPassword("");
-    //         setName("");
-    //         setError("");
-    //       } catch (err2) {
-    //         setError(err2.message);
-    //       }
-    // };
+    //const [error, setError] = useState("");
 
     const nameRegex = /^[a-zA-Z]+\w*$/;
     const emailRegex = /\w{3,}@[a-zA-Z_]+\.[a-zA-Z]{2,5}/;
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/
     // /^[a-zA-Z0-9]{8,}$/;
 
-    // useEffect(() => {
-    //     if (!nameIsError && !emailIsError && !passwordIsError)
-    //         dispatch(setAccountInfo({ name, email, password }))
-
-    //     if (email.match(emailRegex)) setEmailIsError(false)
-    //     else setEmailIsError(true);
-
-    //     if (name.match(nameRegex)) setNameIsError(false)
-    //     else setNameIsError(true);
-
-    //     if (password.match(passwordRegex)) setPasswordIsError(false)
-    //     else setNameIsError(true);
-
-    // }, [name, email, password])
-    //const db = getFirestore();
-
-    const onSignUp = async () => {
-        setError(" ");
-        if (!name) {
-            setError("請輸入使用者名稱")
-            return;
-        }
+    // const onSignUp = async () => {
+    //     setError(" ");
+    //     if (!name) {
+    //         setError("請輸入使用者名稱")
+    //         return;
+    //     }
         
-        if (!email || !email.match(emailRegex)) {
-            setError("請輸入有效信箱")
-            return;
-        }
-        // else setEmailIsError(true);
-            //setNameIsError(false)
-        // else setNameIsError(true);
+    //     if (!email || !email.match(emailRegex)) {
+    //         setError("請輸入有效信箱")
+    //         return;
+    //     }
+    //     if (!password || !password.match(passwordRegex)) {
+    //         setError("請輸入至少8碼（包含英文和數字）")
+    //         return;
+    //     }
+    //     setLoading(true);
+    //     try {
+    //         await createUserWithEmailAndPassword(auth, email, password)
+    //             .then((result) => {
+    //                 setDoc(doc(db, "users", auth.currentUser.uid),{
+    //                     name: name,
+    //                     email: email,
+    //                     avatar: avatar, 
+    //                     watchlist: []
+    //                 });
+    //             })
+    //             .catch((err) => {
+    //                 setLoading(false);
+    //                 setError(err.message);
+    //             })
+    //         dispatch(setAccountInfo({ name, email, password, avatar }))
+    //         setError("");
+    //         setEmail("");
+    //         setPassword("");
+    //         setName("");
+    //         dispatch(login());
+    //     } catch(err){
+    //         setLoading(false);
+    //         setError(err.message);
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // }
+    const onRegister = () => {
+        dispatch(registerAsync({ name, email, password, avatar }))
+     }
 
-        if (!password || !password.match(passwordRegex)) {
-            setError("請輸入至少8碼（包含英文和數字）")
-            return;
-        }
-        setLoading(true);
-        //setPasswordIsError(false)
-        // else setNameIsError(true);
-        try {
-            await createUserWithEmailAndPassword(auth, email, password)
-                .then((result) => {
-                    setDoc(doc(db, "users", auth.currentUser.uid),{
-                        name: name,
-                        email: email,
-                        avatar: avatar, 
-                        watchlist: []
-                    });
-                    // db.collection("users")
-                    // .doc(auth.currentUser.uid)
-                    // .set({
-                    //     name,
-                    //     email
-                    // })
-                })
-                .catch((err) => {
-                    setLoading(false);
-                    setError(err.message);
-                })
-            dispatch(setAccountInfo({ name, email, password, avatar }))
-            setError("");
-            setEmail("");
-            setPassword("");
-            setName("");
-            dispatch(login());
-        } catch(err){
-            setLoading(false);
-            setError(err.message);
-        } finally {
-            setLoading(false);
-        }
-        
-        // setEmail("");
-        // setPassword("");
-        // setName("");
-        // setError("");
-    }
+     const goToLogin = () => {
+        dispatch(gotoLogin())
+     }
+
     const renderButton = () => {
-        return loading ? (
+        return /*loading*/(loginStatus == 'loading') ? (
             <Button
                 isLoading _loading={{
                     bgColor: "#FFDA7B",
-                    w: '314', h:'60', mb:'4'
+                    w: '314', h:'60', mb:'8'
                 }}
                 _spinner={{color: "#445B6C"}}
                 
             >註冊</Button>
         ) : (
             <Button
-                onPress={onSignUp} 
+                onPress={onRegister} 
                 _text={{color: "#445B6C", fontSize: "12"}} 
-                w={314} h={60} mb={4}
+                w={314} h={60} mb={8}
                 bgColor="#FFDA7B"
             >註冊</Button>
         );
     };
+
     
     return(
-        <Center flex={1} style={{backgroundColor: "#181B2A"}}>
-            <Background />
-            <Box  mb={58} mt={7}>
+        <Center flex={1} >
+            {/* <Background /> */}
+            <Box  mb={55} mt={7}>
                 <Modal 
                     visible={modalVisible}
                     transparent={true}
@@ -231,7 +187,7 @@ const RegisterScreen = ({ navigation }) => {
                     style={{ 
                         width: 314, height: 60, borderRadius: 5, 
                         borderColor: "#BBCEDF8C", borderWidth: 1, 
-                        overflow: "hidden", marginBottom: 24
+                        overflow: "hidden", marginBottom: 20
                     }}
                 >
                     <HStack>
@@ -258,7 +214,7 @@ const RegisterScreen = ({ navigation }) => {
                         style={{ 
                             width: 314, height: 60, borderRadius: 5, 
                             borderColor: "#BBCEDF8C", borderWidth: 1, 
-                            overflow: "hidden", marginBottom: 24
+                            overflow: "hidden", marginBottom: 20
                         }}
                     >
                     <HStack>
@@ -287,7 +243,7 @@ const RegisterScreen = ({ navigation }) => {
                     style={{ 
                         width: 314, height: 60, borderRadius: 5, 
                         borderColor: "#BBCEDF8C", borderWidth: 1, 
-                        overflow: "hidden", marginBottom: 84
+                        overflow: "hidden", marginBottom: 44
                     }}
                 >
                     <HStack>
@@ -311,11 +267,16 @@ const RegisterScreen = ({ navigation }) => {
                             onPress={() => setHide(!hide)}
                         />
                     </HStack>
-                    
                 </LinearGradient>
                 {renderButton()}
-                <Text fontSize={12} color="#E48D8D">{error}</Text>
             </Box>
+            <HStack>
+                    <Text fontSize={12} color="#A0A0A0">已經建立過帳號？</Text>
+                    <Pressable onPress={goToLogin}>
+                        <Text fontSize={12} color="#FFDA7B">登入</Text>
+                    </Pressable>
+                </HStack>
+                <Text fontSize={12} color="#E48D8D" mt={3}>{errMsg}</Text>
         </Center>
     )
 }

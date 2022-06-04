@@ -1,5 +1,8 @@
 {
   "expo": {
+    "packagerOpts": {
+      "sourceExts": ["cjs"]
+    },
     "name": "09_MINE DETECTOR",
     "slug": "09_mine-detector",
     "version": "1.0.0",
