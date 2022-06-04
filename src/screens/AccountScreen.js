@@ -30,10 +30,10 @@ const AccountScreen = ({navigation}) => {
     //const watchlist = useSelector(selectWatchlist);
     
     const info = useSelector(selectInfo);
-    const [name, setName] = useState();
-    const [email, setEmail] = useState();
-    const [avatar, setAvatar] = useState("");
-    console.log(avatar);
+    const [name, setName] = useState(info.name);
+    //const [email, setEmail] = useState();
+    const [avatar, setAvatar] = useState(info.avatar);
+    //console.log(`"${info.avatar}"`);
 
     const dispatch = useDispatch();
     // const onSignOut = () => {
@@ -43,10 +43,9 @@ const AccountScreen = ({navigation}) => {
     useEffect(() => {
         dispatch(readUserAsync());
      }, [])
-
      useEffect(() => {
         setName(info.name)
-        setEmail(info.email)
+        //setEmail(info.email)
         setAvatar(info.avatar)
      }, [info]);
 
@@ -78,8 +77,8 @@ const AccountScreen = ({navigation}) => {
                 >
                     <Image 
                         w={90} h={90} mb={4} borderRadius={50}
+                        //source={{uri: avatar}}
                         source={{uri: avatar}}
-                        //source={{uri: info.avatar}}
                         alt="avatar"
                     />
                     <Text 
@@ -89,7 +88,7 @@ const AccountScreen = ({navigation}) => {
                         letterSpacing={0.2}
                         fontFamily= "Asap_400Regular"
                     >
-                        {name}
+                        {info.name}
                     </Text>
                 </Box>
                 <Box mt={84}>

@@ -115,7 +115,7 @@ const accountSlice = createSlice({
            })
            .addCase(loginAsync.fulfilled, (state, action) => {
               console.log('in extraReducer fulfilled payload ...')
-              console.log(action.payload);
+              //console.log(action.payload);
               state.status = 'idle';
               state.login.hasLogin = true;
            })
