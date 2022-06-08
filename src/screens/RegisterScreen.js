@@ -29,7 +29,7 @@ const RegisterScreen = ({ navigation }) => {
     const [hide, setHide] = useState(true);
     //const [loading, setLoading] = useState(false);
     const [modalVisible, setModalVisible] = useState(false)
-    const [index, setIndex] = useState(0);
+    const [index, setIndex] = useState(1);
     const [avatar, setAvatar] = useState("https://github.com/hsiang2/movie_image/blob/main/avatar-rat.png?raw=true");
     //const [error, setError] = useState("");
 
@@ -118,7 +118,9 @@ const RegisterScreen = ({ navigation }) => {
                     visible={modalVisible}
                     transparent={true}
                 >
-                    <Center flex={1} background="#00000080">
+                    <Center flex={1} background="#000000E6">
+                        <Text fontSize="24" mb="10" color="#FFF8E8" >
+                        選擇頭像</Text>
                         <HStack>
                             <Pressable
                                 p={2}
@@ -128,9 +130,9 @@ const RegisterScreen = ({ navigation }) => {
                                 }}
                             >
                                 <Image 
-                                    w={90} h={90} mb={4} borderRadius={50}
-                                    borderWidth={index === 1? 1: 0}
-                                    borderColor="black" 
+                                    w={90} h={90} mb={4} borderRadius={50} mx={1}
+                                    borderWidth={index === 1? 3: 0}
+                                    borderColor="#FFF8E8" 
                                     source={{uri: "https://github.com/hsiang2/movie_image/blob/main/avatar-rat.png?raw=true"}}
                                     alt="rat"
                                 />
@@ -143,15 +145,51 @@ const RegisterScreen = ({ navigation }) => {
                                 }}
                             >
                                 <Image 
-                                    w={90} h={90} mb={4} borderRadius={50}
-                                    borderWidth={index === 2? 1: 0}
-                                    borderColor="black"
+                                    w={90} h={90} mb={4} borderRadius={50} mx={1}
+                                    borderWidth={index === 2? 3: 0}
+                                    borderColor="#FFF8E8"
                                     source={{uri: "https://github.com/hsiang2/movie_image/blob/main/avatar-sealion.png?raw=true"}}
                                     alt="sealion"
                                 />
                             </Pressable>
                         </HStack>
+                        <HStack>
+                            <Pressable
+                                p={2}
+                                onPress={() => {
+                                    setIndex(3);
+                                    setAvatar("https://github.com/hsiang2/movie_image/blob/main/avatar-dolphin.png?raw=true")
+                                }}
+                            >
+                                <Image 
+                                    w={90} h={90} mb={4} borderRadius={50} mx={1}
+                                    borderWidth={index === 3? 3: 0}
+                                    borderColor="#FFF8E8"
+                                    source={{uri: "https://github.com/hsiang2/movie_image/blob/main/avatar-dolphin.png?raw=true"}}
+                                    alt="dolphin"
+                                />
+                            </Pressable>
+                            <Pressable
+                                p={2}
+                                onPress={() => {
+                                    setIndex(4);
+                                    setAvatar("https://github.com/hsiang2/movie_image/blob/main/avatar-shepherd.png?raw=true")
+                                }}
+                            >
+                                <Image 
+                                    w={90} h={90} mb={4} borderRadius={50} mx={1}
+                                    borderWidth={index === 4? 3: 0}
+                                    borderColor="#FFF8E8"
+                                    source={{uri: "https://github.com/hsiang2/movie_image/blob/main/avatar-shepherd.png?raw=true"}}
+                                    alt="dolphin"
+                                />
+                            </Pressable>
+                            
+                        </HStack>
                         <Button
+                            mt={10} h={60} w={200}
+                            _text={{color: "#445B6C", fontSize: "12"}} 
+                            bgColor="#FFDA7B"
                             onPress={() => setModalVisible(!modalVisible)}
                         >完成</Button>
                     </Center>
@@ -262,7 +300,7 @@ const RegisterScreen = ({ navigation }) => {
                             value={password} 
                             onChangeText={text => setPassword(text)}
                         />
-                        <Feather name={hide? "eye": "eye-off"} size={20} color="#B9B9B9" 
+                        <Feather name={hide? "eye-off": "eye"} size={20} color="#B9B9B9" 
                             style={{position:"absolute", top: 20, right: 20}}
                             onPress={() => setHide(!hide)}
                         />

@@ -26,13 +26,16 @@ const AccountScreen = ({navigation}) => {
     const { width } = Dimensions.get("window");
     const color = colorMode == "dark"? ["#DDDDDD19", "#F0F3F525"]:["#F2F9FE", "#E8F0F5"];
     const location = colorMode == "dark"? [0,1]: [0.0073, 0.9907];
-    //const { name, avatar } = useSelector(selectInfo);
+    const info = useSelector(selectInfo);
+    
+
     //const watchlist = useSelector(selectWatchlist);
     
-    const info = useSelector(selectInfo);
-    const [name, setName] = useState(info.name);
+   // const info = useSelector(selectInfo);
+    //console.log(info.avatar);
+    const [name, setName] = useState();
     //const [email, setEmail] = useState();
-    const [avatar, setAvatar] = useState(info.avatar);
+    const [avatar, setAvatar] = useState();
     //console.log(`"${info.avatar}"`);
 
     const dispatch = useDispatch();
@@ -56,7 +59,7 @@ const AccountScreen = ({navigation}) => {
         return <AppLoading />
     }
     return(
-        <SafeAreaView style={{backgroundColor: colorMode == 'dark'? "#181B2A": "#ffffff"}}>
+        <SafeAreaView style={{backgroundColor: colorMode == 'dark'? "#181B2A": "#ffffff", flex: 1}}>
             <Background />
             <ScrollView>
                 <Center>
@@ -67,7 +70,7 @@ const AccountScreen = ({navigation}) => {
                         uri={colorMode=="dark"?
                             "https://raw.githubusercontent.com/hsiang2/movie_image/7778a4730db5ec467ac3132bea85af1840d228e2/dark.svg":
                             "https://raw.githubusercontent.com/hsiang2/movie_image/7778a4730db5ec467ac3132bea85af1840d228e2/light.svg"}
-                        opacity={colorMode=="dark"?1:0.5}
+                        opacity={colorMode=="dark"?1:0.3}
                     />
                 </Center>
                 <Box 
@@ -75,6 +78,15 @@ const AccountScreen = ({navigation}) => {
                     style={{position: "absolute"}}
                     alignItems="center"
                 >
+                    {/* {
+                        (info.avatar != null)?
+                        <Image 
+                            w={90} h={90} mb={4} borderRadius={50}
+                            //source={{uri: avatar}}
+                            source={{uri: info.avatar}}
+                            alt="avatar"
+                        />: null
+                    } */}
                     <Image 
                         w={90} h={90} mb={4} borderRadius={50}
                         //source={{uri: avatar}}
@@ -88,17 +100,17 @@ const AccountScreen = ({navigation}) => {
                         letterSpacing={0.2}
                         fontFamily= "Asap_400Regular"
                     >
-                        {info.name}
+                        {name}
                     </Text>
                 </Box>
                 <Box mt={84}>
-                    <Wishlist /*data={watchlist}*/ data={accountData.wishlist} navigation={navigation}/>
+                    <Wishlist /*data={info.watchlist} /*data={accountData.wishlist}*/ navigation={navigation}/>
                 </Box>
                 
                 <FavoriteActorList data={accountData.favoriteActors}/>
                 
                     
-                        <Box
+                        {/* <Box
                             shadowOffset= {{width: 0, height: 4}}
                             shadowRadius= {5}
                             _dark={{
@@ -170,8 +182,8 @@ const AccountScreen = ({navigation}) => {
                                     </HStack>
                                 </HStack>
                             </LinearGradient>    
-                        </Box>
-                <BottomTabBarHeightContext.Consumer>
+                        </Box> */}
+                {/* <BottomTabBarHeightContext.Consumer>
                     {tabBarHeight => (
                         <Button marginBottom= {tabBarHeight}
                             //onPress={() => onSignOut()}
@@ -180,7 +192,7 @@ const AccountScreen = ({navigation}) => {
                             登出
                         </Button>
                     )}
-                </BottomTabBarHeightContext.Consumer>
+                </BottomTabBarHeightContext.Consumer> */}
                 
             </ScrollView>
         </SafeAreaView>

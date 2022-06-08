@@ -43,18 +43,19 @@ const loginAsync = createAsyncThunk(
     }
  );
 
+
 const initialState = {
     info: {
         name: "",
         email: "",
         //password: "",
-        avatar: ""
+        avatar: "https://github.com/hsiang2/movie_image/blob/main/avatar-grey.png?raw=true",
+        watchlist: [],
     },
     login: {
         hasLogin: false,
         hasAccount: true
     },
-    watchlist: [],
     status: 'idle',
     errMsg: '',
 };
@@ -82,30 +83,23 @@ const accountSlice = createSlice({
         gotoLogin: (state) => {
             state.login.hasAccount = true;
         },
-        addWatchlist: (state, action) => {
-            const isSaved = (element) => {
-                return element.title === action.payload.title;
-            }
-            if(state.watchlist.find(isSaved) === undefined){
-                state.watchlist.push(action.payload);
-                //console.log(state.watchlist)
-            } else {
-                //console.log(state.watchlist)
-            }
-            // if(state.watchlist.find(element => element.id === action.payload.id) === undefined){
-            //     state.watchlist.push(action.payload);
-            // }
-        },
-        removeWatchlist: (state, action) => {
-            const isWanted = (element) => {
-                return element.title !== action.payload.title;
-            }
-            state.watchlist = state.watchlist.filter(isWanted);
-            //console.log(state.watchlist)
-        },
-        setWatchlist: (state, action) => {
-            state.watchlist = action.payload;
-        }
+        // addWatchlist: (state, action) => {
+        //     const isSaved = (element) => {
+        //         return element.title === action.payload.title;
+        //     }
+        //     if(state.watchlist.find(isSaved) === undefined){
+        //         state.watchlist.push(action.payload);
+        //     } 
+        // },
+        // removeWatchlist: (state, action) => {
+        //     const isWanted = (element) => {
+        //         return element.title !== action.payload.title;
+        //     }
+        //     state.watchlist = state.watchlist.filter(isWanted);
+        // },
+        // setWatchlist: (state, action) => {
+        //     state.watchlist = action.payload;
+        // }
     },
     extraReducers: (builder) => {
         builder
@@ -150,12 +144,12 @@ const accountSlice = createSlice({
 
 export const selectInfo = (state) => state.account.info;
 export const selectLogin = (state) => state.account.login;
-export const selectWatchlist = (state) => state.account.watchlist;
+//export const selectWatchlist = (state) => state.account.watchlist;
 
 export const selectErrorMsg = (state) => state.account.errMsg;
 export const selectStatus = (state) => state.account.status;
 
-export const { gotoRegister, gotoLogin, setAccountInfo, signOut, /*login, logout,*/ addWatchlist, removeWatchlist,setWatchlist } = accountSlice.actions;
+export const { gotoRegister, gotoLogin, setAccountInfo, signOut, /*login, logout, addWatchlist, removeWatchlist,setWatchlist*/ } = accountSlice.actions;
 
 export { loginAsync, registerAsync, readUserAsync, updateUserAsync }
 

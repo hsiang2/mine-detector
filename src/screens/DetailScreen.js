@@ -15,7 +15,7 @@ import MovieInfo from "../components/MovieInfo";
 import Rated from "../components/Rated";
 //import { db, auth } from "../../App";
 //import { addWatchlist,removeWatchlist, selectWatchlist } from "../redux/accountSlice";
-
+import { selectInfo, readUserAsync, updateUserAsync, setAccountInfo } from "../redux/accountSlice";
 
 const DetailScreen = ({route, navigation}) => {
     const { image,
@@ -31,7 +31,79 @@ const DetailScreen = ({route, navigation}) => {
           } = route.params;
     const { colorMode } = useColorMode();
     //const watchlist = useSelector(selectWatchlist);
-    const [isPressed, setIsPressed] = useState(false);
+    const info = useSelector(selectInfo);
+    //onst [watchlist, setWatchlist] = useState(info.watchlist);
+
+    const [isPressed, setIsPressed] = useState(() => {
+        const findSame = (element) => {
+            return element.title === title;
+        }
+        if (info.watchlist.find(findSame) === undefined){
+            return (false) 
+        } else { return (true)}
+    });
+
+
+    
+
+    const dispatch = useDispatch();
+
+
+    const isSaved = () => {
+        const findSame = (element) => {
+            return element.title === title;
+        }
+        if (info.watchlist.find(findSame) === undefined){
+            setIsPressed(false) 
+        } else { setIsPressed(true)}
+    }
+
+    const findSame = (element) => {
+        return element.title === title;
+    }
+    const addWatchlist = () => {
+        //setWatchlist(watchlist.concat(route.params))
+        // if(watchlist.find(findSame) === undefined){
+        //     setWatchlist(watchlist.push(route.params))
+        // } 
+        if (info.watchlist.find(findSame) === undefined){
+            dispatch(updateUserAsync({ watchlist: info.watchlist.concat(route.params) }));
+        }
+        
+        //console.log(info.watchlist.concat(route.params))
+    }
+    const removeWatchlist = () => {
+        const isWanted = (element) => {
+            return element.title !== title;
+        }
+        //setWatchlist(watchlist.filter(isWanted));
+        dispatch(updateUserAsync({ watchlist:  info.watchlist.filter(isWanted)}));
+    }
+   
+  
+    useEffect(() => {
+        dispatch(readUserAsync());
+        //isSaved();
+    }, [])
+    
+    useEffect(() => {
+        isSaved();
+        return () => {
+            setIsPressed();
+        }
+    }, [info.watchlist])
+    
+    
+    //  useEffect(() => {
+    //     //setWatchlist(info.watchlist);
+    //     dispatch(updateUserAsync({ watchlist }));
+    //  }, [watchlist]);
+
+    //  useEffect(() => {
+    //     setWatchlist(info.watchlist);
+    //     isSaved();
+    //  }, [info])
+
         // () => {
         //     const isSaved = (element) => {
         //         return element.title === route.params.title;
@@ -109,11 +181,13 @@ const DetailScreen = ({route, navigation}) => {
                             </Box>
                             <Pressable onPress={() => {
                                 if (isPressed){
+                                    removeWatchlist();
                                     setIsPressed(false);
                                     //dispatch(removeWatchlist(route.params));
                         
                                     //console.log(route)
                                 } else {
+                                    addWatchlist();
                                     setIsPressed(true);
                                     //dispatch(addWatchlist(route.params));
                                     //console.log(route)

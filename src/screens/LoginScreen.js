@@ -15,7 +15,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { selectInfo } from "../redux/accountSlice";
 //import { auth, db } from "../../App";
 import Background from "../components/Background"; 
-import { gotoRegister, loginAsync, selectErrorMsg, selectStatus } from "../redux/accountSlice"
+import { gotoRegister, loginAsync, selectErrorMsg, selectStatus, readUserAsync } from "../redux/accountSlice"
 
 const LoginScreen = ({ navigation }) => {
     const dispatch = useDispatch();
@@ -28,7 +28,8 @@ const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     //const [error, setError] = useState("");
-    
+
+    const info = useSelector(selectInfo);
 
     const goToRegister = () => {
         dispatch(gotoRegister())
@@ -166,7 +167,7 @@ const LoginScreen = ({ navigation }) => {
                                     value={password} 
                                     onChangeText={text => setPassword(text)}
                                 />
-                                <Feather name={hide? "eye": "eye-off"} size={20} color="#B9B9B9" 
+                                <Feather name={hide? "eye-off": "eye"} size={20} color="#B9B9B9" 
                                     style={{position:"absolute", top: 20, right: 20}}
                                     onPress={() => setHide(!hide)}
                                 />

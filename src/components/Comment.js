@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { BlurView } from "expo-blur";
 import { Box, HStack, Text, Image, useColorMode } from "native-base";
 import { LinearGradient } from "expo-linear-gradient";
@@ -22,6 +22,19 @@ const Comment = ({comment, isLarge}) => {
         colorMode=="dark"?[0.0073, 0.4687,0.9341]:[0, 0.276, 0.5573, 0.8073, 1];
     const end = isLarge? {x:0, y: 1}: {x: 1, y: 0}
 
+    const [textShown, setTextShown] = useState(false);
+    //const [lengthMore, setlengthMore] = useState(false);
+    //const [ loadMore, setLoadMore ] = useState(false);
+    const [ numOfLines, setNumOfLines ] = useState(0);
+
+    const onTextLayout = useCallback(e => {
+        if(numOfLines == 0) setNumOfLines(e.nativeEvent.lines.length);
+        //setlengthMore(e.nativeEvent.lines.length > 1)
+    });
+    const toggleNumberOfLines = () => {
+        setTextShown(!textShown);
+    }
+    //console.log(lengthMore);
     // let [fontsLoaded] = useFonts({
     //     Asap_400Regular
     // });
@@ -31,7 +44,7 @@ const Comment = ({comment, isLarge}) => {
 
     return(
         <Box 
-            w={width} h={167} borderWidth={1} mr={mr} mb={mb}
+            w={width} /*h={167}*/ borderWidth={1} mr={mr} mb={mb}
              borderRadius={5} 
             _dark={{borderColor: "#6477888C"}}
             _light={{borderColor: "#BFE1E980"}}
@@ -69,14 +82,36 @@ const Comment = ({comment, isLarge}) => {
                         </Box>
                     </HStack>
                     <Text 
-                        height={60} mt={4} fontSize={12}
+                        flex={1}
+                        /*height={60}*/ my={4} fontSize={12}
                         letterSpacing={0.2}
                         _dark={{color: "#B7B7B7"}}
                         _light={{color: "#808080"}}
-                        
+                        onTextLayout={onTextLayout}
+                        //numberOfLines={textShown? undefined: 1}
+                        numberOfLines={numOfLines == 0? null:textShown? numOfLines: 5}
+                        //numberOfLines={5}
+                        //ellipsizeMode="end"
                     >
                         {comment.content}
                     </Text>
+                    {
+                        (numOfLines > 5) &&
+                        <Text 
+                            onPress={toggleNumberOfLines}
+                            alignSelf="flex-end"
+                            fontSize={12}
+                            _dark={{color: "#989898"}}
+                            _light={{color: "#A8A8A8"}}
+                        >{textShown? "隱藏":"顯示更多"}</Text>
+                        // lengthMore ? <Text 
+                        //     onPress={toggleNumberOfLines}
+                        //     alignSelf="flex-end"
+                        //     fontSize={12}
+                        //     _dark={{color: "#989898"}}
+                        //     _light={{color: "#A8A8A8"}}
+                        // >{textShown? "隱藏":"顯示更多"}</Text>:null
+                    }
                     <Text 
                         fontSize={12} letterSpacing={0.5}
                         _dark={{color: "#989898"}}

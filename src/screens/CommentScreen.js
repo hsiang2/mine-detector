@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from "react-redux";
 import CommentList from "../components/CommentList";
 import Background from "../components/Background";
 import Slider from "../components/Slider";
-import { db } from "../../App";
+import { db } from "../api/firebase";
 import { selectInfo } from "../redux/accountSlice";
 import { selectSlider, setSlider } from "../redux/sliderSlice";
 import { async } from "@firebase/util";
@@ -59,7 +59,7 @@ const CommentScreen = ({route}) => {
                 avatar: avatar}) }, {merge: true});
         }
         dispatch(setSlider([0]));
-        dispatch(update());
+        //dispatch(update());
         setComment("");
     }
 
@@ -122,14 +122,14 @@ const CommentScreen = ({route}) => {
                 <BlurView 
                     tint={colorMode == "dark"? "dark": "light"} 
                     intensity={60} style={{ position: "absolute",
-                    bottom: tabBarHeight, height: 66, width: width}} 
+                    bottom: tabBarHeight, /*height: 66,*/ width: width}} 
                 />
                 <Box
                     position="absolute"
                     bottom={tabBarHeight}
-                    _dark={{backgroundColor: "#2A3B4B80"}} 
-                    _light={{backgroundColor: "#E7F9FD80"}}
-                    h={66} w={width} pt={2}
+                    _dark={{backgroundColor: "#2A3B4BB3"}} 
+                    _light={{backgroundColor: "#E7F9FDB3"}}
+                    /*h={66}*/ w={width} pt={2}
                 >
                     <HStack justifyContent="space-between" px={5} alignItems="center">
                         <Pressable
@@ -150,15 +150,21 @@ const CommentScreen = ({route}) => {
                             />
                         </Pressable>
                         <Slider visible={sliderVisible}/>
-                        <HStack alignItems="center"  w={280} height={50} mr={2} display={inputVisible}>
+                        <HStack alignItems="center"  w={280} /*height={50}*/ mr={2} my={2} display={inputVisible}>
                             <Input 
-                                variant="rounded"
+                                //variant="rounded"
+                                //py={3}
+                                borderRadius={50}
                                 placeholder= "輸入評論..."
+                                //h="90%"
                                 w="100%"
                                 px={4}
+                                _focus={{borderColor: "#CAEAF1"}}
                                 multiline
                                 _light={{borderColor: "#5A7D9D", color: "#5A7D9D"}}
+                                borderColor="#C4C4C4"
                                 value={comment}
+                                placeholderTextColor="#B9B9B9"
                                 onChangeText={text => setComment(text)}
                             />
                             </HStack>

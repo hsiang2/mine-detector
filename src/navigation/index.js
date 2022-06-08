@@ -20,6 +20,8 @@ import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import AuthScreen from '../screens/AuthScreen';
 import { selectLogin, selectInfo } from '../redux/accountSlice';
+import EditScreen from '../screens/EditScreen';
+import SettingScreen from '../screens/SettingScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -27,6 +29,7 @@ const Tab = createBottomTabNavigator();
 const Navigation = () => {
     const { colorMode } = useColorMode();
     const login = useSelector(selectLogin);
+    //console.log(login.hasLogin);
      //const info = useSelector(selectInfo)
      //console.log(info);
 
@@ -145,7 +148,10 @@ const MyTabs = () => {
                 },
             })}
         >
-            <Tab.Screen name='HomePage' component={MovieStack} />
+            <Tab.Screen name='HomePage' component={MovieStack} 
+                //options={{unmountOnBlur: true}}
+                //listeners={({navigation}) => ({blur: () => navigation.setParams({ screen: undefined })})}
+            />
             <Tab.Screen name='RankingsPage' component={RankingsScreen} />
             <Tab.Screen name='SearchPage' component={SearchScreen} />
             <Tab.Screen name='AccountPage' component={AccountStack} />
@@ -175,6 +181,7 @@ const MovieStack = ({navigation}) => {
                 name="Detail"
                 component={DetailScreen}
                 options={{
+                    //unmountOnBlur: true,
                     headerRight: () => (
                         <Pressable
                             onPress={() => navigation.goBack()}
@@ -232,12 +239,43 @@ const AccountStack = ({navigation}) => {
                         <AntDesign 
                             name="setting" size={24} 
                             color={colorMode=="dark"? "#EDF0F5": "#243243"}
-                            style={{paddingTop: 20, paddingRight: 40}}
+                            style={{paddingTop: 20, paddingRight: 16}}
+                            onPress={() => navigation.navigate('Setting')}
                         />
                     ),
                     title: null,
                 }}
             /> 
+            <Stack.Screen 
+                name='Setting'
+                component={SettingScreen}
+                options={{
+                    title: "設定",
+                    headerTintColor: colorMode=="dark"? "#EDF0F5": "#243243",
+                    headerLeft: () => (
+                        <AntDesign 
+                            name="left" size={24}
+                            style={{marginLeft: 16}}
+                            color={colorMode=="dark"? "#EDF0F5": "#243243"}
+                            onPress={()=> navigation.navigate('Account')}
+                    />)
+                }}
+            />
+             <Stack.Screen 
+                name='Edit'
+                component={EditScreen}
+                options={{
+                    title: "編輯資料",
+                    headerTintColor: colorMode=="dark"? "#EDF0F5": "#243243",
+                    headerLeft: () => (
+                        <AntDesign 
+                            name="left" size={24}
+                            style={{marginLeft: 16}}
+                            color={colorMode=="dark"? "#EDF0F5": "#243243"}
+                            onPress={()=> navigation.navigate('Setting')}
+                    />)
+                }}
+            />
             <Stack.Screen 
                 name="Detail"
                 component={DetailScreen}
