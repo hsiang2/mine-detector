@@ -52,12 +52,12 @@ const AccountScreen = ({navigation}) => {
         setAvatar(info.avatar)
      }, [info]);
 
-    let [fontsLoaded] = useFonts({
-        Asap_400Regular
-    });
-    if (!fontsLoaded) {
-        return <AppLoading />
-    }
+    // let [fontsLoaded] = useFonts({
+    //     Asap_400Regular
+    // });
+    // if (!fontsLoaded) {
+    //     return <AppLoading />
+    // }
     return(
         <SafeAreaView style={{backgroundColor: colorMode == 'dark'? "#181B2A": "#ffffff", flex: 1}}>
             <Background />
@@ -98,7 +98,7 @@ const AccountScreen = ({navigation}) => {
                         _dark={{color: "#F2F1F1"}} 
                         _light={{color: "#445B6C"}}
                         letterSpacing={0.2}
-                        fontFamily= "Asap_400Regular"
+                        //fontFamily= "Asap_400Regular"
                     >
                         {name}
                     </Text>

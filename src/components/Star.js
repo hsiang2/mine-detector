@@ -5,9 +5,9 @@ import { useFonts, Asap_400Regular } from "@expo-google-fonts/asap";
 
 
 const Star = ({star}) => {
-    let [fontsLoaded] = useFonts({
-        Asap_400Regular
-    });
+    // let [fontsLoaded] = useFonts({
+    //     Asap_400Regular
+    // });
     const cheese = <Image 
                         w={3} h={3} alt="cheese icon"
                         source={{uri: "https://github.com/hsiang2/movie_image/blob/main/ic_cheese.png?raw=true"}} 
@@ -17,15 +17,15 @@ const Star = ({star}) => {
                     source={{uri: "https://github.com/hsiang2/movie_image/blob/main/ic_bomb.png?raw=true"}}
                 />;
 
-    if (!fontsLoaded) {
-        return <AppLoading />
-    }
+    // if (!fontsLoaded) {
+    //     return <AppLoading />
+    // }
     return(
         <HStack alignItems="center">
             {star >= 5 ? cheese: bomb}
             <Text 
                 fontSize={12} ml={1} letterSpacing={0.2}
-                fontFamily= "Asap_400Regular"
+                //fontFamily= "Asap_400Regular"
                 _dark={{
                     color: star >= 5 ? "#FFDA7B": "#E2E0E0"
                 }}

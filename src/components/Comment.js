@@ -74,7 +74,7 @@ const Comment = ({comment, isLarge}) => {
                                 letterSpacing={0.2}
                                 _dark={{color: "#E8E8E8"}}
                                 _light={{color: "#243243"}}
-                                fontFamily= "Asap_400Regular"
+                                //fontFamily= "Asap_400Regular"
                             >
                                 {comment.user}
                             </Text>
@@ -116,7 +116,7 @@ const Comment = ({comment, isLarge}) => {
                         fontSize={12} letterSpacing={0.5}
                         _dark={{color: "#989898"}}
                         _light={{color: "#A8A8A8"}}
-                        fontFamily= "Asap_400Regular"
+                        //fontFamily= "Asap_400Regular"
                     >
                         {comment.date}
                     </Text>

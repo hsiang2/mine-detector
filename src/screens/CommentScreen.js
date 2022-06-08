@@ -66,10 +66,10 @@ const CommentScreen = ({route}) => {
     
 
     return(
-        <KeyboardAvoidingView
-            behavior= { Platform.OS == 'ios' ? "padding": "height"}
-            flex={1}
-        >
+        // <KeyboardAvoidingView
+        //     behavior= { Platform.OS == 'ios' ? "padding": "height"}
+        //     flex={1}
+        // >
             <SafeAreaView backgroundColor={colorMode=="dark"? "#181B2A": "#ffffff"} flex={1}> 
                 <Background />
                 <Box 
@@ -175,7 +175,7 @@ const CommentScreen = ({route}) => {
                     </HStack>
                 </Box>
             </SafeAreaView>
-        </KeyboardAvoidingView>
+        //</KeyboardAvoidingView>
         
     );
 }

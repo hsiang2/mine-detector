@@ -6,12 +6,12 @@ import { useFonts, Asap_400Regular } from "@expo-google-fonts/asap";
 
 const ActorDetail = ({actor}) => {
     const {colorMode} = useColorMode();
-    let [fontsLoaded] = useFonts({
-        Asap_400Regular
-    });
-    if (!fontsLoaded) {
-        return <AppLoading />
-    }
+    // let [fontsLoaded] = useFonts({
+    //     Asap_400Regular
+    // });
+    // if (!fontsLoaded) {
+    //     return <AppLoading />
+    // }
     return(
         <HStack mr={29}>
             <Box  h={39} borderLeftRadius={8} borderRightRadius={50} overflow="hidden">
@@ -31,7 +31,7 @@ const ActorDetail = ({actor}) => {
                         fontSize={12} mb={-0.5}
                         _dark={{color: "#F2F1F1"}}
                         _light={{color: "#243243"}}
-                        fontFamily= "Asap_400Regular"
+                        //fontFamily= "Asap_400Regular"
                     >
                         {actor.title}
                     </Text>
@@ -40,7 +40,7 @@ const ActorDetail = ({actor}) => {
                         fontSize={12}
                         _dark={{color: "#B9B9B9"}}
                         _light={{color: "#959595"}}
-                        fontFamily= "Asap_400Regular"
+                        //fontFamily= "Asap_400Regular"
                     >
                         {actor.role}
                     </Text>

@@ -5,12 +5,12 @@ import { useFonts, Asap_400Regular } from "@expo-google-fonts/asap";
 
 
 const MovieInfo = ({data, title}) => {
-    let [fontsLoaded] = useFonts({
-        Asap_400Regular
-    });
-    if (!fontsLoaded) {
-        return <AppLoading />
-    }
+    // let [fontsLoaded] = useFonts({
+    //     Asap_400Regular
+    // });
+    // if (!fontsLoaded) {
+    //     return <AppLoading />
+    // }
     return(
         <HStack>
             <Box 
@@ -27,7 +27,7 @@ const MovieInfo = ({data, title}) => {
                     {title}
                 </Text>
                 <Text
-                    fontFamily="Asap_400Regular"
+                    //fontFamily="Asap_400Regular"
                      fontSize={12} letterSpacing={0.5}
                      _dark={{color: "#CCCCCC"}}
                      _light={{color: "#959595"}}

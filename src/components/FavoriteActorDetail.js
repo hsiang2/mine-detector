@@ -8,12 +8,12 @@ import { useFonts, Asap_400Regular } from "@expo-google-fonts/asap";
 const FavoriteActorDetail = ({actor}) => {
     const firstName = actor.title.slice(0, actor.title.indexOf(' '));
     const lastName = actor.title.slice(actor.title.indexOf(' ')+1);
-    let [fontsLoaded] = useFonts({
-        Asap_400Regular
-    });
-    if (!fontsLoaded) {
-        return <AppLoading />
-    }
+    // let [fontsLoaded] = useFonts({
+    //     Asap_400Regular
+    // });
+    // if (!fontsLoaded) {
+    //     return <AppLoading />
+    // }
     return(
         <Box mr={5}>
             <ImageBackground 
@@ -31,7 +31,7 @@ const FavoriteActorDetail = ({actor}) => {
                         fontSize={12} 
                         color= "#E8E8E8"
                         letterSpacing={0.2}
-                        fontFamily="Asap_400Regular"
+                        //fontFamily="Asap_400Regular"
                         lineHeight={13}
                         numberOfLines={2}
                     >
