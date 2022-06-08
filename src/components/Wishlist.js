@@ -9,6 +9,7 @@ import { selectInfo } from "../redux/accountSlice";
 const Wishlist = ({data, navigation}) => {
     const {colorMode} = useColorMode();
     const { watchlist } = useSelector(selectInfo);
+    //console.log(watchlist);
     //const watchlist = useSelector(selectWatchlist);
     const renderItem = ({item}) => (<WishlistDetail movie={item} navigation={navigation}/>)
     return (

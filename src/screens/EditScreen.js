@@ -9,7 +9,7 @@ import { selectInfo, readUserAsync, updateUserAsync } from "../redux/accountSlic
 import Background from "../components/Background";
 import { backgroundColor } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
 
-const EditScreen = () => {
+const EditScreen = ({navigation}) => {
     const info = useSelector(selectInfo);
     const [name, setName] = useState();
     const [email, setEmail] = useState();
@@ -127,7 +127,7 @@ const EditScreen = () => {
                                     _text={{color: "#445B6C", fontSize: "12"}} 
                                     bgColor="#FFDA7B"
                                     onPress={() => setModalVisible(!modalVisible)}
-                                >完成</Button>
+                                >確認</Button>
                             </Center>
                             
                         </Modal>
@@ -174,7 +174,10 @@ const EditScreen = () => {
                     <Button _text={{color: "#445B6C", fontSize: "12"}} 
                         w={314} h={60} mt={44}
                         bgColor="#FFDA7B"
-                        onPress={onUpdate}
+                        onPress={() => {
+                            onUpdate();
+                            navigation.navigate('Setting')
+                        }}
                     >
                     更新
                     </Button>

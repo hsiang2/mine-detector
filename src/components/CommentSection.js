@@ -4,7 +4,7 @@ import { TabView, SceneMap, TabBar } from 'react-native-tab-view'
 import { useColorMode } from "native-base";
 import CommentSectionDetail from "./CommentSectionDetail";
 import { doc, onSnapshot } from "firebase/firestore";
-import { Box, FlatList, Text, Pressable } from "native-base";
+import { Box, FlatList, Text, Pressable, Center, Image } from "native-base";
 import Comment from "./Comment";
 import { db } from "../api/firebase";
 
@@ -33,6 +33,33 @@ const CommentSection = ({navigation, movie}) => {
         return (() => { unsubscribe();})
     }, [])
     const CommentRoute = () => (
+        (data.length == 0)?
+        <Box flex={1}>
+            <Pressable 
+                mt={15} mb={18} mr={30} alignItems="flex-end" 
+                onPress={() => navigation.navigate('Comment', {isSpoiler: false, movie})}
+            >
+                <Text 
+                    fontSize={14} letterSpacing={0.2}
+                    _dark={{color: "#FFDA7B"}}
+                    _light={{color: "#D99F3E"}}
+                >
+                    前往留言
+                </Text>
+            </Pressable>
+            <Center flex={1}>
+                <Image 
+                    w={77} h={50} alt="logo" opacity={0.5}
+                    source={{uri: "https://github.com/hsiang2/movie_image/blob/main/rat-grey.png?raw=true"}}
+                />
+                <Text 
+                    fontSize={12}
+                    _dark={{color: "#989898"}}
+                    _light={{color: "#A8A8A8"}}
+                >尚無留言</Text>
+            </Center>
+        </Box>
+        :
         <Box flex={1} >
             <Pressable 
                 mt={15} mb={18} mr={30} alignItems="flex-end" 
@@ -59,6 +86,33 @@ const CommentSection = ({navigation, movie}) => {
         </Box>
     );
     const SpoilerCommentRoute = () => (
+        (spoilerData.length == 0)?
+        <Box flex={1}>
+            <Pressable 
+                mt={15} mb={18} mr={30} alignItems="flex-end" 
+                onPress={() => navigation.navigate('Comment', {isSpoiler: true, movie})}
+            >
+                <Text 
+                    fontSize={14} letterSpacing={0.2}
+                    _dark={{color: "#FFDA7B"}}
+                    _light={{color: "#D99F3E"}}
+                >
+                    前往留言
+                </Text>
+            </Pressable>
+            <Center flex={1}>
+                <Image 
+                    w={77} h={50} alt="logo" opacity={0.5}
+                    source={{uri: "https://github.com/hsiang2/movie_image/blob/main/rat-grey.png?raw=true"}}
+                />
+                <Text 
+                    fontSize={12}
+                    _dark={{color: "#989898"}}
+                    _light={{color: "#A8A8A8"}}
+                >尚無留言</Text>
+            </Center>
+            
+        </Box>:
         <Box flex={1} >
             <Pressable 
                 mt={15} mb={18} mr={30} alignItems="flex-end" 

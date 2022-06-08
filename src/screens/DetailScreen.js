@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Box, HStack, Image, ScrollView, Text, useColorMode } from "native-base";
+import React, { useEffect, useRef, useState } from "react";
+import { Box, HStack, Image, ScrollView, Text, useColorMode, Pressable } from "native-base";
 import { BottomTabBarHeightContext } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Pressable } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
+import LottieView from "lottie-react-native";
 //import { doc, updateDoc } from "firebase/firestore";
 
 import ActorList from "../components/ActorList";
@@ -34,28 +34,44 @@ const DetailScreen = ({route, navigation}) => {
     const info = useSelector(selectInfo);
     //onst [watchlist, setWatchlist] = useState(info.watchlist);
 
+    const animation = useRef(null);
+    const onPress = () => {
+        if(isPressed){
+            animation.current.play();
+            console.log("add")
+        } else {
+            animation.current.reset();
+            console.log("remove")
+        }   
+    }
+
     const [isPressed, setIsPressed] = useState(() => {
         const findSame = (element) => {
             return element.title === title;
         }
         if (info.watchlist.find(findSame) === undefined){
+            //animation.current.reset();
             return (false) 
-        } else { return (true)}
+        } else { 
+            //animation.current.play();
+            return (true)
+        }
     });
-
-
-    
-
     const dispatch = useDispatch();
 
+    
 
     const isSaved = () => {
         const findSame = (element) => {
             return element.title === title;
         }
         if (info.watchlist.find(findSame) === undefined){
+            animation.current.reset();
             setIsPressed(false) 
-        } else { setIsPressed(true)}
+        } else { 
+            animation.current.play();
+            setIsPressed(true)
+        }
     }
 
     const findSame = (element) => {
@@ -85,13 +101,24 @@ const DetailScreen = ({route, navigation}) => {
         dispatch(readUserAsync());
         //isSaved();
     }, [])
-    
     useEffect(() => {
-        isSaved();
-        return () => {
-            setIsPressed();
-        }
-    }, [info.watchlist])
+        //onPress();
+        if(isPressed){
+            animation.current.play();
+            console.log("added")
+        } else {
+            animation.current.reset();
+            console.log("removed")
+        }   
+        onPress();
+    }, [])
+    // useEffect(() => {
+    //     isSaved();
+        
+    //     return () => {
+    //         setIsPressed();
+    //     }
+    // }, [info.watchlist])
     
     
     //  useEffect(() => {
@@ -179,27 +206,56 @@ const DetailScreen = ({route, navigation}) => {
                                 </Text>
                                 <Star star={star.toFixed(1)}/>
                             </Box>
-                            <Pressable onPress={() => {
+                            {/* <Pressable onPress={() => {
                                 if (isPressed){
                                     removeWatchlist();
                                     setIsPressed(false);
-                                    //dispatch(removeWatchlist(route.params));
                         
                                     //console.log(route)
                                 } else {
                                     addWatchlist();
                                     setIsPressed(true);
-                                    //dispatch(addWatchlist(route.params));
-                                    //console.log(route)
                                 }
-                                // setIsPressed(!isPressed)
-                                // isPressed?dispatch(addWatchlist(route))
-                                // :dispatch(removeWatchlist(route))
                             }}>
                                 < Ionicons 
                                     name={isPressed? "bookmark": "bookmark-outline"} 
                                     color={colorMode == "dark"?"#FFDA7B": "#D99F3ED9"}
                                     size={28} style={{paddingTop: 5}}
+                                />
+                            </Pressable> */}
+                            <Pressable h={10} w={10} pt={5} justifyContent="center" alignItems="center" 
+                                onPress={() => {
+                                    // setIsPressed((prev) => !prev)
+                                    // if (isPressed){
+                                    //     addWatchlist();
+                                    //     // setIsPressed(false);
+                                    //     onPress();
+                                    //     console.log("add")
+                                    // } else {
+                                    //     removeWatchlist();
+                                    //     // setIsPressed(true);
+                                    //     onPress();
+                                    //     console.log("remove")
+                                    // }
+                                    if (isPressed){
+                                        removeWatchlist();
+                                        setIsPressed(false);
+                                        animation.current.reset();
+                                        //onPress();
+                                        //console.log("remove")
+                                    } else {
+                                        addWatchlist();
+                                        setIsPressed(true);
+                                        animation.current.play();
+                                        //console.log("add")
+                                        //onPress();
+                                    }
+                                }}>
+                                <LottieView 
+                                    ref={animation}
+                                    source={require("../json/saveIcon.json")}
+                                    loop={false} //style={{width: 200, height: 200 }}
+                                    speed={2}
                                 />
                             </Pressable>
                             

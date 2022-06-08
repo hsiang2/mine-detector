@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, Box, useColorMode, Center, HStack, Button, Pressable } from "native-base";
 import { SafeAreaView } from "react-native";
+import { useDispatch } from "react-redux";
 import { LinearGradient } from "expo-linear-gradient";
 import Toggle from 'react-native-toggle-element'
 import Ionicons from "react-native-vector-icons/Ionicons"
@@ -9,6 +10,7 @@ import Background from "../components/Background";
 import { signOut } from "../redux/accountSlice";
 
 const SettingScreen = ({navigation}) => {
+    const dispatch = useDispatch();
     const { colorMode, toggleColorMode } = useColorMode();
     const color = colorMode == "dark"? 
             ["#38425870", "#384258", "#38425854"]:
