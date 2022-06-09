@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, Box, useColorMode, Center, HStack, Button, Pressable } from "native-base";
+import { Text, Box, useColorMode, HStack, Pressable } from "native-base";
 import { SafeAreaView } from "react-native";
 import { useDispatch } from "react-redux";
 import { LinearGradient } from "expo-linear-gradient";
@@ -20,20 +20,7 @@ const SettingScreen = ({navigation}) => {
     
     return(
         <SafeAreaView style={{backgroundColor: colorMode == 'dark'? "#181B2A": "#ffffff", flex: 1}}>
-            <Background />
-            {/* <Text 
-                _dark={{color: "#F4F4F4"}}
-                _light={{color: "#445B6C"}}
-                fontSize={20}
-                letterSpacing={0.2}
-                mt={5}
-                mb={100}
-                alignSelf="center"
-
-            >
-                設定
-            </Text> */}
-            
+            <Background />        
             <Pressable
                 shadowOffset= {{width: 0, height: 4}}
                 shadowRadius= {5}

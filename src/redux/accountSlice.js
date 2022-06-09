@@ -67,16 +67,10 @@ const accountSlice = createSlice({
         setAccountInfo: (state, action) => {
             state.info= action.payload;
         },
-        // login: (state) => {
-        //     state.login.hasLogin = true;
-        // },
         signOut: (state) => {
             logout();
             state.login.hasLogin = false;
          },
-        // logout: (state) => {
-        //     state.login.hasLogin = false;
-        // },
         gotoRegister: (state) => {
             state.login.hasAccount = false;
         },

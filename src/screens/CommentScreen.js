@@ -4,10 +4,10 @@ import { Box, Center, HStack, ScrollView, Text, useColorMode, Image, View,Pressa
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import { SafeAreaView, } from "react-native-safe-area-context";
-import { Dimensions, Platform } from "react-native";
+import { Dimensions } from "react-native";
 import { BlurView } from "expo-blur";
 import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
-import { doc, setDoc, serverTimestamp, arrayUnion, updateDoc } from "firebase/firestore";
+import { doc, setDoc, arrayUnion } from "firebase/firestore";
 import { useSelector, useDispatch } from "react-redux"; 
 
 import CommentList from "../components/CommentList";
@@ -16,12 +16,9 @@ import Slider from "../components/Slider";
 import { db } from "../api/firebase";
 import { selectInfo } from "../redux/accountSlice";
 import { selectSlider, setSlider } from "../redux/sliderSlice";
-import { async } from "@firebase/util";
-import { update } from "../redux/commentSlice";
 
 const CommentScreen = ({route}) => {
     const {isSpoiler, movie} = route.params;
-    //console.log(route);
     const [customStyleIndex, setCustomStyleIndex] = isSpoiler?useState(1): useState(0);
     const handleCustomIndexSelect = (index) => {
         setCustomStyleIndex(index);
@@ -38,8 +35,6 @@ const CommentScreen = ({route}) => {
     const { name, avatar } = useSelector(selectInfo);
     const slider = useSelector(selectSlider);
     const dispatch = useDispatch();
-    //const spoiler = isSpoiler?"spoiler":"noSpoiler";
-    //console.log(slider[0])
     
     const commentRef = doc(db, "comments", movie);
     const submit = () => {
@@ -66,10 +61,6 @@ const CommentScreen = ({route}) => {
     
 
     return(
-        // <KeyboardAvoidingView
-        //     behavior= { Platform.OS == 'ios' ? "padding": "height"}
-        //     flex={1}
-        // >
             <SafeAreaView backgroundColor={colorMode=="dark"? "#181B2A": "#ffffff"} flex={1}> 
                 <Background />
                 <Box 
@@ -175,8 +166,6 @@ const CommentScreen = ({route}) => {
                     </HStack>
                 </Box>
             </SafeAreaView>
-        //</KeyboardAvoidingView>
-        
     );
 }
 

@@ -1,11 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Box, HStack, Image, ScrollView, Text, useColorMode, Pressable } from "native-base";
 import { BottomTabBarHeightContext } from "@react-navigation/bottom-tabs";
-import Ionicons from "react-native-vector-icons/Ionicons";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useDispatch, useSelector } from "react-redux";
 import LottieView from "lottie-react-native";
-//import { doc, updateDoc } from "firebase/firestore";
 
 import ActorList from "../components/ActorList";
 import CommentSection from "../components/CommentSection";
@@ -13,9 +11,7 @@ import Background from "../components/Background";
 import Star from "../components/Star";
 import MovieInfo from "../components/MovieInfo";
 import Rated from "../components/Rated";
-//import { db, auth } from "../../App";
-//import { addWatchlist,removeWatchlist, selectWatchlist } from "../redux/accountSlice";
-import { selectInfo, readUserAsync, updateUserAsync, setAccountInfo } from "../redux/accountSlice";
+import { selectInfo, readUserAsync, updateUserAsync } from "../redux/accountSlice";
 
 const DetailScreen = ({route, navigation}) => {
     const { image,
@@ -30,18 +26,14 @@ const DetailScreen = ({route, navigation}) => {
             actors,
           } = route.params;
     const { colorMode } = useColorMode();
-    //const watchlist = useSelector(selectWatchlist);
     const info = useSelector(selectInfo);
-    //onst [watchlist, setWatchlist] = useState(info.watchlist);
 
     const animation = useRef(null);
     const onPress = () => {
         if(isPressed){
             animation.current.play();
-            console.log("add")
         } else {
             animation.current.reset();
-            console.log("remove")
         }   
     }
 
@@ -50,119 +42,33 @@ const DetailScreen = ({route, navigation}) => {
             return element.title === title;
         }
         if (info.watchlist.find(findSame) === undefined){
-            //animation.current.reset();
             return (false) 
-        } else { 
-            //animation.current.play();
-            return (true)
-        }
+        } else { return (true)}
     });
     const dispatch = useDispatch();
-
-    
-
-    const isSaved = () => {
-        const findSame = (element) => {
-            return element.title === title;
-        }
-        if (info.watchlist.find(findSame) === undefined){
-            animation.current.reset();
-            setIsPressed(false) 
-        } else { 
-            animation.current.play();
-            setIsPressed(true)
-        }
-    }
 
     const findSame = (element) => {
         return element.title === title;
     }
     const addWatchlist = () => {
-        //setWatchlist(watchlist.concat(route.params))
-        // if(watchlist.find(findSame) === undefined){
-        //     setWatchlist(watchlist.push(route.params))
-        // } 
         if (info.watchlist.find(findSame) === undefined){
             dispatch(updateUserAsync({ watchlist: info.watchlist.concat(route.params) }));
         }
-        
-        //console.log(info.watchlist.concat(route.params))
     }
     const removeWatchlist = () => {
         const isWanted = (element) => {
             return element.title !== title;
         }
-        //setWatchlist(watchlist.filter(isWanted));
         dispatch(updateUserAsync({ watchlist:  info.watchlist.filter(isWanted)}));
     }
    
   
     useEffect(() => {
         dispatch(readUserAsync());
-        //isSaved();
     }, [])
     useEffect(() => {
-        //onPress();
-        if(isPressed){
-            animation.current.play();
-            console.log("added")
-        } else {
-            animation.current.reset();
-            console.log("removed")
-        }   
         onPress();
     }, [])
-    // useEffect(() => {
-    //     isSaved();
-        
-    //     return () => {
-    //         setIsPressed();
-    //     }
-    // }, [info.watchlist])
-    
-    
-    //  useEffect(() => {
-    //     //setWatchlist(info.watchlist);
-    //     dispatch(updateUserAsync({ watchlist }));
-    //  }, [watchlist]);
-
-    //  useEffect(() => {
-    //     setWatchlist(info.watchlist);
-    //     isSaved();
-    //  }, [info])
-
-        // () => {
-        //     const isSaved = (element) => {
-        //         return element.title === route.params.title;
-        //     }
-        //     if(watchlist.find(isSaved) === undefined){
-        //         console.log("沒看過");
-        //         return false
-        //     } else {
-        //         console.log("看過");
-        //         return true
-        //     }
-        // });
-    //const watchlistRef = doc(db, "users", auth.currentUser.uid);
-    
-    // const dispatch = useDispatch();
-    // useEffect(async () => {
-    //     await updateDoc(watchlistRef, {
-    //         watchlist
-    //     }).then(() => {
-    //         const isSaved = (element) => {
-    //             return element.title === route.params.title;
-    //         }
-    //         if(watchlist.find(isSaved) === undefined){
-    //             //console.log("沒看過");
-    //             setIsPressed(false);
-    //         } else {
-    //             //console.log("看過");
-    //             setIsPressed(true);
-    //         }
-    //     })
-    // }, [watchlist])
-
 
     return(
         <SafeAreaView style={{backgroundColor: colorMode == 'dark'? "#181B2A": "#ffffff"}}>
@@ -225,30 +131,14 @@ const DetailScreen = ({route, navigation}) => {
                             </Pressable> */}
                             <Pressable h={10} w={10} pt={5} justifyContent="center" alignItems="center" 
                                 onPress={() => {
-                                    // setIsPressed((prev) => !prev)
-                                    // if (isPressed){
-                                    //     addWatchlist();
-                                    //     // setIsPressed(false);
-                                    //     onPress();
-                                    //     console.log("add")
-                                    // } else {
-                                    //     removeWatchlist();
-                                    //     // setIsPressed(true);
-                                    //     onPress();
-                                    //     console.log("remove")
-                                    // }
                                     if (isPressed){
                                         removeWatchlist();
                                         setIsPressed(false);
                                         animation.current.reset();
-                                        //onPress();
-                                        //console.log("remove")
                                     } else {
                                         addWatchlist();
                                         setIsPressed(true);
                                         animation.current.play();
-                                        //console.log("add")
-                                        //onPress();
                                     }
                                 }}>
                                 <LottieView 

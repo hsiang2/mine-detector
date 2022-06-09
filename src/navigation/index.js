@@ -29,9 +29,6 @@ const Tab = createBottomTabNavigator();
 const Navigation = () => {
     const { colorMode } = useColorMode();
     const login = useSelector(selectLogin);
-    //console.log(login.hasLogin);
-     //const info = useSelector(selectInfo)
-     //console.log(info);
 
      return (
           <KeyboardAvoidingView
@@ -53,49 +50,8 @@ const Navigation = () => {
             }
           </KeyboardAvoidingView>
       );
-
-
-    // return login? (
-    //     <NavigationContainer>
-    //         <StatusBar
-    //             barStyle={ colorMode == "dark"? "light-content": "dark-content"}
-    //         />
-    //         <MyTabs />
-    //         {/* <StatusBar
-    //             barStyle={ colorMode == "dark"? "light-content": "dark-content"}
-    //         />
-    //         <MyTabs /> */}
-    //     </NavigationContainer>
-    // ) : (
-    //     <NavigationContainer>
-    //         <LoginStack />
-    //     </NavigationContainer>
-    // );
 }
-
-const LoginStack = () => {
-    const navigation = useNavigation();
-    return(
-        <Stack.Navigator>
-            <Stack.Screen 
-                options={{headerShown: false}}
-                name='Login' component={LoginScreen}
-            />
-            <Stack.Screen 
-                options={{ 
-                    headerTransparent: true, title: null, 
-                    headerLeft: () => (
-                        <AntDesign 
-                            name="left" style={{marginLeft: 26}}
-                            size={24} color="#FFF8E8"
-                            onPress={()=> navigation.goBack()}
-                    />)
-                }}
-                name='Register' component={RegisterScreen}
-            />
-        </Stack.Navigator>
-    )
-} 
+      
 
 const MyTabs = () => {
     const { colorMode } = useColorMode();

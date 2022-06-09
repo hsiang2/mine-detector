@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import { useWindowDimensions } from "react-native";
 import { TabView, SceneMap, TabBar } from 'react-native-tab-view'
 import { useColorMode } from "native-base";
-import CommentSectionDetail from "./CommentSectionDetail";
 import { doc, onSnapshot } from "firebase/firestore";
 import { Box, FlatList, Text, Pressable, Center, Image } from "native-base";
 import Comment from "./Comment";
@@ -15,7 +14,6 @@ const CommentSection = ({navigation, movie}) => {
     const [spoilerData, setSpoilerData] = useState([]);
     
     useEffect( () => {
-        //console.log("hi");
         const unsubscribe = onSnapshot(doc(db, "comments", movie), (doc) => {
             
                 if(doc.data().spoiler){
@@ -24,7 +22,6 @@ const CommentSection = ({navigation, movie}) => {
                 } 
            
                 if(doc.data().noSpoiler){
-                    
                     const comment = doc.data().noSpoiler
                     setData(comment)
                 } 

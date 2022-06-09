@@ -2,15 +2,12 @@ import React from "react";
 import { Center, FlatList, HStack, Text, useColorMode,Image } from "native-base";
 import AntDesign from "react-native-vector-icons/AntDesign"
 import { useSelector } from "react-redux";
-//import { selectWatchlist } from "../redux/accountSlice";
 import WishlistDetail from "./WishlistDetail";
 import { selectInfo } from "../redux/accountSlice";
 
 const Wishlist = ({data, navigation}) => {
     const {colorMode} = useColorMode();
     const { watchlist } = useSelector(selectInfo);
-    //console.log(watchlist);
-    //const watchlist = useSelector(selectWatchlist);
     const renderItem = ({item}) => (<WishlistDetail movie={item} navigation={navigation}/>)
     return (
         <>

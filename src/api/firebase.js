@@ -14,11 +14,8 @@ import {
     onSnapshot
 } from "firebase/firestore";
 
-import { useDispatch } from 'react-redux';
-
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { getReactNativePersistence, initializeAuth } from 'firebase/auth/react-native';
-import { setComment } from '../redux/commentSlice';
 
 
 const firebaseConfig = {
@@ -97,33 +94,33 @@ export const db = getFirestore(app);
         }
       }
 
-    export const getComment = async ({movie, isSpoiler}) => {
-        const dispatch = useDispatch();
-        try {
+    // export const getComment = async ({movie, isSpoiler}) => {
+    //     const dispatch = useDispatch();
+    //     try {
             
-            const commentRef = doc(db, "comments", movie);
-            const commentSnap = await getDoc(commentRef);
-            /*const unsubscribe = */onSnapshot(commentRef, (doc) => {
-                if(isSpoiler){
-                    if(commentSnap.data().spoiler){
+    //         const commentRef = doc(db, "comments", movie);
+    //         const commentSnap = await getDoc(commentRef);
+    //         /*const unsubscribe = */onSnapshot(commentRef, (doc) => {
+    //             if(isSpoiler){
+    //                 if(commentSnap.data().spoiler){
                         
-                        dispatch(setComment(doc.data().spoiler))
-                    } else { dispatch(setComment([]))}
-                } else {
+    //                     dispatch(setComment(doc.data().spoiler))
+    //                 } else { dispatch(setComment([]))}
+    //             } else {
                     
-                    if(commentSnap.data().noSpoiler){
+    //                 if(commentSnap.data().noSpoiler){
                         
-                        dispatch(setComment(doc.data().noSpoiler))
-                    } 
-                    else{
-                        dispatch(setComment([]))}
-                } 
-            });
-        } catch (e) {
-            console.log(e);
-        }
-        //unsubscribe();
-    }
+    //                     dispatch(setComment(doc.data().noSpoiler))
+    //                 } 
+    //                 else{
+    //                     dispatch(setComment([]))}
+    //             } 
+    //         });
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    //     //unsubscribe();
+    // }
 
 
 

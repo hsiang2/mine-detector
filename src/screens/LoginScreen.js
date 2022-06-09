@@ -1,23 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import React, { useState } from "react";
 //import { doc, getDoc } from "firebase/firestore";
 import { Center, FormControl, Input, Text, WarningOutlineIcon, Button, Image, Pressable, HStack, Box } from "native-base";
 //import { TextInput, Button, Text } from "react-native";
 import { useDispatch, useSelector } from "react-redux";
-import { TextInput, ActivityIndicator, Keyboard, TouchableWithoutFeedback } from "react-native";
+import { TextInput, Keyboard, TouchableWithoutFeedback } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import Foundation from 'react-native-vector-icons/Foundation';
 import Feather from "react-native-vector-icons/Feather";
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-//import { login, setAccountInfo, setWatchlist, gotoRegister} from "../redux/accountSlice";
 import { selectInfo } from "../redux/accountSlice";
-//import { auth, db } from "../../App";
 import Background from "../components/Background"; 
-import { gotoRegister, loginAsync, selectErrorMsg, selectStatus, readUserAsync } from "../redux/accountSlice"
+import { gotoRegister, loginAsync, selectErrorMsg, selectStatus } from "../redux/accountSlice"
 
-const LoginScreen = ({ navigation }) => {
+const LoginScreen = () => {
     const dispatch = useDispatch();
 
     const errMsg = useSelector(selectErrorMsg);
@@ -102,7 +98,7 @@ const LoginScreen = ({ navigation }) => {
         <Center flex={1}>
             <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
                 <Center>
-                    {/* <Background /> */}
+                    <Background />
                     <Image 
                         w={108} h={108} mb={55} borderRadius={50}
                         source={{uri: "https://github.com/hsiang2/movie_image/blob/main/avatar-rat.png?raw=true"}}
@@ -189,12 +185,6 @@ const LoginScreen = ({ navigation }) => {
                                 <Text fontSize={12} color="#FFDA7B">註冊</Text>
                             </Pressable>
                         </HStack>
-                        {/* <Button
-                            _text={{color: "#445B6C", fontSize: "12"}} 
-                            w={314} h={60} mb={4}
-                            bgColor="#EFEFEF"
-                            onPress={() => navigation.navigate("Register")}
-                        >註冊</Button> */}
                         <Text fontSize={12} color="#E48D8D" mt={3}>{errMsg}</Text>
                     {/* <TextInput
                         labelStyle={{ marginTop: 20 }}
